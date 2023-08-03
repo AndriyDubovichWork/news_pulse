@@ -1,14 +1,32 @@
 'use client';
-import axios from 'axios';
 import styles from './Home.module.scss';
-
+import getMostPopularNews from './requests/getMostPopularNews';
+import { useState, useEffect } from 'react';
 export default function Home() {
-  axios
-    .get(
-      `https://api.nytimes.com/svc/mostpopular/v2/viewed/1.json?api-key=${process.env.NEXT_PUBLIC_apiKey}`
-    )
-    .then((data) => {
-      console.log(data.data.results);
+  const [news, setNews] = useState<Article[]>([]);
+
+  useEffect(() => {
+    getMostPopularNews().then((fetchedNews) => {
+      setNews(fetchedNews);
+      console.log(fetchedNews);
     });
-  return <main className={styles.Home}>hello</main>;
+  }, []);
+
+  return (
+    <main className={styles.Home}>
+      {news?.map((Article) => {
+        return (
+          <div>
+            <a href={Article.url}>
+              <img
+                src={Article?.media?.[0]?.['media-metadata']?.[2]?.url}
+                alt='12'
+              />
+              {Article.title}
+            </a>
+          </div>
+        );
+      })}
+    </main>
+  );
 }
