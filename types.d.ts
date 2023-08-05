@@ -1,4 +1,4 @@
-type Media = {
+type MediaT = {
   type: string;
   subtype: string;
   caption: string;
@@ -8,10 +8,12 @@ type Media = {
   width: number;
   'media-metadata': {
     url: string;
+    width: number;
+    height: number;
   }[];
 };
 
-type Article = {
+type ArticleT = {
   abstract: string;
   adx_keywords: string;
   asset_id: number;

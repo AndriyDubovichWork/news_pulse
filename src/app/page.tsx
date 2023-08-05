@@ -2,8 +2,10 @@
 import styles from './Home.module.scss';
 import getMostPopularNews from './requests/getMostPopularNews';
 import { useState, useEffect } from 'react';
+import Article from './components/Article/Article';
+
 export default function Home() {
-  const [news, setNews] = useState<Article[]>([]);
+  const [news, setNews] = useState<ArticleT[]>([]);
 
   useEffect(() => {
     getMostPopularNews().then((fetchedNews) => {
@@ -14,18 +16,8 @@ export default function Home() {
 
   return (
     <main className={styles.Home}>
-      {news?.map((Article) => {
-        return (
-          <div>
-            <a href={Article.url}>
-              <img
-                src={Article?.media?.[0]?.['media-metadata']?.[2]?.url}
-                alt='12'
-              />
-              {Article.title}
-            </a>
-          </div>
-        );
+      {news?.map((article) => {
+        return <Article article={article} />;
       })}
     </main>
   );
