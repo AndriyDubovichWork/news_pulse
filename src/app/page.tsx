@@ -1,6 +1,6 @@
 'use client';
 import styles from './Home.module.scss';
-import getMostPopularNews from './requests/getMostPopularNews';
+import getMostPopularNews from './api/requests/getMostPopularNews';
 import { useState, useEffect } from 'react';
 import Article from './components/Article/Article';
 
