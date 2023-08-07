@@ -16,6 +16,7 @@ export default function Header() {
         <Link href='/about-us'>About us</Link>
       </div>
       <div className={style.half}>
+        <SearchBar />
         <p>News Pulse</p>
       </div>
     </header>
