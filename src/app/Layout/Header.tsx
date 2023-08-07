@@ -2,6 +2,7 @@ import React from 'react';
 import style from './header.module.scss';
 import Link from 'next/link';
 import SearchBar from '../components/SearchBar/SearchBar';
+import { BsFillBookmarkFill, BsBookmark } from 'react-icons/bs';
 
 export default function Header() {
   return (
@@ -17,7 +18,9 @@ export default function Header() {
       </div>
       <div className={style.half}>
         <SearchBar />
-        <p>News Pulse</p>
+        <p>user img</p>
+        <p>name</p>
+        <BsBookmark />
       </div>
     </header>
   );

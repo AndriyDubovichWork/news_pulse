@@ -1,10 +1,13 @@
-.image {
-  background-color: #222;
-  animation-name: color;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
-}
+.article {
+  width: 440px;
 
+  .image {
+    background-color: #222;
+    animation-name: color;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+  }
+}
 @keyframes color {
   0% {
     background-color: #4f4f4f;

@@ -8,7 +8,7 @@ type ArticlePropsT = { article: ArticleT };
 function Article({ article }: ArticlePropsT) {
   return (
     <div>
-      <a href={article.url} target='_blank'>
+      <a href={article.url} target='_blank' className={style.article}>
         <Image
           height={293}
           width={440}
