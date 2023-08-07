@@ -1,5 +1,5 @@
 'use client';
-import styles from './Home.module.scss';
+import styles from './home.module.scss';
 import getMostPopularNews from './api/requests/getMostPopularNews';
 import { useState, useEffect } from 'react';
 import Article from './components/Article/Article';
@@ -15,7 +15,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className={styles.Home}>
+    <main className={styles.home}>
       {news?.map((article) => {
         return <Article article={article} />;
       })}

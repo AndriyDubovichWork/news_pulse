@@ -1,7 +1,7 @@
 import React from 'react';
 import ArticlePlaceHolder from './nytLogo.png';
 import Image from 'next/image';
-import style from './Article.module.scss';
+import style from './article.module.scss';
 
 type ArticlePropsT = { article: ArticleT };
 
@@ -12,7 +12,7 @@ function Article({ article }: ArticlePropsT) {
         <Image
           height={293}
           width={440}
-          className={style.Image}
+          className={style.image}
           src={
             article?.media?.[0]?.['media-metadata']?.[2]?.url ||
             ArticlePlaceHolder.src

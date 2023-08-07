@@ -1,5 +1,5 @@
 import React from 'react';
-import style from './News.module.scss';
+import style from './news.module.scss';
 export default function News() {
-  return <main className={style.News}>News</main>;
+  return <main className={style.news}>News</main>;
 }
