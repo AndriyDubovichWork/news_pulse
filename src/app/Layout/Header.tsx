@@ -8,7 +8,7 @@ export default function Header() {
   return (
     <header className={style.header}>
       <div className={style.half}>
-        <Link href='/news' className={style.logo}>
+        <Link href='/' className={style.logo}>
           News Pulse
         </Link>
         <Link href='/categories'>Categories</Link>
@@ -20,7 +20,7 @@ export default function Header() {
         <SearchBar />
         <p>user img</p>
         <p>name</p>
-        <BsBookmark />
+        <BsBookmark className={style.icon} />
       </div>
     </header>
   );

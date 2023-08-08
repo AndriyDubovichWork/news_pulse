@@ -1,0 +1,15 @@
+@import 'vars.scss';
+
+.notFound {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  text-align: center;
+  .highLighted {
+    color: $highLightedText;
+    font-size: 12rem;
+  }
+}
