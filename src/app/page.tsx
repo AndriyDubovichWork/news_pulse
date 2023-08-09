@@ -1,5 +1,5 @@
 'use client';
-import styles from './home.module.scss';
+import style from './home.module.scss';
 import getMostPopularNews from './api/requests/getMostPopularNews';
 import { useState, useEffect } from 'react';
 import Article from './components/Article/Article';
@@ -10,14 +10,12 @@ import getWeather from './api/requests/getWeather';
 export default function Home() {
   const [news, setNews] = useState<ArticleT[]>([]);
   const [weather, setWeather] = useState<WeatherT>();
-  const [ip, setIp] = useState<string>('');
 
   useEffect(() => {
     getMostPopularNews().then((fetchedNews) => {
       setNews(fetchedNews);
     });
     getUserIp().then((ip) => {
-      setIp(ip);
       getWeather(ip).then((res) => {
         setWeather(res);
       });
@@ -25,14 +23,14 @@ export default function Home() {
   }, []);
 
   return (
-    <main className={styles.home}>
+    <main className={style.home}>
       {weather && <Weather weather={weather} />}
 
-      {ip}
-      {news?.map((article) => {
-        return <Article article={article} />;
-      })}
-      {/* <Weather /> */}
+      <div className={style.articles}>
+        {news?.map((article) => {
+          return <Article article={article} />;
+        })}
+      </div>
     </main>
   );
 }

@@ -38,12 +38,12 @@ type ArticleT = {
   url: string;
 };
 type WeatherT = {
-  location: Location;
+  location: LocationT;
   current: Current;
   forecast: Forecast;
 };
 
-type Location = {
+type LocationT = {
   name: string;
   region: string;
   country: string;

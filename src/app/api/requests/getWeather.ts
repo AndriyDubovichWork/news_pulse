@@ -6,7 +6,7 @@ export default function getWeather(location: string) {
   };
   return axios
     .get<WeatherTRes, WeatherTRes>(
-      `http://api.weatherapi.com/v1/forecast.json?key=${process.env.NEXT_PUBLIC_Weather_apiKey}&q=${location}&days=1&aqi=no&alerts=no`
+      `http://api.weatherapi.com/v1/forecast.json?key=${process.env.NEXT_PUBLIC_Weather_apiKey}&q=${location}&days=7&aqi=no&alerts=no`
     )
     .then((res) => res.data);
 }
