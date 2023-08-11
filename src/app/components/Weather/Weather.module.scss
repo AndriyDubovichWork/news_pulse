@@ -1,24 +1,30 @@
 @import '../../vars.scss';
 
-.general {
-  display: flex;
-  justify-content: space-between;
-  .stats {
-    display: flex;
-    flex-direction: row;
-    .icon {
-      height: 10vh;
-    }
-    .temp {
-      font-size: 3rem;
-      font-weight: 400;
-    }
+.byLocation {
+  width: 50%;
 
-    .subData {
-      .row {
-        color: $TinedText;
-        font-size: 1rem;
+  .general {
+    display: flex;
+    justify-content: space-between;
+    .stats {
+      display: flex;
+      flex-direction: row;
+      .icon {
+        height: 10vh;
+      }
+      .temp {
+        font-size: 3rem;
+        font-weight: 400;
+      }
+
+      .subData {
+        .row {
+          color: $TinedText;
+          font-size: 1rem;
+        }
       }
     }
+  }
+  .chart {
   }
 }
