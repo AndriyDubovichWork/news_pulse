@@ -1,0 +1,18 @@
+@import '../../../../vars.scss';
+
+.day {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+
+  .dayName {
+    text-align: center;
+  }
+
+  .temp {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}

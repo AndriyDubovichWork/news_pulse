@@ -3,9 +3,10 @@ import style from './home.module.scss';
 import getMostPopularNews from './api/requests/getMostPopularNews';
 import { useState, useEffect } from 'react';
 import Article from './components/Article/Article';
-import Weather from './components/Weather/Weather';
+import Weather from './components/WeatherWidget/WeatherOfUser/WeatherOfUser';
 import getUserIp from './api/requests/getUserIp';
 import getWeather from './api/requests/getWeather';
+import WeatherWidget from './components/WeatherWidget/WeatherWidget';
 
 export default function Home() {
   const [news, setNews] = useState<ArticleT[]>([]);
@@ -24,7 +25,7 @@ export default function Home() {
 
   return (
     <main className={style.home}>
-      {weather && <Weather weather={weather} />}
+      {weather && <WeatherWidget weather={weather} />}
 
       <div className={style.articles}>
         {news?.map((article) => {

@@ -1,17 +1,20 @@
 import React, { useState } from 'react';
-import style from './Weather.module.scss';
+import style from './WeatherOfUser.module.scss';
 import { registerables, Chart } from 'chart.js';
 
 import { Line } from 'react-chartjs-2';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
+import WeatherDay from './WeatherDay/WeatherDay';
+Chart.register(...registerables);
 
-export default function Weather({ weather }: { weather: WeatherT }) {
+export default function WeatherOfUser({ weather }: { weather: WeatherT }) {
   const [isMetric, setIsMetric] = useState(true);
-  Chart.register(...registerables);
+  const [selectedDate, setSelectedDate] = useState(0);
+  const switchIsMetric = () => setIsMetric(!isMetric);
 
   const data = {
     labels: [
-      ...weather.forecast.forecastday[0].hour.map((hour, id) =>
+      ...weather.forecast.forecastday[selectedDate].hour.map((hour, id) =>
         id % 2 ? hour.time.split(' ')[1] : ''
       ),
     ],
@@ -19,8 +22,8 @@ export default function Weather({ weather }: { weather: WeatherT }) {
       {
         label: '',
         data: [
-          ...weather.forecast.forecastday[0].hour.map(
-            (hour) => hour.heatindex_c
+          ...weather.forecast.forecastday[selectedDate].hour.map(
+            (hour, id) => hour.heatindex_c
           ),
         ],
         borderColor: '#FCC54C',
@@ -34,22 +37,27 @@ export default function Weather({ weather }: { weather: WeatherT }) {
       <div className={style.general}>
         <div className={style.stats}>
           <img
-            src={weather.current.condition.icon}
+            src={weather.forecast.forecastday[selectedDate].day.condition.icon}
             alt='weather icon'
             className={style.icon}
           />
-          <h1 className={style.temp}>
-            {isMetric ? weather.current.temp_c : weather.current.temp_f}
+          <h1 className={style.temp} onClick={switchIsMetric}>
+            {isMetric
+              ? weather.forecast.forecastday[selectedDate].day.avgtemp_c
+              : weather.forecast.forecastday[selectedDate].day.avgtemp_f}
           </h1>
           <div className={style.subData}>
             <h3 className={style.row}>
-              Precipitation {weather.current.precip_in}%
+              Precipitation{' '}
+              {weather.forecast.forecastday[selectedDate].day.totalprecip_in}%
             </h3>
             <h3 className={style.row}>
-              Precipitation {weather.current.humidity}%
+              Precipitation{' '}
+              {weather.forecast.forecastday[selectedDate].day.avghumidity}%
             </h3>
             <h3 className={style.row}>
-              Precipitation {weather.current.wind_kph} km/h
+              Precipitation{' '}
+              {weather.forecast.forecastday[selectedDate].day.avgvis_km} km/h
             </h3>
           </div>
         </div>
@@ -69,13 +77,16 @@ export default function Weather({ weather }: { weather: WeatherT }) {
             line: {
               tension: 0.25,
             },
+            point: {
+              radius: 1,
+            },
           },
           plugins: {
             datalabels: {
               display: true,
               color: '#fff',
-              formatter: Math.round,
               anchor: 'end',
+              formatter: Math.round,
               offset: -30,
               align: 'start',
             },
@@ -83,11 +94,20 @@ export default function Weather({ weather }: { weather: WeatherT }) {
               display: false,
             },
           },
+          scales: {
+            y: {
+              ticks: {
+                display: false,
+              },
+            },
+          },
         }}
       />
-      {weather.forecast.forecastday.map((forecastday) => {
-        return <p>{forecastday.day.avgtemp_c}</p>;
-      })}
+      <div className={style.days}>
+        {weather.forecast.forecastday.map((forecastday, id) => {
+          return <WeatherDay forecastday={forecastday} />;
+        })}
+      </div>
     </div>
   );
 }
