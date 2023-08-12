@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import style from './WeatherOfUser.module.scss';
 import { registerables, Chart } from 'chart.js';
 
@@ -31,7 +31,6 @@ export default function WeatherOfUser({ weather }: { weather: WeatherT }) {
       },
     ],
   };
-
   return (
     <div className={style.byLocation}>
       <div className={style.general}>
@@ -105,7 +104,14 @@ export default function WeatherOfUser({ weather }: { weather: WeatherT }) {
       />
       <div className={style.days}>
         {weather.forecast.forecastday.map((forecastday, id) => {
-          return <WeatherDay forecastday={forecastday} />;
+          return (
+            <WeatherDay
+              forecastday={forecastday}
+              switchDay={() => {
+                setSelectedDate(id);
+              }}
+            />
+          );
         })}
       </div>
     </div>

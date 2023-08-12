@@ -1,27 +1,11 @@
 'use client';
 import style from './home.module.scss';
-import getMostPopularNews from './api/requests/getMostPopularNews';
-import { useState, useEffect } from 'react';
 import Article from './components/Article/Article';
-import Weather from './components/WeatherWidget/WeatherOfUser/WeatherOfUser';
-import getUserIp from './api/requests/getUserIp';
-import getWeather from './api/requests/getWeather';
 import WeatherWidget from './components/WeatherWidget/WeatherWidget';
+import useGetWeatherData from './hooks/useGetWeatherData';
 
 export default function Home() {
-  const [news, setNews] = useState<ArticleT[]>([]);
-  const [weather, setWeather] = useState<WeatherT>();
-
-  useEffect(() => {
-    getMostPopularNews().then((fetchedNews) => {
-      setNews(fetchedNews);
-    });
-    getUserIp().then((ip) => {
-      getWeather(ip).then((res) => {
-        setWeather(res);
-      });
-    });
-  }, []);
+  const { weather, news } = useGetWeatherData();
 
   return (
     <main className={style.home}>
