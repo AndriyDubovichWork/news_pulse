@@ -10,6 +10,7 @@ export default function WeatherDay({
 }) {
   const date = new Date(forecastday.date);
   const dayName = date.toLocaleDateString('en-US', { weekday: 'short' });
+
   return (
     <div className={style.day} onClick={switchDay}>
       <p className={style.dayName}>{dayName}</p>

@@ -5,32 +5,19 @@ import { registerables, Chart } from 'chart.js';
 import { Line } from 'react-chartjs-2';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 import WeatherDay from './WeatherDay/WeatherDay';
+import useGetWeatherOfUser from '@/app/hooks/useGetWeatherOfUser';
 Chart.register(...registerables);
 
 export default function WeatherOfUser({ weather }: { weather: WeatherT }) {
-  const [isMetric, setIsMetric] = useState(true);
-  const [selectedDate, setSelectedDate] = useState(0);
-  const switchIsMetric = () => setIsMetric(!isMetric);
+  const {
+    isMetric,
+    selectedDate,
+    setSelectedDate,
+    switchIsMetric,
+    data,
+    chartRef,
+  } = useGetWeatherOfUser(weather);
 
-  const data = {
-    labels: [
-      ...weather.forecast.forecastday[selectedDate].hour.map((hour, id) =>
-        id % 2 ? hour.time.split(' ')[1] : ''
-      ),
-    ],
-    datasets: [
-      {
-        label: '',
-        data: [
-          ...weather.forecast.forecastday[selectedDate].hour.map(
-            (hour, id) => hour.heatindex_c
-          ),
-        ],
-        borderColor: '#FCC54C',
-        backgroundColor: '#FCC54C',
-      },
-    ],
-  };
   return (
     <div className={style.byLocation}>
       <div className={style.general}>
@@ -64,10 +51,13 @@ export default function WeatherOfUser({ weather }: { weather: WeatherT }) {
           <p className={style.place}>
             {weather.location.name}, {weather.location.country}
           </p>
-          <p className={style.time}>{weather.current.last_updated}</p>
+          <p className={style.time}>
+            {weather.forecast.forecastday[selectedDate].date}
+          </p>
         </div>
       </div>
       <Line
+        ref={chartRef}
         plugins={[ChartDataLabels]}
         data={data}
         className={style.chart}
@@ -109,6 +99,9 @@ export default function WeatherOfUser({ weather }: { weather: WeatherT }) {
               forecastday={forecastday}
               switchDay={() => {
                 setSelectedDate(id);
+                let lineChart = chartRef.current;
+
+                lineChart.update();
               }}
             />
           );
