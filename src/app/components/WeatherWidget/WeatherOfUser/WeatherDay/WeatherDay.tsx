@@ -4,15 +4,20 @@ import style from './WeatherDay.module.scss';
 export default function WeatherDay({
   forecastday,
   switchDay,
+  isSelected,
 }: {
   switchDay: () => void;
   forecastday: Forecastday;
+  isSelected: boolean;
 }) {
   const date = new Date(forecastday.date);
   const dayName = date.toLocaleDateString('en-US', { weekday: 'short' });
 
   return (
-    <div className={style.day} onClick={switchDay}>
+    <div
+      className={`${style.day} ${isSelected && style.selected}`}
+      onClick={switchDay}
+    >
       <p className={style.dayName}>{dayName}</p>
       <img src={forecastday.day.condition.icon} alt='weather img' />
       <div className={style.temp}>

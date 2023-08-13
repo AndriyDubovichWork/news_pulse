@@ -1,6 +1,8 @@
 @import '../../../../vars.scss';
 
 .day {
+  padding: 10px;
+  cursor: pointer;
   display: flex;
   flex-direction: column;
 
@@ -15,4 +17,11 @@
     flex-direction: row;
     justify-content: space-between;
   }
+}
+.day:hover,
+.day:focus {
+  background-color: aquamarine;
+}
+.selected {
+  background-color: aqua;
 }

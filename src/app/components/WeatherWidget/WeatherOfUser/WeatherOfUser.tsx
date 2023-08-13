@@ -96,6 +96,7 @@ export default function WeatherOfUser({ weather }: { weather: WeatherT }) {
         {weather.forecast.forecastday.map((forecastday, id) => {
           return (
             <WeatherDay
+              isSelected={id === selectedDate}
               forecastday={forecastday}
               switchDay={() => {
                 setSelectedDate(id);
