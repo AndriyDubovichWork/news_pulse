@@ -20,12 +20,12 @@
 }
 .day:hover,
 .day:focus {
-  background-color: $secondaryBackground;
+  background-color: $activeBackground;
 }
 .selected {
-  background-color: $activeBackground;
+  background-color: $secondaryBackground;
 }
 .selected:hover,
 .selected:focus {
-  background-color: $activeBackground;
+  background-color: $secondaryBackground;
 }
