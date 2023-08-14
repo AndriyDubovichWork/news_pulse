@@ -6,7 +6,7 @@ import getWeather from '../api/requests/getWeather';
 export default function useGetData() {
   const [news, setNews] = useState<ArticleT[]>([]);
   const [weather, setWeather] = useState<WeatherT>();
-  const [worldWeather, setWorldWeather] = useState<WeatherT[]>();
+  const [citiesWeather, setCitiesWeather] = useState<WeatherT[]>();
 
   useEffect(() => {
     getMostPopularNews().then((fetchedNews) => {
@@ -23,9 +23,9 @@ export default function useGetData() {
       getWeather('Paris'),
       getWeather('Lviv'),
     ]).then((values) => {
-      setWorldWeather(values);
+      setCitiesWeather(values);
     });
   }, []);
 
-  return { news, setNews, weather, setWeather, worldWeather };
+  return { news, setNews, weather, setWeather, citiesWeather };
 }

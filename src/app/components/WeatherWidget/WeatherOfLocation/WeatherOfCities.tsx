@@ -1,20 +1,20 @@
 import React from 'react';
 import CityWeather from './CityWeather/CityWeather';
 
-type WeatherOfLocationT = {
-  worldWeather: WeatherT[];
+type WeatherOfCitiesT = {
+  citiesWeather: WeatherT[];
   isMetric: boolean;
   switchIsMetric: () => void;
 };
 
-function WeatherOfLocation({
-  worldWeather,
+export default function WeatherOfCities({
+  citiesWeather,
   isMetric,
   switchIsMetric,
-}: WeatherOfLocationT) {
+}: WeatherOfCitiesT) {
   return (
     <>
-      {worldWeather.map((cityWeather) => {
+      {citiesWeather.map((cityWeather) => {
         return (
           <CityWeather
             weather={cityWeather}
@@ -26,5 +26,3 @@ function WeatherOfLocation({
     </>
   );
 }
-
-export default WeatherOfLocation;

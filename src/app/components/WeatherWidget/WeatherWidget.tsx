@@ -2,17 +2,17 @@ import React from 'react';
 
 import WeatherOfUser from './WeatherOfUser/WeatherOfUser';
 import useWeatherWidgetData from '@/app/hooks/useWeatherWidgetData';
-import WeatherOfLocation from './WeatherOfLocation/WeatherOfLocation';
+import WeatherOfCities from './WeatherOfLocation/WeatherOfCities';
 import style from './WeatherWidget.module.scss';
 
 type WeatherWidgetT = {
   weather: WeatherT;
-  worldWeather: WeatherT[];
+  citiesWeather: WeatherT[];
 };
 
 export default function WeatherWidget({
   weather,
-  worldWeather,
+  citiesWeather,
 }: WeatherWidgetT) {
   const { isMetric, switchIsMetric } = useWeatherWidgetData();
   return (
@@ -22,8 +22,8 @@ export default function WeatherWidget({
         isMetric={isMetric}
         switchIsMetric={switchIsMetric}
       />
-      <WeatherOfLocation
-        worldWeather={worldWeather}
+      <WeatherOfCities
+        citiesWeather={citiesWeather}
         isMetric={isMetric}
         switchIsMetric={switchIsMetric}
       />
