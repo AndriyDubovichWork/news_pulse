@@ -15,6 +15,9 @@ export default function WeatherChart({ chartData }: WeatherChartT) {
       plugins={[ChartDataLabels]}
       data={chartData}
       options={{
+        layout: {
+          padding: 20,
+        },
         elements: {
           line: {
             tension: 0.25,

@@ -21,8 +21,10 @@ export default function WeatherOfUser({
   isMetric,
   switchIsMetric,
 }: WeatherOfUserT) {
-  const { selectedDate, setSelectedDate, chartData } =
-    useWeatherOfUserData(weather);
+  const { selectedDate, setSelectedDate, chartData } = useWeatherOfUserData(
+    weather,
+    isMetric
+  );
 
   return (
     <div className={style.byLocation}>
@@ -37,13 +39,18 @@ export default function WeatherOfUser({
             {isMetric
               ? weather.forecast.forecastday[selectedDate].day.avgtemp_c
               : weather.forecast.forecastday[selectedDate].day.avgtemp_f}
+            <h3 className={style.tempUnit}>{isMetric ? '°C' : '°F'}</h3>
           </h1>
           <div className={style.subData}>
             <Row>
               <>
                 Precipitation:
-                {weather.forecast.forecastday[selectedDate].day.totalprecip_mm}
-                mm
+                {isMetric
+                  ? weather.forecast.forecastday[selectedDate].day
+                      .totalprecip_mm
+                  : weather.forecast.forecastday[selectedDate].day
+                      .totalprecip_in}
+                {isMetric ? 'mm' : 'in'}
               </>
             </Row>
             <Row>
@@ -55,7 +62,10 @@ export default function WeatherOfUser({
             <Row>
               <>
                 Wind:
-                {weather.forecast.forecastday[selectedDate].day.avgvis_km} km/h
+                {isMetric
+                  ? weather.forecast.forecastday[selectedDate].day.avgvis_km
+                  : weather.forecast.forecastday[selectedDate].day.avgvis_miles}
+                {isMetric ? 'km/h' : 'mph'}
               </>
             </Row>
           </div>
@@ -75,6 +85,7 @@ export default function WeatherOfUser({
         {weather.forecast.forecastday.map((forecastday, id) => {
           return (
             <WeatherDay
+              isMetric={isMetric}
               isSelected={id === selectedDate}
               forecastday={forecastday}
               switchDay={() => setSelectedDate(id)}

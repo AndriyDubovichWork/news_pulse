@@ -1,6 +1,9 @@
 import { useRef, useState } from 'react';
 
-export default function useWeatherOfUserData(weather: WeatherT) {
+export default function useWeatherOfUserData(
+  weather: WeatherT,
+  isMetric: boolean
+) {
   const [selectedDate, setSelectedDate] = useState(0);
   const chartData = {
     labels: [
@@ -12,8 +15,8 @@ export default function useWeatherOfUserData(weather: WeatherT) {
       {
         label: '',
         data: [
-          ...weather.forecast.forecastday[selectedDate].hour.map(
-            (hour, id) => hour.heatindex_c
+          ...weather.forecast.forecastday[selectedDate].hour.map((hour, id) =>
+            isMetric ? hour.heatindex_c : hour.heatindex_f
           ),
         ],
         borderColor: '#FCC54C',
