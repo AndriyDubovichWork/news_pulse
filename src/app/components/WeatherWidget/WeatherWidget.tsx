@@ -1,11 +1,15 @@
-import React, { useState } from 'react';
-import style from './Weather.module.scss';
-import { registerables, Chart } from 'chart.js';
+import React from 'react';
 
-import { Line } from 'react-chartjs-2';
-import ChartDataLabels from 'chartjs-plugin-datalabels';
-import Weather from './WeatherOfUser/WeatherOfUser';
+import WeatherOfUser from './WeatherOfUser/WeatherOfUser';
+import useWeatherWidgetData from '@/app/hooks/useWeatherWidgetData';
 
 export default function WeatherWidget({ weather }: { weather: WeatherT }) {
-  return <Weather weather={weather} />;
+  const { isMetric, switchIsMetric } = useWeatherWidgetData();
+  return (
+    <WeatherOfUser
+      weather={weather}
+      isMetric={isMetric}
+      switchIsMetric={switchIsMetric}
+    />
+  );
 }

@@ -2,10 +2,10 @@
 import style from './home.module.scss';
 import Article from './components/Article/Article';
 import WeatherWidget from './components/WeatherWidget/WeatherWidget';
-import useGetWeatherData from './hooks/useGetWeatherData';
+import useGetData from './hooks/useGetData';
 
 export default function Home() {
-  const { weather, news } = useGetWeatherData();
+  const { weather, news } = useGetData();
 
   return (
     <main className={style.home}>

@@ -1,10 +1,8 @@
 import { useRef, useState } from 'react';
 
-export default function useGetWeatherOfUser(weather: WeatherT) {
-  const [isMetric, setIsMetric] = useState(true);
+export default function useWeatherOfUserData(weather: WeatherT) {
   const [selectedDate, setSelectedDate] = useState(0);
-  const switchIsMetric = () => setIsMetric(!isMetric);
-  const data = {
+  const chartData = {
     labels: [
       ...weather.forecast.forecastday[selectedDate].hour.map((hour, id) =>
         id % 2 ? hour.time.split(' ')[1] : ''
@@ -23,15 +21,11 @@ export default function useGetWeatherOfUser(weather: WeatherT) {
       },
     ],
   };
-  const chartRef: any = useRef();
 
   return {
-    data,
-    chartRef,
-    isMetric,
-    setIsMetric,
+    chartData,
+
     selectedDate,
     setSelectedDate,
-    switchIsMetric,
   };
 }

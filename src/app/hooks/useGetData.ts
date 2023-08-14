@@ -3,7 +3,7 @@ import getMostPopularNews from '../api/requests/getMostPopularNews';
 import getUserIp from '../api/requests/getUserIp';
 import getWeather from '../api/requests/getWeather';
 
-export default function useGetWeatherData() {
+export default function useGetData() {
   const [news, setNews] = useState<ArticleT[]>([]);
   const [weather, setWeather] = useState<WeatherT>();
 
