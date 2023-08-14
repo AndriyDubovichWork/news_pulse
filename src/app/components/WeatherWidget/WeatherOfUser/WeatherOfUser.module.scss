@@ -1,7 +1,7 @@
 @import '../../../vars.scss';
 
 .byLocation {
-  width: 50%;
+  grid-area: 1 / 1 / 3 / 3;
 
   .general {
     display: flex;
@@ -9,29 +9,6 @@
     .stats {
       display: flex;
       flex-direction: row;
-      .icon {
-        height: 10vh;
-      }
-      .temp {
-        font-size: 3rem;
-        font-weight: 400;
-        cursor: pointer;
-        display: flex;
-        .tempUnit {
-          font-size: 1.5rem;
-          font-weight: 400;
-        }
-      }
-
-      .subData {
-        .row {
-          color: $TinedText;
-          font-size: 1rem;
-        }
-      }
-    }
-    .placeTime {
-      text-align: right;
     }
   }
   .days {

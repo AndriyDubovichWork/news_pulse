@@ -6,6 +6,7 @@ import useWeatherOfUserData from '@/app/hooks/useWeatherOfUserData';
 import WeatherChart from './WeatherChart/WeatherChart';
 import dateToWeekName from '@/app/lib/dateToWeekName';
 import dateToHour from '@/app/lib/dateToHour';
+import { Conditions, PlaceTime, Temp } from '../Reusable';
 
 type WeatherOfUserT = {
   weather: WeatherT;
@@ -30,55 +31,21 @@ export default function WeatherOfUser({
     <div className={style.byLocation}>
       <div className={style.general}>
         <div className={style.stats}>
-          <img
-            src={weather.forecast.forecastday[selectedDate].day.condition.icon}
-            alt={weather.forecast.forecastday[selectedDate].day.condition.text}
-            className={style.icon}
+          <Temp
+            avgtempC={weather.forecast.forecastday[selectedDate].day.avgtemp_c}
+            avgtempF={weather.forecast.forecastday[selectedDate].day.avgtemp_f}
+            condition={weather.forecast.forecastday[selectedDate].day.condition}
+            isMetric={isMetric}
+            switchIsMetric={switchIsMetric}
           />
-          <h1 className={style.temp} onClick={switchIsMetric}>
-            {isMetric
-              ? weather.forecast.forecastday[selectedDate].day.avgtemp_c
-              : weather.forecast.forecastday[selectedDate].day.avgtemp_f}
-            <h3 className={style.tempUnit}>{isMetric ? '°C' : '°F'}</h3>
-          </h1>
-          <div className={style.subData}>
-            <Row>
-              <>
-                Precipitation:
-                {isMetric
-                  ? weather.forecast.forecastday[selectedDate].day
-                      .totalprecip_mm
-                  : weather.forecast.forecastday[selectedDate].day
-                      .totalprecip_in}
-                {isMetric ? 'mm' : 'in'}
-              </>
-            </Row>
-            <Row>
-              <>
-                Humidity:
-                {weather.forecast.forecastday[selectedDate].day.avghumidity}%
-              </>
-            </Row>
-            <Row>
-              <>
-                Wind:
-                {isMetric
-                  ? weather.forecast.forecastday[selectedDate].day.avgvis_km
-                  : weather.forecast.forecastday[selectedDate].day.avgvis_miles}
-                {isMetric ? 'km/h' : 'mph'}
-              </>
-            </Row>
-          </div>
+
+          <Conditions
+            isMetric={isMetric}
+            switchIsMetric={switchIsMetric}
+            weather={weather}
+          />
         </div>
-        <div className={style.placeTime}>
-          <p className={style.place}>
-            {weather.location.name}, {weather.location.country}
-          </p>
-          <p className={style.time}>
-            {dateToWeekName(weather.current.last_updated)}{' '}
-            {dateToHour(weather.current.last_updated)}
-          </p>
-        </div>
+        <PlaceTime weather={weather} />
       </div>
       <WeatherChart chartData={chartData} />
       <div className={style.days}>

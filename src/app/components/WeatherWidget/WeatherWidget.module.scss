@@ -1,48 +1,9 @@
 @import '../../vars.scss';
 
-.byLocation {
-  width: 50%;
-
-  .general {
-    display: flex;
-    justify-content: space-between;
-    .stats {
-      display: flex;
-      flex-direction: row;
-      .icon {
-        height: 10vh;
-      }
-      .temp {
-        font-size: 3rem;
-        font-weight: 400;
-      }
-
-      .subData {
-        .row {
-          color: $TinedText;
-          font-size: 1rem;
-        }
-      }
-    }
-  }
-  .days {
-    display: flex;
-    justify-content: space-around;
-    .day {
-      display: flex;
-      flex-direction: column;
-
-      justify-content: center;
-
-      .dayName {
-        text-align: center;
-      }
-
-      .temp {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-      }
-    }
-  }
+.weather {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 2vw;
+  grid-row-gap: 2vh;
 }

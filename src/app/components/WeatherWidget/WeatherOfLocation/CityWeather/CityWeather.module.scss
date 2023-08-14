@@ -1,0 +1,23 @@
+@import './../../../../vars.scss';
+
+.city {
+  padding: 25px 25px 55px 25px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  .conditionNTime {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .placeTime {
+      text-align: right;
+    }
+  }
+  .temp {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+  }
+}

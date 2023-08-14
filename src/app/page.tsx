@@ -5,11 +5,13 @@ import WeatherWidget from './components/WeatherWidget/WeatherWidget';
 import useGetData from './hooks/useGetData';
 
 export default function Home() {
-  const { weather, news } = useGetData();
+  const { weather, news, worldWeather } = useGetData();
 
   return (
     <main className={style.home}>
-      {weather && <WeatherWidget weather={weather} />}
+      {weather && (
+        <WeatherWidget weather={weather} worldWeather={worldWeather} />
+      )}
 
       <div className={style.articles}>
         {news?.map((article) => {

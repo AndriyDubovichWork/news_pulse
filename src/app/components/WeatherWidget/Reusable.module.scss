@@ -1,0 +1,26 @@
+@import './../../vars.scss';
+
+.conditions {
+  .row {
+    color: $TinedText;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+}
+.placeTime {
+  text-align: right;
+}
+
+.icon {
+  height: 4.375rem;
+}
+.temp {
+  font-size: 3rem;
+  font-weight: 400;
+  cursor: pointer;
+  display: flex;
+  .tempUnit {
+    font-size: 1.5rem;
+    font-weight: 400;
+  }
+}
