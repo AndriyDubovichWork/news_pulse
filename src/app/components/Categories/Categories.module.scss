@@ -1,4 +1,9 @@
+@import './../../vars.scss';
+
 .categories {
+  background-color: $secondaryBackground;
+  padding: 4vh 2vw;
+
   display: flex;
   flex-direction: row;
   justify-content: space-around;
