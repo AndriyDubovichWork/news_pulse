@@ -1,7 +1,7 @@
 @import './vars.scss';
 
 .home {
-  width: 90vw;
+  width: $defaultWidth;
   margin: 0 auto;
   background-color: $mainBackground;
   .articles {

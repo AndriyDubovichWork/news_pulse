@@ -1,7 +1,7 @@
 @import '../vars.scss';
 
 .header {
-  width: 90vw;
+  width: $defaultWidth;
   margin: 3vh auto;
 
   display: flex;
