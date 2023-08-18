@@ -1,6 +1,6 @@
 import React from 'react';
 import Category from './Category/Category';
-import style from './Categories.module.scss';
+import style from './CategoriesWidget.module.scss';
 const categories = [
   'Food',
   'Animal',
@@ -12,11 +12,11 @@ const categories = [
   'Nature',
 ];
 
-export default function Categories() {
+export default function CategoriesWidget() {
   return (
     <div className={style.categories}>
       {categories.map((category) => (
-        <Category category={category} />
+        <Category category={category} key={category} />
       ))}
     </div>
   );
