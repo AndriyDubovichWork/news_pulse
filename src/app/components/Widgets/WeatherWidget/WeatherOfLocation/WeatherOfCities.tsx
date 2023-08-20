@@ -17,6 +17,8 @@ export default function WeatherOfCities({
       {citiesWeather.map((cityWeather) => {
         return (
           <CityWeather
+            key={cityWeather.current.condition.code}
+
             weather={cityWeather}
             isMetric={isMetric}
             switchIsMetric={switchIsMetric}

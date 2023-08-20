@@ -17,7 +17,7 @@ export default function Home() {
 
       <div className={style.articles}>
         {news?.map((article) => {
-          return <Article article={article} />;
+          return <Article article={article} key={article.byline} />;
         })}
       </div>
     </main>

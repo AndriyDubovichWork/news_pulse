@@ -7,8 +7,16 @@ import Title from '../components/Title/Title';
 import Comment from '../components/Comment/Comment';
 import Link from 'next/link';
 
-function Icon({ src, name }: { src: string; name: string }) {
-  return <Image width={40} height={40} src={src} alt={`${name} icon`} />;
+function Icon({
+  src,
+  name,
+  size = 40,
+}: {
+  src: string;
+  name: string;
+  size?: number;
+}) {
+  return <Image width={size} height={size} src={src} alt={`${name} icon`} />;
 }
 
 const AuthorsInstagram = [
@@ -44,7 +52,7 @@ export default function Footer() {
           <Title title='Mega News' />
 
           {categories.map((category) => (
-            <p>{category}</p>
+            <p key={category}>{category}</p>
           ))}
         </div>
 
@@ -54,7 +62,6 @@ export default function Footer() {
             placeholder='Write your email ..'
             style={{ width: '100%', height: '6vh' }}
           />
-          
         </div>
 
         <div className={style.socialNetwork}>
@@ -96,10 +103,11 @@ export default function Footer() {
 
         {AuthorsInstagram.map((url, id) => {
           return (
-            <Link href={url}>
-              <img
+            <Link href={url} key={url}>
+              <Icon
+                size={104}
                 src={`https://random.imagecdn.app/104/104/?avoidCachingSoItwillBeDifferentImages=${id}`}
-                alt='instagram image'
+                name='instagram image'
               />
             </Link>
           );

@@ -6,12 +6,14 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'static01.nyt.com',
-        port: '',
-        // pathname: '/image/upload/**',
       },
       {
         protocol: 'https',
         hostname: 'upload.wikimedia.org',
+      },
+      {
+        protocol: 'https',
+        hostname: 'random.imagecdn.app',
       },
     ],
   },

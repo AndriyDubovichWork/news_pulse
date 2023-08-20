@@ -52,6 +52,7 @@ export default function WeatherOfUser({
         {weather.forecast.forecastday.map((forecastday, id) => {
           return (
             <WeatherDay
+              key={forecastday.astro.moonrise}
               isMetric={isMetric}
               isSelected={id === selectedDate}
               forecastday={forecastday}
