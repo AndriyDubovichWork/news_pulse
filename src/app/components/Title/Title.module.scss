@@ -1,3 +1,5 @@
+@import './../../vars.scss';
+
 .title {
   display: flex;
 
@@ -5,7 +7,7 @@
   .rectangle {
     width: 4px;
     height: 10px;
-    background-color: #f81539;
+    background-color: $highLightedText;
     margin-right: 6px;
   }
 }

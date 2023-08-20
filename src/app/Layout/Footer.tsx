@@ -4,10 +4,24 @@ import useCategories from '../hooks/useCategories';
 import Input from '../components/Input/Input';
 import Image from 'next/image';
 import Title from '../components/Title/Title';
+import Comment from '../components/Comment/Comment';
+import Link from 'next/link';
 
 function Icon({ src, name }: { src: string; name: string }) {
   return <Image width={40} height={40} src={src} alt={`${name} icon`} />;
 }
+
+const AuthorsInstagram = [
+  'https://www.instagram.com/kimkardashian/',
+  'https://www.instagram.com/kimkardashian/',
+  'https://www.instagram.com/kimkardashian/',
+  'https://www.instagram.com/kimkardashian/',
+  'https://www.instagram.com/kimkardashian/',
+  'https://www.instagram.com/kimkardashian/',
+  'https://www.instagram.com/kimkardashian/',
+  'https://www.instagram.com/kimkardashian/',
+  'https://www.instagram.com/kimkardashian/',
+];
 
 export default function Footer() {
   const categories = useCategories();
@@ -62,6 +76,33 @@ export default function Footer() {
 
       <div className={style.newComents}>
         <Title title='New Comments' />
+        <Comment
+          author='comentator'
+          text='hi my name is coment i am important'
+        />
+        <Comment
+          author='Andrew Johnson'
+          text='hi my name is coment i am important not copired comment'
+        />
+        <Comment
+          author='Real Comentator'
+          text='hi my name is coment i am important not copired comment 100% original'
+        />
+      </div>
+
+      <div className={style.instagram}>
+        <Title title='Follow on Instagram' className={style.instagramTitle} />
+
+        {AuthorsInstagram.map((url, id) => {
+          return (
+            <Link href={url}>
+              <img
+                src={`https://random.imagecdn.app/104/104/?avoidCachingSoItwillBeDifferentImages=${id}`}
+                alt='instagram image'
+              />
+            </Link>
+          );
+        })}
       </div>
     </footer>
   );

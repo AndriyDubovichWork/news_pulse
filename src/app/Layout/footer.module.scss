@@ -4,7 +4,7 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 1fr;
-  grid-column-gap: 0px;
+  grid-column-gap: 24px;
   grid-row-gap: 0px;
 
   width: $defaultWidth;
@@ -42,7 +42,20 @@
       justify-content: space-between;
     }
   }
-
   .newComents {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .instagram {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 0.5fr repeat(3, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    .instagramTitle {
+      grid-area: 1 / 1 / 2 / 4;
+    }
   }
 }
