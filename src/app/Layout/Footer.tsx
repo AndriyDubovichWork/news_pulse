@@ -54,6 +54,7 @@ export default function Footer() {
             placeholder='Write your email ..'
             style={{ width: '100%', height: '6vh' }}
           />
+          
         </div>
 
         <div className={style.socialNetwork}>

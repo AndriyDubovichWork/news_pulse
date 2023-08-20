@@ -13,6 +13,9 @@
   .leftfooterSection {
     grid-area: 1 / 1 / 2 / 3;
 
+    background-color: $secondaryBackground;
+    padding: 40px;
+
     width: calc($defaultWidth/2);
 
     display: grid;
