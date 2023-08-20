@@ -2,22 +2,24 @@
 
 .footer {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 1fr;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
 
   width: $defaultWidth;
-  margin: 0 auto;
+  margin: 5vh auto;
 
-  .footerSection {
+  .leftfooterSection {
+    grid-area: 1 / 1 / 2 / 3;
+
     width: calc($defaultWidth/2);
 
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
+    grid-template-rows: 1fr repeat(2, 0.1fr);
+    grid-column-gap: 5vw;
+    grid-row-gap: 3vh;
     .megaNews {
       grid-area: 1 / 1 / 2 / 3;
     }
@@ -25,5 +27,22 @@
     .categories {
       grid-area: 1 / 3 / 2 / 4;
     }
+
+    .newsLetters {
+      grid-area: 2 / 1 / 3 / 3;
+    }
+
+    .socialNetwork {
+      grid-area: 2 / 3 / 3 / 4;
+    }
+
+    .copyright {
+      grid-area: 3 / 1 / 4 / 4;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  .newComents {
   }
 }

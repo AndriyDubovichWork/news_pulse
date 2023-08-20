@@ -1,0 +1,11 @@
+.title {
+  display: flex;
+
+  align-items: center;
+  .rectangle {
+    width: 4px;
+    height: 10px;
+    background-color: #f81539;
+    margin-right: 6px;
+  }
+}
