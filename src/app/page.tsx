@@ -4,6 +4,7 @@ import Article from './components/Article/Article';
 import useGetData from './hooks/useGetData';
 import CategoriesWidget from './components/Widgets/CategoriesWidget/CategoriesWidget';
 import WeatherWidget from './components/Widgets/WeatherWidget/WeatherWidget';
+import PaginatedArticlesWidget from './components/Widgets/PaginatedArticlesWidget/PaginatedArticlesWidget';
 
 export default function Home() {
   const { weather, citiesWeather, news } = useGetData();
@@ -11,15 +12,11 @@ export default function Home() {
   return (
     <main className={style.home}>
       <CategoriesWidget />
+
+      <PaginatedArticlesWidget title='hello' news={news} />
       {weather && citiesWeather && (
         <WeatherWidget weather={weather} citiesWeather={citiesWeather} />
       )}
-
-      <div className={style.articles}>
-        {news?.map((article) => {
-          return <Article article={article} key={article.byline} />;
-        })}
-      </div>
     </main>
   );
 }

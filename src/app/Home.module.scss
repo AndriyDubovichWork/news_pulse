@@ -5,12 +5,4 @@
   width: $defaultWidth;
   margin: 0 auto;
   background-color: $mainBackground;
-  .articles {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
-
-    grid-template-rows: auto;
-    grid-column-gap: 1vw;
-    grid-row-gap: 5vh;
-  }
 }
