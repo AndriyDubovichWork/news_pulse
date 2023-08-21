@@ -1,11 +1,19 @@
+@import './../../../vars.scss';
+
 .headerSection {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 
   .arrow {
+    margin: 0 5px;
     padding: 12px;
     border: none;
+    background-color: $secondaryBackground;
+  }
+  .arrow:hover {
+    cursor: pointer;
+    background-color: $activeBackground;
   }
 
   margin: 4vh auto;
