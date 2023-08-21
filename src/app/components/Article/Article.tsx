@@ -23,7 +23,7 @@ function Article({ article, isWide = false }: ArticlePropsT) {
       />
       <div className={style.text}>
         <h3 className={style.title}>{article.title}</h3>
-        <p>{article.abstract}</p>
+        <p className={style.abstract}>{article.abstract}</p>
       </div>
     </Link>
   );

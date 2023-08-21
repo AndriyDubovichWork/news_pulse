@@ -13,15 +13,19 @@ export default function PaginatedArticlesWidget({
   title,
   news,
 }: PaginatedArticlesWidgetT) {
-  const { boundaries, moveRight, moveLeft } = usePaginationBoundaries(
+  const { disabled, boundaries, moveRight, moveLeft } = usePaginationBoundaries(
     news.length
   );
 
   return (
     <>
       <Title title={title} />
-      <button onClick={moveRight}>+</button>
-      <button onClick={moveLeft}>-</button>
+      <button onClick={moveLeft} disabled={disabled.left}>
+        -
+      </button>
+      <button onClick={moveRight} disabled={disabled.right}>
+        +
+      </button>
       <div className={style.posts}>
         {news
           .filter(
