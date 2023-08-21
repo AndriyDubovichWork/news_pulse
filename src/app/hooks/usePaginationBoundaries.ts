@@ -10,7 +10,7 @@ export default function usePaginationBoundaries(pagesNumber: number) {
     left: true,
     right: false,
   });
-
+  // update disabled buttons
   useEffect(() => {
     let [left, right] = [false, false];
 

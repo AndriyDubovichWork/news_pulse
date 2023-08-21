@@ -13,7 +13,7 @@ export default function Home() {
     <main className={style.home}>
       <CategoriesWidget />
 
-      <PaginatedArticlesWidget title='hello' news={news} />
+      <PaginatedArticlesWidget title='Popular Posts' news={news} />
       {weather && citiesWeather && (
         <WeatherWidget weather={weather} citiesWeather={citiesWeather} />
       )}
