@@ -17,8 +17,9 @@ function Article({ article, isWide = false, isHigh = false }: ArticlePropsT) {
         className={`${style.highArticle} ${isWide && style.wideArticle}`}
       >
         <Image
-          height={452}
-          width={isWide ? 744 : 360}
+          width={0}
+          height={0}
+          style={{ width: '90%', height: 'auto' }}
           className={style.image}
           src={data?.url || ArticlePlaceHolder.src}
           alt={data?.url}
