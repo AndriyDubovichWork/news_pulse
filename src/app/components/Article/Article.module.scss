@@ -1,3 +1,5 @@
+@import './../../vars.scss';
+
 .article {
   display: flex;
   flex-direction: column;
@@ -31,6 +33,63 @@
     }
   }
 }
+
+.wideArticle {
+  display: flex;
+  flex-direction: row;
+  .text {
+    padding-left: 2vw;
+  }
+}
+.highArticle {
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+  .image {
+    background-color: #222;
+    animation-name: color;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+
+    object-fit: cover;
+  }
+  .text {
+    background-color: $secondaryBackgroundTransparent;
+
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translate(-50%, 0);
+
+    width: 340px;
+
+    z-index: 2;
+
+    padding: 16px;
+
+    .title {
+      font-size: 16px;
+
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-bottom: 16px;
+    }
+    .abstract {
+      font-size: 14px;
+
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+  }
+  .textWide {
+    width: 724px;
+  }
+}
 @keyframes color {
   0% {
     background-color: #4f4f4f;
@@ -40,13 +99,5 @@
   }
   100% {
     background-color: #4f4f4f;
-  }
-}
-
-.wideArticle {
-  display: flex;
-  flex-direction: row;
-  .text {
-    padding-left: 2vw;
   }
 }
