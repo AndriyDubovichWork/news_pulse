@@ -1,0 +1,24 @@
+@import './../../../vars.scss';
+
+.header {
+  display: flex;
+  flex-direction: row;
+
+  justify-content: space-between;
+
+  .more {
+    display: flex;
+    align-items: center;
+
+    background-color: $secondaryBackground;
+    padding: 10px 16px 10px 24px;
+  }
+}
+
+.newPosts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(680px, 1fr));
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}

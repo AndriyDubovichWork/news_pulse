@@ -4,6 +4,7 @@ import HightArticlesWidget from './HightArticlesWidget/HightArticlesWidget';
 import PaginatedArticlesWidget from './PaginatedArticlesWidget/PaginatedArticlesWidget';
 import FootBallWidget from './FootBallWidget/FootBallWidget';
 import WeatherWidget from './WeatherWidget/WeatherWidget';
+import NewPosts from './NewPosts/NewPosts';
 
 type WidgetsPropsT = {
   weather: WeatherT;
@@ -21,6 +22,8 @@ function Widgets({ weather, citiesWeather, news }: WidgetsPropsT) {
       <PaginatedArticlesWidget title='Popular Posts' news={news} />
 
       <FootBallWidget />
+
+      <NewPosts news={news} />
 
       {weather && citiesWeather && (
         <WeatherWidget weather={weather} citiesWeather={citiesWeather} />
