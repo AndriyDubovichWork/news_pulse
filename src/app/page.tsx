@@ -6,6 +6,7 @@ import CategoriesWidget from './components/Widgets/CategoriesWidget/CategoriesWi
 import WeatherWidget from './components/Widgets/WeatherWidget/WeatherWidget';
 import PaginatedArticlesWidget from './components/Widgets/PaginatedArticlesWidget/PaginatedArticlesWidget';
 import HightArticlesWidget from './components/Widgets/HightArticlesWidget/HightArticlesWidget';
+import FootBallWidget from './components/Widgets/FootBallWidget/FootBallWidget';
 
 export default function Home() {
   const { weather, citiesWeather, news } = useGetData();
@@ -17,6 +18,8 @@ export default function Home() {
       <HightArticlesWidget news={news} />
 
       <PaginatedArticlesWidget title='Popular Posts' news={news} />
+
+      <FootBallWidget />
 
       {weather && citiesWeather && (
         <WeatherWidget weather={weather} citiesWeather={citiesWeather} />

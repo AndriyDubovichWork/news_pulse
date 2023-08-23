@@ -14,7 +14,9 @@ function Article({ article, isWide = false, isHigh = false }: ArticlePropsT) {
       <Link
         href={article.url}
         target='_blank'
-        className={`${style.highArticle} ${isWide && style.wideArticle}`}
+        className={`${style.highArticle} ${
+          isWide && style.wideArticle && style.highNWideArticle
+        }`}
       >
         <Image
           height={452}

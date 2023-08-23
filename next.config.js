@@ -15,6 +15,10 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'random.imagecdn.app',
       },
+      {
+        protocol: 'https',
+        hostname: 'c4.wallpaperflare.com',
+      },
     ],
   },
 };
