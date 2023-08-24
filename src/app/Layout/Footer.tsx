@@ -16,7 +16,15 @@ function Icon({
   name: string;
   size?: number;
 }) {
-  return <Image width={size} height={size} src={src} alt={`${name} icon`} />;
+  return (
+    <Image
+      width={size}
+      height={size}
+      src={src}
+      alt={`${name} icon`}
+      className={style.icon}
+    />
+  );
 }
 
 const AuthorsInstagram = [

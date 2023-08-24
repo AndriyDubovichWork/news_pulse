@@ -1,6 +1,8 @@
 @import './../../vars.scss';
 
 .comment {
+  border-radius: $borderRadius;
+
   background-color: $secondaryBackground;
 
   padding: 16px;

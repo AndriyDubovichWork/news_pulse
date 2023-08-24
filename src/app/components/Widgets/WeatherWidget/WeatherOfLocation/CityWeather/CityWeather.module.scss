@@ -1,6 +1,8 @@
 @import './../../../../../vars.scss';
 
 .city {
+  border-radius: $borderRadius;
+
   background-color: $secondaryBackground;
   padding: 25px 25px 55px 25px;
 

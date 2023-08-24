@@ -1,6 +1,8 @@
 @import '../../../../../vars.scss';
 
 .day {
+  border-radius: $borderRadius;
+
   padding: 10px;
   cursor: pointer;
   display: flex;

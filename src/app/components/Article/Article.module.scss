@@ -4,6 +4,8 @@
   display: flex;
   flex-direction: column;
   .image {
+    border-radius: $borderRadius;
+
     background-color: #222;
     animation-name: color;
     animation-duration: 2s;
@@ -12,7 +14,6 @@
     object-fit: cover;
   }
   .text {
-    border-radius: 0;
     display: flex;
     flex-direction: column;
     width: 340px;
@@ -24,12 +25,8 @@
       overflow: hidden;
       text-overflow: ellipsis;
       margin: 16px 0;
-
-      border-radius: 0;
     }
     .abstract {
-      border-radius: 0;
-
       font-size: 14px;
 
       overflow: hidden;
@@ -54,6 +51,8 @@
   justify-content: center;
 
   .image {
+    border-radius: $borderRadius;
+
     background-color: #222;
     animation-name: color;
     animation-duration: 2s;
@@ -62,6 +61,8 @@
     object-fit: cover;
   }
   .text {
+    border-radius: $borderRadius;
+
     background-color: $secondaryBackgroundTransparent;
 
     position: absolute;

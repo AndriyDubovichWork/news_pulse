@@ -1,6 +1,8 @@
 @import './../../../../vars.scss';
 
 .category {
+  border-radius: $borderRadius;
+
   padding: 1.5vh 2vw;
   background-color: $activeBackground;
 }
