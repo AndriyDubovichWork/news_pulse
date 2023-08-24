@@ -6,6 +6,7 @@ import FootBallWidget from './FootBallWidget/FootBallWidget';
 import WeatherWidget from './WeatherWidget/WeatherWidget';
 import NewPosts from './NewPosts/NewPosts';
 import shuffleArray from '@/app/lib/shuffleArray';
+import LatestVideos from './LatestVideos/LatestVideos';
 
 type WidgetsPropsT = {
   weather: WeatherT;
@@ -14,8 +15,6 @@ type WidgetsPropsT = {
 };
 
 function Widgets({ weather, citiesWeather, news }: WidgetsPropsT) {
-  console.log(shuffleArray(news));
-
   return (
     <>
       <CategoriesWidget />
@@ -30,6 +29,8 @@ function Widgets({ weather, citiesWeather, news }: WidgetsPropsT) {
       <FootBallWidget />
 
       <NewPosts news={news} />
+
+      <LatestVideos news={shuffleArray(news)} />
 
       <PaginatedArticlesWidget title='Trendy Posts' news={shuffleArray(news)} />
 
