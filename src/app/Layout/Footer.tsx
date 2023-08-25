@@ -39,6 +39,22 @@ const AuthorsInstagram = [
   'https://www.instagram.com/kimkardashian/',
 ];
 
+const comments = [
+  { author: 'comentator', text: 'hi my name is coment i am important' },
+  {
+    author: 'Andrew Johnson',
+    text: 'hi my name is coment i am important not copired comment',
+  },
+  {
+    author: 'Real Comentator',
+    text: 'hi my name is coment i am important not copired comment 100% original',
+  },
+  {
+    author: 'Andrew Piterson',
+    text: 'sheeeesh',
+  },
+];
+
 export default function Footer() {
   const categories = useCategories();
   return (
@@ -92,18 +108,9 @@ export default function Footer() {
 
       <div className={style.newComents}>
         <Title title='New Comments' />
-        <Comment
-          author='comentator'
-          text='hi my name is coment i am important'
-        />
-        <Comment
-          author='Andrew Johnson'
-          text='hi my name is coment i am important not copired comment'
-        />
-        <Comment
-          author='Real Comentator'
-          text='hi my name is coment i am important not copired comment 100% original'
-        />
+        {comments.map((comment) => (
+          <Comment author={comment.author} text={comment.text} />
+        ))}
       </div>
 
       <div className={style.instagram}>
