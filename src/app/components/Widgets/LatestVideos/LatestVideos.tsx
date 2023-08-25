@@ -19,7 +19,7 @@ function LatestVideos({ news }: LatestVideosPropsT) {
           const isFirst = id === 0;
           return (
             <div className={isFirst ? style.video : ''}>
-              <Article article={article} isHigh={isFirst} isWide={isFirst} />
+              <Article article={article} isHigh={isFirst} isWide={true} />
             </div>
           );
         })}

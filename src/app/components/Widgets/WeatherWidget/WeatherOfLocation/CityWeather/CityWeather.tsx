@@ -14,6 +14,7 @@ export default function CityWeather({
   isMetric,
   switchIsMetric,
 }: CityWeatherT) {
+  const id = Math.random();
   return (
     <div className={style.city}>
       <div className={style.conditionNTime}>
