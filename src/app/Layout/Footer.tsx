@@ -28,15 +28,15 @@ function Icon({
 }
 
 const AuthorsInstagram = [
-  'https://www.instagram.com/kimkardashian/',
-  'https://www.instagram.com/kimkardashian/',
-  'https://www.instagram.com/kimkardashian/',
-  'https://www.instagram.com/kimkardashian/',
-  'https://www.instagram.com/kimkardashian/',
-  'https://www.instagram.com/kimkardashian/',
-  'https://www.instagram.com/kimkardashian/',
-  'https://www.instagram.com/kimkardashian/',
-  'https://www.instagram.com/kimkardashian/',
+  'https://www.instagram.com',
+  'https://www.instagram.com',
+  'https://www.instagram.com',
+  'https://www.instagram.com',
+  'https://www.instagram.com',
+  'https://www.instagram.com',
+  'https://www.instagram.com',
+  'https://www.instagram.com',
+  'https://www.instagram.com',
 ];
 
 const comments = [
@@ -121,7 +121,7 @@ export default function Footer() {
 
         {AuthorsInstagram.map((url, id) => {
           return (
-            <Link href={url} key={url}>
+            <Link href={url} key={url} target='_blank'>
               <Icon
                 size={104}
                 src={`https://random.imagecdn.app/104/104/?avoidCachingSoItwillBeDifferentImages=${id}`}

@@ -11,7 +11,7 @@ import LatestVideos from './LatestVideos/LatestVideos';
 type WidgetsPropsT = {
   weather: WeatherT;
   citiesWeather: WeatherT[];
-  news: ArticleT[];
+  news: NewsT;
 };
 
 function Widgets({ weather, citiesWeather, news }: WidgetsPropsT) {

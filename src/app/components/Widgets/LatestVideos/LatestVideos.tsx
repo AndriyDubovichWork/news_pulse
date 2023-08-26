@@ -5,7 +5,7 @@ import Article from '../../Article/Article';
 import Title from '../../Title/Title';
 
 type LatestVideosPropsT = {
-  news: ArticleT[];
+  news: NewsT;
 };
 
 function LatestVideos({ news }: LatestVideosPropsT) {

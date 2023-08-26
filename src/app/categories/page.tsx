@@ -2,14 +2,18 @@
 
 import React from 'react';
 import style from './Categories.module.scss';
-import { useSearchParams } from 'next/navigation';
 import CategoriesWidget from '../components/Widgets/CategoriesWidget/CategoriesWidget';
-import CategoryHeader from './Layout/CategoryHeader';
+import useGetData from '../hooks/useGetData';
+import useSearchParams from '../hooks/useSearchParams';
+import CategoryHeader from './Layout/CategoryHeader/CategoryHeader';
+import CategoryBody from './Layout/CategoryBody/CategoryBody';
 
 export default function Categories() {
-  const searchParams = useSearchParams();
+  const { news } = useGetData();
 
-  const category = searchParams.get('category');
+  const { getParam } = useSearchParams();
+
+  const category = getParam('category');
   if (!category) {
     return (
       <main className={style.categories}>
@@ -20,6 +24,7 @@ export default function Categories() {
   return (
     <main className={style.categories}>
       <CategoryHeader category={category} />
+      <CategoryBody />
     </main>
   );
 }

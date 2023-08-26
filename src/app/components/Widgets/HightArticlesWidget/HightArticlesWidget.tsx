@@ -3,7 +3,7 @@ import Article from '../../Article/Article';
 import style from './HightArticlesWidget.module.scss';
 
 type HightArticlesWidgetT = {
-  news: ArticleT[];
+  news: NewsT;
 };
 
 function HightArticlesWidget({ news }: HightArticlesWidgetT) {

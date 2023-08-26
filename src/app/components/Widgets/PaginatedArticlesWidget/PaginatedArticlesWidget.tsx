@@ -6,7 +6,7 @@ import usePaginationBoundaries from '@/app/hooks/usePaginationBoundaries';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 type PaginatedArticlesWidgetT = {
   title: string;
-  news: ArticleT[];
+  news: NewsT;
 };
 
 export default function PaginatedArticlesWidget({

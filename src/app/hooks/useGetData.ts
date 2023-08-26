@@ -4,7 +4,7 @@ import getUserIp from '../api/requests/getUserIp';
 import getWeather from '../api/requests/getWeather';
 
 export default function useGetData() {
-  const [news, setNews] = useState<ArticleT[]>([]);
+  const [news, setNews] = useState<NewsT>([]);
   const [weather, setWeather] = useState<WeatherT>();
   const [citiesWeather, setCitiesWeather] = useState<WeatherT[]>();
 

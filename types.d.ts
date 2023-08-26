@@ -13,6 +13,8 @@ type MediaT = {
   }[];
 };
 
+type NewsT = ArticleT[];
+
 type ArticleT = {
   abstract: string;
   adx_keywords: string;
