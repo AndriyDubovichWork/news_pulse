@@ -3,8 +3,7 @@ import style from './CategoryHeader.module.scss';
 import Link from 'next/link';
 import { IoIosArrowForward } from 'react-icons/io';
 import Title from '@/app/components/Title/Title';
-import { useSearchParams } from 'next/navigation';
-import useUpdateSearchParams from '@/app/hooks/useUpdateSearchParams';
+import useSearchParams from '@/app/hooks/useSearchParams';
 type CategoryHeaderPropsT = {
   category: string;
 };
@@ -12,11 +11,10 @@ type CategoryHeaderPropsT = {
 const byArray = ['New', 'Trendy', 'Popular', 'Top'];
 
 export default function CategoryHeader({ category }: CategoryHeaderPropsT) {
-  const [selectedSort, setSelectedSort] = useState(byArray[0]);
-  const updateParam = useUpdateSearchParams();
+  const { setParam, getParam } = useSearchParams();
 
   useEffect(() => {
-    updateParam('sortBy', selectedSort);
+    setParam('sortBy', byArray[0]);
   }, []);
 
   return (
@@ -31,12 +29,12 @@ export default function CategoryHeader({ category }: CategoryHeaderPropsT) {
           {byArray.map((by) => {
             return (
               <p
+                key={by}
                 onClick={() => {
-                  updateParam('sortBy', by);
-                  setSelectedSort(by);
+                  setParam('sortBy', by);
                 }}
                 className={
-                  selectedSort === by ? style.selected : style.notSelected
+                  getParam('sortBy') === by ? style.selected : style.notSelected
                 }
               >
                 {by}
