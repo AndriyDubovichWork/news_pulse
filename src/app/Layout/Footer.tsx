@@ -74,17 +74,20 @@ export default function Footer() {
 
         <div className={style.categories}>
           <Title title='Mega News' />
-
-          {categories.map((category) => (
-            <p key={category}>{category}</p>
-          ))}
+          <div className={style.links}>
+            {categories.map((category) => (
+              <Link href={`/categories/?category=${category}`} key={category}>
+                {category}
+              </Link>
+            ))}
+          </div>
         </div>
 
         <div className={style.newsLetters}>
           <Title title='Newsletters' />
           <Input
             placeholder='Write your email ..'
-            style={{ width: '100%', height: '6vh' }}
+            style={{ width: '100%', height: '6vh', borderRadius: '12px' }}
           />
         </div>
 

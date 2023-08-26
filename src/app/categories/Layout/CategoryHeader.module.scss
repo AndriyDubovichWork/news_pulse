@@ -1,0 +1,36 @@
+@import './../../vars.scss';
+
+.categoryHeader {
+  .link {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .sort {
+    padding: 16px;
+    .byLine {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      width: 20vw;
+
+      cursor: pointer;
+      .selected {
+        color: $highLightedText;
+      }
+      .notSelected {
+        color: $TinedText;
+      }
+      .notSelected:hover {
+        color: $mainText;
+      }
+    }
+  }
+  .title {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-transform: capitalize;
+  }
+}
