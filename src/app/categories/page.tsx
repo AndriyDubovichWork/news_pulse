@@ -6,7 +6,7 @@ import CategoriesWidget from '../components/Widgets/CategoriesWidget/CategoriesW
 import useGetData from '../hooks/useGetData';
 import useSearchParams from '../hooks/useSearchParams';
 import CategoryHeader from './Layout/CategoryHeader/CategoryHeader';
-import CategoryBody from './Layout/CategoryBody/CategoryBody';
+import GridArticles from '../components/GridArticles/GridArticles';
 
 export default function Categories() {
   const { news } = useGetData();
@@ -24,7 +24,7 @@ export default function Categories() {
   return (
     <main className={style.categories}>
       <CategoryHeader category={category} />
-      <CategoryBody />
+      <GridArticles news={news} />
     </main>
   );
 }
