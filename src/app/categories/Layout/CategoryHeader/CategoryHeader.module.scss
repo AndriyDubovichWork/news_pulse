@@ -1,14 +1,6 @@
 @import './../../../vars.scss';
 
 .categoryHeader {
-  .link {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    .current {
-      color: $TinedText;
-    }
-  }
   .sort {
     padding: 16px;
     display: flex;

@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import style from './CategoryHeader.module.scss';
-import Link from 'next/link';
-import { IoIosArrowForward } from 'react-icons/io';
 import Title from '@/app/components/Title/Title';
 import useSearchParams from '@/app/hooks/useSearchParams';
 import { BsFillGrid3X3GapFill } from 'react-icons/bs';
 import { BiGridVertical } from 'react-icons/bi';
+import ArrowedLink from '@/app/components/ArrowedLink/ArrowedLink';
 
 type CategoryHeaderPropsT = {
   category: string;
@@ -30,11 +29,7 @@ export default function CategoryHeader({
 
   return (
     <header className={style.categoryHeader}>
-      <div className={style.link}>
-        <Link href='/'>Home</Link>
-        <IoIosArrowForward />
-        <p className={style.current}>{category}</p>
-      </div>
+      <ArrowedLink current={category} />
       <div className={style.sort}>
         <div className={style.byLine}>
           {byArray.map((by) => {

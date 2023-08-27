@@ -1,0 +1,9 @@
+@import './../../vars.scss';
+.link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  .current {
+    color: $TinedText;
+  }
+}
