@@ -1,35 +1,32 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import style from './Categories.module.scss';
-import useGetData from '../hooks/useGetData';
-import useSearchParams from '../hooks/useSearchParams';
+
 import CategoryHeader from './Layout/CategoryHeader/CategoryHeader';
 import GridArticles from '../components/GridArticles/GridArticles';
+import useCategoriesData from '../hooks/useCategoriesData';
+
 import { useRouter } from 'next/navigation';
-import shuffleArray from '../lib/shuffleArray';
 
 export default function Categories() {
+  const { category, news, shuffleNews, isGrid, setIsGrid } =
+    useCategoriesData();
   const router = useRouter();
-
-  const { news, setNews } = useGetData();
-
-  const { getParam } = useSearchParams();
-
-  const category = getParam('category');
   if (!category) {
     router.push('/');
     return;
   }
 
-  const shuffleNews = () => {
-    setNews(shuffleArray(news));
-  };
-
   return (
     <main className={style.categories}>
-      <CategoryHeader category={category} shuffleNews={shuffleNews} />
-      <GridArticles news={news} />
+      <CategoryHeader
+        category={category}
+        shuffleNews={shuffleNews}
+        setIsGrid={setIsGrid}
+        isGrid={isGrid}
+      />
+      <GridArticles news={news} isGrid={isGrid} />
     </main>
   );
 }

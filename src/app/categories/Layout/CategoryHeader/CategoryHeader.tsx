@@ -4,9 +4,13 @@ import Link from 'next/link';
 import { IoIosArrowForward } from 'react-icons/io';
 import Title from '@/app/components/Title/Title';
 import useSearchParams from '@/app/hooks/useSearchParams';
+import { BsFillGrid3X3GapFill, BsList } from 'react-icons/bs';
+
 type CategoryHeaderPropsT = {
   category: string;
   shuffleNews: () => void;
+  setIsGrid: React.Dispatch<React.SetStateAction<boolean>>;
+  isGrid: boolean;
 };
 
 const byArray = ['New', 'Trendy', 'Popular', 'Top'];
@@ -14,6 +18,8 @@ const byArray = ['New', 'Trendy', 'Popular', 'Top'];
 export default function CategoryHeader({
   category,
   shuffleNews,
+  setIsGrid,
+  isGrid,
 }: CategoryHeaderPropsT) {
   const { setParam, getParam } = useSearchParams();
 
@@ -46,6 +52,20 @@ export default function CategoryHeader({
               </p>
             );
           })}
+        </div>
+        <div className={style.type}>
+          <div
+            className={`${style.icon} ${!isGrid && style.active}`}
+            onClick={() => setIsGrid(false)}
+          >
+            <BsList size={16} />
+          </div>
+          <div
+            className={`${style.icon} ${isGrid && style.active}`}
+            onClick={() => setIsGrid(true)}
+          >
+            <BsFillGrid3X3GapFill size={16} />
+          </div>
         </div>
       </div>
       <Title title={`Category : ${category}`} className={style.title} />

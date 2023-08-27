@@ -8,6 +8,11 @@
   }
   .sort {
     padding: 16px;
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-between;
+
     .byLine {
       display: flex;
       flex-direction: row;
@@ -23,6 +28,19 @@
       }
       .notSelected:hover {
         color: $mainText;
+      }
+    }
+    .type {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      width: 5vw;
+      .icon {
+        padding: 12px;
+        cursor: pointer;
+      }
+      .active {
+        background-color: $secondaryBackground;
       }
     }
   }
