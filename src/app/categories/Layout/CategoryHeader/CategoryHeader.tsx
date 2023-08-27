@@ -6,11 +6,15 @@ import Title from '@/app/components/Title/Title';
 import useSearchParams from '@/app/hooks/useSearchParams';
 type CategoryHeaderPropsT = {
   category: string;
+  shuffleNews: () => void;
 };
 
 const byArray = ['New', 'Trendy', 'Popular', 'Top'];
 
-export default function CategoryHeader({ category }: CategoryHeaderPropsT) {
+export default function CategoryHeader({
+  category,
+  shuffleNews,
+}: CategoryHeaderPropsT) {
   const { setParam, getParam } = useSearchParams();
 
   useEffect(() => {
@@ -32,6 +36,7 @@ export default function CategoryHeader({ category }: CategoryHeaderPropsT) {
                 key={by}
                 onClick={() => {
                   setParam('sortBy', by);
+                  shuffleNews();
                 }}
                 className={
                   getParam('sortBy') === by ? style.selected : style.notSelected
