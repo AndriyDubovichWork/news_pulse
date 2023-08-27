@@ -35,6 +35,14 @@
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
     }
+    .byline {
+      color: $TinedText;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 18px;
+      letter-spacing: 0.25px;
+    }
   }
 }
 

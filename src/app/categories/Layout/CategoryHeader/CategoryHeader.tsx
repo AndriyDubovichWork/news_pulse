@@ -4,7 +4,8 @@ import Link from 'next/link';
 import { IoIosArrowForward } from 'react-icons/io';
 import Title from '@/app/components/Title/Title';
 import useSearchParams from '@/app/hooks/useSearchParams';
-import { BsFillGrid3X3GapFill, BsList } from 'react-icons/bs';
+import { BsFillGrid3X3GapFill } from 'react-icons/bs';
+import { BiGridVertical } from 'react-icons/bi';
 
 type CategoryHeaderPropsT = {
   category: string;
@@ -32,7 +33,7 @@ export default function CategoryHeader({
       <div className={style.link}>
         <Link href='/'>Home</Link>
         <IoIosArrowForward />
-        <p>{category}</p>
+        <p className={style.current}>{category}</p>
       </div>
       <div className={style.sort}>
         <div className={style.byLine}>
@@ -58,7 +59,7 @@ export default function CategoryHeader({
             className={`${style.icon} ${!isGrid && style.active}`}
             onClick={() => setIsGrid(false)}
           >
-            <BsList size={16} />
+            <BiGridVertical size={16} />
           </div>
           <div
             className={`${style.icon} ${isGrid && style.active}`}

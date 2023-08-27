@@ -48,6 +48,7 @@ function Article({ article, isWide = false, isHigh = false }: ArticlePropsT) {
       <div className={style.text}>
         <h3 className={style.title}>{article.title}</h3>
         <p className={style.abstract}>{article.abstract}</p>
+        <p className={style.byline}>{article.byline}</p>
       </div>
     </Link>
   );
