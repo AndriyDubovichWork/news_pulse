@@ -2,11 +2,12 @@
 
 .categoryHeader {
   .sort {
-    padding: 16px;
     display: flex;
     flex-direction: row;
 
     justify-content: space-between;
+    background-color: $secondaryBackground;
+    border-radius: $borderRadius;
 
     .byLine {
       display: flex;
