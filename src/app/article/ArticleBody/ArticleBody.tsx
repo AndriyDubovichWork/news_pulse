@@ -31,9 +31,8 @@ function ArticleBody({ article, news }: ArticleBodyPropsT) {
 
         <ArticleContent />
         <ArticleComments />
-
-        <PaginatedArticlesWidget news={news} title='Related Posts' />
       </div>
+      <PaginatedArticlesWidget news={news} title='Related Posts' />
     </div>
   );
 }

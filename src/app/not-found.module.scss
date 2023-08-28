@@ -1,11 +1,14 @@
 @import 'vars.scss';
 
 .notFound {
-  position: absolute;
-  top: 50%;
-  left: 50%;
+  height: 90vh;
+  width: 100vw;
 
-  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  flex-direction: column;
 
   text-align: center;
   .errorCode {
