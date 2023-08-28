@@ -2,30 +2,10 @@ import React from 'react';
 import style from './footer.module.scss';
 import useCategories from '../hooks/useCategories';
 import Input from '../components/Input/Input';
-import Image from 'next/image';
 import Title from '../components/Title/Title';
 import Comment from '../components/Comment/Comment';
 import Link from 'next/link';
-
-function Icon({
-  src,
-  name,
-  size = 40,
-}: {
-  src: string;
-  name: string;
-  size?: number;
-}) {
-  return (
-    <Image
-      width={size}
-      height={size}
-      src={src}
-      alt={`${name} icon`}
-      className={style.icon}
-    />
-  );
-}
+import Icon from '../components/Icon/Icon';
 
 const AuthorsInstagram = [
   'https://www.instagram.com',
@@ -75,8 +55,11 @@ export default function Footer() {
         <div className={style.categories}>
           <Title title='Mega News' />
           <div className={style.links}>
-            {categories.map((category) => (
-              <Link href={`/categories/?category=${category}`} key={category}>
+            {categories.map((category, id) => (
+              <Link
+                href={`/categories/?category=${category}`}
+                key={category + id}
+              >
                 {category}
               </Link>
             ))}

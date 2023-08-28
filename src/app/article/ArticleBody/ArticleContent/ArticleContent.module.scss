@@ -1,0 +1,21 @@
+.content {
+  .title {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-transform: capitalize;
+  }
+  .text {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 34px;
+    text-transform: lowercase;
+  }
+  .imageContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
