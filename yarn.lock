@@ -4348,6 +4348,11 @@ uri-js@^4.2.2:
   dependencies:
     punycode "^2.1.0"
 
+use-view-transitions@^1.0.16:
+  version "1.0.16"
+  resolved "https://registry.yarnpkg.com/use-view-transitions/-/use-view-transitions-1.0.16.tgz#6a6cad8e23921a0831b5324e8589cdf890c049f8"
+  integrity sha512-6suGH0QsKUCLXQqs9uRV6gL4TxNS3eTRT/uPpYQRZ7rh7sJw0ULm+8ZAJfUsaWRSKumKC4Yg6763do9m1MXI+w==
+
 util-deprecate@^1.0.1, util-deprecate@~1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/util-deprecate/-/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"

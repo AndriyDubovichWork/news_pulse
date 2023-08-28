@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@daniel-szulc/react-weather-widget": "^1.0.1",
     "@types/node": "20.4.5",
     "@types/react": "18.2.18",
     "@types/react-dom": "18.2.7",
