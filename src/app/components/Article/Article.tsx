@@ -12,8 +12,8 @@ function Article({ article, isWide = false, isHigh = false }: ArticlePropsT) {
   if (isHigh)
     return (
       <Link
-        href={article.url}
-        target='_blank'
+        href={`/article?id=${article.asset_id}`}
+        // target='_blank'
         className={`${style.highArticle} ${
           isWide && style.wideArticle && style.highNWideArticle
         }`}

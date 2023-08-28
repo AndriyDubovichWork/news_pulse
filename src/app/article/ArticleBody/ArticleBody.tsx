@@ -18,6 +18,7 @@ function ArticleBody({ article, news }: ArticleBodyPropsT) {
       <div className={style.content}>
         <h1 className={style.title}>{article.title}</h1>
         <Image
+          className={style.mainImage}
           alt={article?.media?.[0]?.caption || 'lake image'}
           height={600}
           width={1072}

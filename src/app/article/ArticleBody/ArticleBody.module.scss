@@ -1,10 +1,19 @@
 .body {
   .content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
     .title {
       font-size: 36px;
       font-style: normal;
       font-weight: 400;
       line-height: normal;
+
+      margin: 0 auto;
+    }
+    .mainImage {
+      margin: 0 auto;
     }
   }
 }
