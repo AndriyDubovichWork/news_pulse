@@ -1,5 +1,8 @@
+@import './../../vars.scss';
+
 .input {
-  border: 0;
+  border-width: 0;
+  border-radius: $borderRadius;
   width: 15vw;
   height: 4vh;
   padding: 0 0.5vw;

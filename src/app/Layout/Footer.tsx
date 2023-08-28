@@ -104,7 +104,7 @@ export default function Footer() {
 
         {AuthorsInstagram.map((url, id) => {
           return (
-            <Link href={url} key={url} target='_blank'>
+            <Link href={url} key={url + id} target='_blank'>
               <Icon
                 size={104}
                 src={`https://random.imagecdn.app/104/104/?avoidCachingSoItwillBeDifferentImages=${id}`}
