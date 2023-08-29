@@ -31,6 +31,10 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'prod-images.dacast.com',
       },
+      {
+        protocol: 'https',
+        hostname: 'gisgeography.com',
+      },
     ],
   },
 };

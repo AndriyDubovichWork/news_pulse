@@ -1,0 +1,17 @@
+@import './../../vars.scss';
+
+.elem {
+  display: flex;
+  align-items: center;
+  .text {
+    color: $TinedText;
+
+    margin: 0 10px;
+
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    text-transform: capitalize;
+  }
+}

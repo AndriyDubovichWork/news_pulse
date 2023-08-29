@@ -3,22 +3,7 @@ import style from './AboutArticle.module.scss';
 import { BsCalendarDate } from 'react-icons/bs';
 import { FaRegCommentDots } from 'react-icons/fa';
 import { AiOutlineFolder } from 'react-icons/ai';
-
-function AboutArticleElem({
-  text,
-  icon,
-}: {
-  text: string;
-  icon: ReactElement<any, any>;
-}) {
-  return (
-    <div className={style.elem}>
-      {icon}
-
-      <p className={style.text}>{text}</p>
-    </div>
-  );
-}
+import IconWithText from '@/app/components/IconWithText/IconWithText';
 
 type AboutArticlePropsT = {
   date: string;
@@ -33,12 +18,12 @@ export default function AboutArticle({
 }: AboutArticlePropsT) {
   return (
     <div className={style.about}>
-      <AboutArticleElem text={date} icon={<BsCalendarDate />} />
-      <AboutArticleElem
+      <IconWithText text={date} icon={<BsCalendarDate />} />
+      <IconWithText
         text={`Comments : ${coments}`}
         icon={<FaRegCommentDots />}
       />
-      <AboutArticleElem
+      <IconWithText
         text={`Category : ${category}`}
         icon={<AiOutlineFolder />}
       />

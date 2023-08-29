@@ -4,17 +4,12 @@ import style from './WeatherOfUser.module.scss';
 import WeatherDay from './WeatherDay/WeatherDay';
 import useWeatherOfUserData from '@/app/hooks/useWeatherOfUserData';
 import WeatherChart from './WeatherChart/WeatherChart';
-import dateToWeekName from '@/app/lib/dateToWeekName';
-import dateToHour from '@/app/lib/dateToHour';
 import { Conditions, PlaceTime, Temp } from '../Reusable';
 
 type WeatherOfUserT = {
   weather: WeatherT;
   isMetric: boolean;
   switchIsMetric: () => void;
-};
-const Row = ({ children }: { children: JSX.Element }) => {
-  return <h3 className={style.row}>{children}</h3>;
 };
 
 export default function WeatherOfUser({

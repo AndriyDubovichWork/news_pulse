@@ -1,0 +1,23 @@
+@import './../../vars.scss';
+
+.info {
+  width: $defaultWidth;
+  margin: 70px auto;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 53px;
+
+  .map {
+    grid-area: 1 / 1 / 2 / 3;
+    object-fit: cover;
+  }
+
+  .contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: left;
+  }
+}
