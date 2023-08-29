@@ -25,7 +25,7 @@ export default function CategoryHeader({
 
   useEffect(() => {
     setParam('sortBy', byArray[0]);
-  }, []);
+  }, [setParam]);
 
   return (
     <header className={style.categoryHeader}>

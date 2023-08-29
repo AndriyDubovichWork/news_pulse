@@ -95,7 +95,11 @@ export default function Footer() {
       <div className={style.newComents}>
         <Title title='New Comments' />
         {comments.map((comment) => (
-          <Comment author={comment.author} text={comment.text} />
+          <Comment
+            author={comment.author}
+            text={comment.text}
+            key={comment.text}
+          />
         ))}
       </div>
 

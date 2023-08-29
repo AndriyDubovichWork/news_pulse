@@ -33,7 +33,13 @@ function ContactInfo() {
       <Title title='News Pulse Information' />
 
       {contacts.map((contact) => {
-        return <IconWithText text={contact.title} icon={contact.icon} />;
+        return (
+          <IconWithText
+            text={contact.title}
+            icon={contact.icon}
+            key={contact.title}
+          />
+        );
       })}
     </div>
   );

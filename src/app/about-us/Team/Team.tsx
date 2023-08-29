@@ -39,7 +39,7 @@ function Team() {
       <Title title='News Pulse Team' className={style.title} />
       <div className={style.team}>
         {members.map((member) => {
-          return <Member member={member} />;
+          return <Member member={member} key={member.name} />;
         })}
       </div>
     </>

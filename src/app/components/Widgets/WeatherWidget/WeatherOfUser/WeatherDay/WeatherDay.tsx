@@ -1,6 +1,7 @@
 import React from 'react';
 import style from './WeatherDay.module.scss';
 import dateToWeekName from '@/app/lib/dateToWeekName';
+import Image from 'next/image';
 
 type WeatherDayT = {
   switchDay: () => void;
@@ -21,7 +22,7 @@ export default function WeatherDay({
       onClick={switchDay}
     >
       <p className={style.dayName}>{dateToWeekName(forecastday.date)}</p>
-      <img src={forecastday.day.condition.icon} alt='weather img' />
+      <Image src={forecastday.day.condition.icon} alt='weather img' />
       <div className={style.temp}>
         <p>
           {Math.round(

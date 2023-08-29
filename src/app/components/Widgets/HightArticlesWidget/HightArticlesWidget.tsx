@@ -12,7 +12,14 @@ function HightArticlesWidget({ news }: HightArticlesWidgetT) {
     <div className={style.articles}>
       {lessNews.map((article, id) => {
         const isLast = id === 2;
-        return <Article article={article} isHigh={true} isWide={isLast} />;
+        return (
+          <Article
+            article={article}
+            isHigh={true}
+            isWide={isLast}
+            key={article.abstract}
+          />
+        );
       })}
     </div>
   );

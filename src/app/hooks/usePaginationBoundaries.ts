@@ -22,7 +22,7 @@ export default function usePaginationBoundaries(pagesNumber: number) {
       left,
       right,
     });
-  }, [boundaries]);
+  }, [boundaries, pagesNumber]);
 
   const moveRight = () => {
     if (boundaries.right >= pagesNumber - 1) return;

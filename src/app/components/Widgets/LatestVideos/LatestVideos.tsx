@@ -18,8 +18,16 @@ function LatestVideos({ news }: LatestVideosPropsT) {
         {slicedNews.map((article, id) => {
           const isFirst = id === 0;
           return (
-            <div className={isFirst ? style.video : style.article}>
-              <Article article={article} isHigh={isFirst} isWide={true} />
+            <div
+              className={isFirst ? style.video : style.article}
+              key={article.abstract}
+            >
+              <Article
+                article={article}
+                isHigh={isFirst}
+                isWide={true}
+                key={article.abstract}
+              />
             </div>
           );
         })}

@@ -23,7 +23,7 @@ function NewPosts({ news }: NewPostsPropsT) {
       </div>
       <div className={style.newPosts}>
         {visibleNews.map((article) => {
-          return <Article article={article} isWide />;
+          return <Article article={article} isWide key={article.abstract} />;
         })}
       </div>
     </>
