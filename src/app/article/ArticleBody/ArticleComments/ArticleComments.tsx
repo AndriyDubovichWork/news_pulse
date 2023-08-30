@@ -21,7 +21,7 @@ function ArticleComments() {
       <Title title='Add a Comments' />
 
       <div className={style.input}>
-        <Input className={style.input} style={{ width: '100%' }} />
+        <Input className={style.input} />
         <Input
           type={'button'}
           style={{ width: '20%', margin: '0 auto' }}

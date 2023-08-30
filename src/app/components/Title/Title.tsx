@@ -1,10 +1,16 @@
 import React from 'react';
 import style from './Title.module.scss';
 
-function Title({ title, className }: { title: string; className?: string }) {
+type TitlePropsT = {
+  title: string;
+  className?: string;
+  withRectangle?: boolean;
+};
+
+function Title({ title, className, withRectangle = true }: TitlePropsT) {
   return (
     <div className={`${style.title} ${className}`}>
-      <div className={style.rectangle} />
+      {withRectangle && <div className={style.rectangle} />}
       <h3>{title}</h3>
     </div>
   );
