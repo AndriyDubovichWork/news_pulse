@@ -5,35 +5,11 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'static01.nyt.com',
+        hostname: '**',
       },
       {
-        protocol: 'https',
-        hostname: 'upload.wikimedia.org',
-      },
-      {
-        protocol: 'https',
-        hostname: 'random.imagecdn.app',
-      },
-      {
-        protocol: 'https',
-        hostname: 'c4.wallpaperflare.com',
-      },
-      {
-        protocol: 'https',
-        hostname: 'images.pexels.com',
-      },
-      {
-        protocol: 'https',
-        hostname: 'images.unsplash.com',
-      },
-      {
-        protocol: 'https',
-        hostname: 'prod-images.dacast.com',
-      },
-      {
-        protocol: 'https',
-        hostname: 'gisgeography.com',
+        protocol: 'http',
+        hostname: '**',
       },
     ],
   },

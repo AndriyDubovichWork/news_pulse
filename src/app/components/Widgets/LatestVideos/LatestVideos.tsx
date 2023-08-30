@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import React from 'react';
 import style from './LatestVideos.module.scss';
 import Article from '../../Article/Article';

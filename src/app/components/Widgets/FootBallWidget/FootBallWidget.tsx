@@ -23,9 +23,11 @@ export default function FootBallWidget() {
 
           return (
             <Image
+              height={334}
+              width={isMiddle ? 616 : 360}
               key={imgSrc.src}
               src={imgSrc}
-              alt='football data images'
+              alt='football data image'
               className={`${isMiddle && style.middle}`}
             />
           );

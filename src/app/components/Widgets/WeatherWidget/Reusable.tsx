@@ -2,7 +2,7 @@ import React from 'react';
 import style from './Reusable.module.scss';
 import dateToWeekName from '@/app/lib/dateToWeekName';
 import dateToHour from '@/app/lib/dateToHour';
-import Image from 'next/image';
+import Icon from '../../Icon/Icon';
 
 type ConditionsT = {
   weather: WeatherT;
@@ -78,7 +78,12 @@ export function Temp({
 }: TempT) {
   return (
     <>
-      <Image src={condition.icon} alt={condition.text} className={style.icon} />
+      <Icon
+        size={64}
+        name={condition.text}
+        src={'https:' + condition.icon}
+        className={style.icon}
+      />
       <h1 className={style.temp} onClick={switchIsMetric}>
         {isMetric ? avgtempC : avgtempF}
         <h3 className={style.tempUnit}>{isMetric ? '°C' : '°F'}</h3>

@@ -5,10 +5,12 @@ export default function Icon({
   src,
   name,
   size = 40,
+  className,
 }: {
   src: string;
   name: string;
   size?: number;
+  className?: string;
 }) {
   return (
     <Image
@@ -16,7 +18,7 @@ export default function Icon({
       height={size}
       src={src}
       alt={`${name} icon`}
-      className={style.icon}
+      className={`${style.icon} ${className}`}
     />
   );
 }
