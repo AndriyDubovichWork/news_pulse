@@ -3,6 +3,7 @@ import style from './header.module.scss';
 import Link from 'next/link';
 import SearchBar from '../components/SearchBar/SearchBar';
 import { BsFillBookmarkFill, BsBookmark } from 'react-icons/bs';
+import { IoIosArrowDown } from 'react-icons/io';
 
 export default function Header() {
   return (
@@ -20,6 +21,7 @@ export default function Header() {
         <SearchBar />
         <p>user img</p>
         <p>name</p>
+        <IoIosArrowDown />
         <BsBookmark className={style.icon} />
       </div>
     </header>
