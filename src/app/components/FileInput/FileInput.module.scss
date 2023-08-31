@@ -1,0 +1,60 @@
+@import './../../vars.scss';
+.dropContainer {
+  position: relative;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px dashed $TinedText;
+  color: $TinedText;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out, border 0.2s ease-in-out;
+}
+
+.dropContainer:hover,
+.dropContainer.dragActive {
+  background: $activeBackground;
+  border-color: $secondaryBackground;
+}
+
+.dropContainer:hover .dropTitle,
+.dropContainer.dragActive .dropTitle {
+  color: $mainText;
+}
+
+.dropTitle {
+  color: $TinedText;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  transition: color 0.2s ease-in-out;
+}
+
+.input {
+  width: 350px;
+  max-width: 100%;
+  color: #444;
+  padding: 5px;
+  background: #fff;
+  border-radius: 10px;
+  border: 1px solid #555;
+}
+
+.input::file-selector-button {
+  margin-right: 20px;
+  border: none;
+  background: $highLightedText;
+  padding: 10px 20px;
+  border-radius: $borderRadius;
+  color: $mainText;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+.input::file-selector-button:hover {
+  background: $highLightedTinnedText;
+}

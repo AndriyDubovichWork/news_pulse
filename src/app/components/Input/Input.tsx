@@ -6,7 +6,7 @@ function Input(
     HTMLInputElement
   >
 ) {
-  return <input {...props} className={style.input} />;
+  return <input {...props} className={`${style.input} ${props.className}`} />;
 }
 
 export default Input;
