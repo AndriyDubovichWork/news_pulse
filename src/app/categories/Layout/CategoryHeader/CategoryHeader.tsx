@@ -33,18 +33,17 @@ export default function CategoryHeader({
       <div className={style.sort}>
         <div className={style.byLine}>
           {byArray.map((by) => {
+            const isSelected = by === getParam('sortBy');
             return (
               <p
                 key={by}
                 onClick={() => {
-                  setParam('sortBy', by);
-                  if (by !== getParam('sortBy')) {
+                  if (!isSelected) {
+                    setParam('sortBy', by);
                     shuffleNews();
                   }
                 }}
-                className={
-                  getParam('sortBy') === by ? style.selected : style.notSelected
-                }
+                className={isSelected ? style.selected : style.notSelected}
               >
                 {by}
               </p>

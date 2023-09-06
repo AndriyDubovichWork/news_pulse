@@ -5,23 +5,7 @@ import TextArea from '../components/TextArea/TextArea';
 import Title from '../components/Title/Title';
 import Input from '../components/Input/Input';
 import FileInput from '../components/FileInput/FileInput';
-
-function UserInput({
-  title,
-  input,
-  isWide,
-}: {
-  input: ReactElement<any, any>;
-  title: string;
-  isWide?: boolean;
-}) {
-  return (
-    <div className={isWide ? style.wide : ''}>
-      <Title title={title} withRectangle={false} />
-      {input}
-    </div>
-  );
-}
+import UserInput from '../components/UserInput/UserInput';
 
 export default function ContactUs() {
   return (
