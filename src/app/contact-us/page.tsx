@@ -16,7 +16,7 @@ export default function ContactUs() {
         <UserInput input={<Input />} title='Subject' />
         <UserInput input={<Input />} title='Name' />
         <UserInput input={<Input />} title='Email' />
-        <UserInput input={<TextArea />} title='Explanation' isWide />
+        <UserInput input={<TextArea />} title='Explanation'  wideArea={'2 / 1 / 3 / 3'}/>
         <UserInput input={<FileInput />} title='Add File' />
       </div>
 

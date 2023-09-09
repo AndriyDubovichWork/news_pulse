@@ -4,6 +4,7 @@ import ArrowedLink from '../components/ArrowedLink/ArrowedLink';
 import Input from '../components/Input/Input';
 import UserInput from '../components/UserInput/UserInput';
 import FileInput from '../components/FileInput/FileInput';
+import TextArea from '../components/TextArea/TextArea';
 
 function ProfileEdit() {
   return (
@@ -17,8 +18,12 @@ function ProfileEdit() {
         <UserInput input={<Input />} title='New Password' />
         <UserInput input={<Input />} title='Email' />
 
-        {/* ToDo fix is wide  */}
-        <UserInput input={<FileInput />} isWide title='Add Banner' />
+        <UserInput input={<FileInput />} wideArea={'3 / 1 / 4 / 4'} title='Add Banner' />
+
+
+        <UserInput input={<TextArea />} wideArea={'4 / 1 / 5 / 3'} title='Add Banner' />
+        <UserInput input={<FileInput />} title='Add Image' />
+
       </div>
     </main>
   );

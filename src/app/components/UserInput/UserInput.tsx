@@ -5,14 +5,14 @@ import Title from '../Title/Title';
 export default function UserInput({
   title,
   input,
-  isWide,
+  wideArea,
 }: {
   input: ReactElement<any, any>;
   title: string;
-  isWide?: boolean;
+  wideArea?: string;
 }) {
   return (
-    <div className={isWide ? style.wide : ''}>
+    <div style={{gridArea:wideArea}}>
       <Title title={title} withRectangle={false} />
       {input}
     </div>
