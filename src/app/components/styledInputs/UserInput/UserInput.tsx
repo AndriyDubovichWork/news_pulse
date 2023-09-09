@@ -1,6 +1,6 @@
 import { ReactElement } from 'react';
 import style from './UserInput.module.scss';
-import Title from '../Title/Title';
+import Title from '../../Title/Title';
 
 export default function UserInput({
   title,

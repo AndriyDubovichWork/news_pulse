@@ -1,10 +1,10 @@
 import React from 'react';
 import style from './ProfileEdit.module.scss';
 import ArrowedLink from '../components/ArrowedLink/ArrowedLink';
-import Input from '../components/Input/Input';
-import UserInput from '../components/UserInput/UserInput';
-import FileInput from '../components/FileInput/FileInput';
-import TextArea from '../components/TextArea/TextArea';
+import Input from '../components/styledInputs/Input/Input';
+import UserInput from '../components/styledInputs/UserInput/UserInput';
+import FileInput from '../components/styledInputs/FileInput/FileInput';
+import TextArea from '../components/styledInputs/TextArea/TextArea';
 
 function ProfileEdit() {
   return (
@@ -24,6 +24,7 @@ function ProfileEdit() {
         <UserInput input={<TextArea />} wideArea={'4 / 1 / 5 / 3'} title='Add Banner' />
         <UserInput input={<FileInput />} title='Add Image' />
 
+        {/* <UserInput input={<Input type='' />} title='Add Image' /> */}
       </div>
     </main>
   );

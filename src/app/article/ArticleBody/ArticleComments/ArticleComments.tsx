@@ -1,7 +1,7 @@
 import React from 'react';
 import Comment from '@/app/components/Comment/Comment';
 import Title from '@/app/components/Title/Title';
-import Input from '@/app/components/Input/Input';
+import Input from '@/app/components/styledInputs/Input/Input';
 import style from './ArticleComments.module.scss';
 
 function ArticleComments() {

@@ -1,13 +1,17 @@
 import React, { ReactElement } from 'react';
 import style from './ContactUs.module.scss';
 import ArrowedLink from '../components/ArrowedLink/ArrowedLink';
-import TextArea from '../components/TextArea/TextArea';
+import TextArea from '../components/styledInputs/TextArea/TextArea';
 import Title from '../components/Title/Title';
-import Input from '../components/Input/Input';
-import FileInput from '../components/FileInput/FileInput';
-import UserInput from '../components/UserInput/UserInput';
+import Input from '../components/styledInputs/Input/Input';
+import FileInput from '../components/styledInputs/FileInput/FileInput';
+import UserInput from '../components/styledInputs/UserInput/UserInput';
+import Button from '../components/styledInputs/Button/Button';
 
 export default function ContactUs() {
+
+
+  
   return (
     <div className={style.contact}>
       <ArrowedLink current='Contact Us' />
@@ -20,7 +24,11 @@ export default function ContactUs() {
         <UserInput input={<FileInput />} title='Add File' />
       </div>
 
-      <Input type='button' value='send' className={style.button} />
+
+
+      <Button  value='send'/>
     </div>
-  );
+
+
+);
 }

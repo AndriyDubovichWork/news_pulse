@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import style from './header.module.scss';
 import Link from 'next/link';
-import SearchBar from '../components/SearchBar/SearchBar';
+import SearchBar from '../components/styledInputs/SearchBar/SearchBar';
 import { BsBookmark } from 'react-icons/bs';
 import { IoIosArrowDown } from 'react-icons/io';
 import { FiUser } from 'react-icons/fi';
