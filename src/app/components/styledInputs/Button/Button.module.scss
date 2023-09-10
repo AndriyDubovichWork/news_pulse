@@ -1,13 +1,12 @@
-
-@import './../../../vars.scss';
+@import "./../../../vars.scss";
 
 .button {
-    align-self: flex-end;
-    width: 10vw;
-    background-color: $highLightedText;
-  }
-  .button:hover,
-  .button:focus {
-    cursor: pointer;
-    background-color: $highLightedTinnedText;
-  }
+  align-self: flex-end;
+  width: 10vw;
+  background-color: $highLightedText;
+}
+.button:hover,
+.button:focus {
+  cursor: pointer;
+  background-color: $highLightedTinnedText;
+}
