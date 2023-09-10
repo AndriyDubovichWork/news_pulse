@@ -1,8 +1,7 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
 import style from './ContactUs.module.scss';
 import ArrowedLink from '../components/ArrowedLink/ArrowedLink';
 import TextArea from '../components/styledInputs/TextArea/TextArea';
-import Title from '../components/Title/Title';
 import Input from '../components/styledInputs/Input/Input';
 import FileInput from '../components/styledInputs/FileInput/FileInput';
 import UserInput from '../components/styledInputs/UserInput/UserInput';

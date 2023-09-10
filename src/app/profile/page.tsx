@@ -5,6 +5,7 @@ import Input from '../components/styledInputs/Input/Input';
 import UserInput from '../components/styledInputs/UserInput/UserInput';
 import FileInput from '../components/styledInputs/FileInput/FileInput';
 import TextArea from '../components/styledInputs/TextArea/TextArea';
+import Button from '../components/styledInputs/Button/Button';
 
 function ProfileEdit() {
   return (
@@ -24,8 +25,11 @@ function ProfileEdit() {
         <UserInput input={<TextArea />} wideArea={'4 / 1 / 5 / 3'} title='Add Banner' />
         <UserInput input={<FileInput />} title='Add Image' />
 
-        {/* <UserInput input={<Input type='' />} title='Add Image' /> */}
+
+
+
       </div>
+        <Button value='save' className={style.Button}/>
     </main>
   );
 }

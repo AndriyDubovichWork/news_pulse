@@ -1,5 +1,5 @@
-import React, { ReactElement } from 'react';
-import style from './IconWithText.module.scss';
+import React, { ReactElement } from "react";
+import style from "./IconWithText.module.scss";
 function IconWithText({
   text,
   icon,
@@ -10,7 +10,7 @@ function IconWithText({
   textClassName?: string;
 }) {
   return (
-    <div className={style.elem}>
+    <div className={`${style.elem} ${textClassName}`}>
       {icon}
 
       <p className={`${style.text} ${textClassName}`}>{text}</p>
