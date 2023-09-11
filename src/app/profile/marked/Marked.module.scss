@@ -1,0 +1,31 @@
+@import "./../../vars.scss";
+
+.user {
+  color: $mainText;
+  margin: 0 auto;
+
+  width: $defaultWidth;
+  .writerInfo {
+    background-color: $secondaryBackground;
+    padding: 10px;
+
+    border-radius: $borderRadius;
+
+    .banner {
+      border-radius: $borderRadius;
+      width: 100%;
+    }
+
+    .writer {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 1fr;
+      grid-column-gap: 0px;
+      grid-row-gap: 0px;
+    }
+  }
+  .articles {
+    margin: 4vh 0;
+  }
+}

@@ -1,37 +1,59 @@
-import React from 'react';
-import style from './ProfileEdit.module.scss';
-import ArrowedLink from '../components/ArrowedLink/ArrowedLink';
-import Input from '../components/styledInputs/Input/Input';
-import UserInput from '../components/styledInputs/UserInput/UserInput';
-import FileInput from '../components/styledInputs/FileInput/FileInput';
-import TextArea from '../components/styledInputs/TextArea/TextArea';
-import Button from '../components/styledInputs/Button/Button';
+"use client";
 
-function ProfileEdit() {
+import React from "react";
+import style from "./User.module.scss";
+import ArrowedLink from "../components/ArrowedLink/ArrowedLink";
+import Image from "next/image";
+import IconWithText from "../components/IconWithText/IconWithText";
+import { AiOutlineStar, AiOutlineUser } from "react-icons/ai";
+import { BsFillFileEarmarkPostFill } from "react-icons/bs";
+import Button from "../components/styledInputs/Button/Button";
+import useGetData from "../hooks/useGetData";
+import GridArticles from "../components/GridArticles/GridArticles";
+import Paginator from "../components/Paginator/Paginator";
+
+export default function User() {
+  const { news, shuffleNews } = useGetData();
+
   return (
-    <main className={style.profile}>
-      <ArrowedLink current='Profile Edit' />
-      <div className={style.Inputs}>
-        <UserInput input={<Input />} title='First Name' />
-        <UserInput input={<Input />} title='Last Name' />
-        <UserInput input={<Input />} title='User Name' />
-        <UserInput input={<Input />} title='Old Password' />
-        <UserInput input={<Input />} title='New Password' />
-        <UserInput input={<Input />} title='Email' />
+    <main className={style.user}>
+      <ArrowedLink current="Writer" />
+      <div className={style.writerInfo}>
+        <Image
+          className={style.banner}
+          width={1491}
+          height={150}
+          alt="Image Banner"
+          src={`https://random.imagecdn.app/1491/150/?avoidCachingSoItwillBeDifferentImages=bannerImage`}
+        />
+        <div className={style.writer}>
+          <div className={style.user}>
+            <Image
+              className={style.userImg}
+              width={75}
+              height={75}
+              alt="user Image"
+              src={`https://random.imagecdn.app/75/75/?avoidCachingSoItwillBeDifferentImages=userImage`}
+            />
+            <p className={style.name}>hello world</p>
+          </div>
 
-        <UserInput input={<FileInput />} wideArea={'3 / 1 / 4 / 4'} title='Add Banner' />
+          <div className={style.about}>
+            <IconWithText icon={<AiOutlineStar />} text="Rate : 4.2" />
+            <IconWithText icon={<AiOutlineUser />} text="Follower : 1.2k" />
+            <IconWithText
+              icon={<BsFillFileEarmarkPostFill />}
+              text="Post : 29"
+            />
+          </div>
 
-
-        <UserInput input={<TextArea />} wideArea={'4 / 1 / 5 / 3'} title='Add Banner' />
-        <UserInput input={<FileInput />} title='Add Image' />
-
-
-
-
+          <Button value="+ Follow" className={style.button} />
+        </div>
       </div>
-        <Button value='save' className={style.Button}/>
+      <div className={style.articles}>
+        <GridArticles news={news} isGrid />
+      </div>
+      <Paginator shuffleNews={shuffleNews} />
     </main>
   );
 }
-
-export default ProfileEdit;
