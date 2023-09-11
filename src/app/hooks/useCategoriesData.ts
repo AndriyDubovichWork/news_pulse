@@ -1,7 +1,7 @@
-import useGetData from './useGetData';
-import useSearchParamsHook from './useSearchParams';
-import shuffleArray from '../lib/shuffleArray';
-import { useState } from 'react';
+import useGetData from "./useGetData";
+import useSearchParamsHook from "./useSearchParams";
+import shuffleArray from "../lib/shuffleArray";
+import { useState } from "react";
 export default function useCategoriesData() {
   const { news, setNews } = useGetData();
 
@@ -9,7 +9,7 @@ export default function useCategoriesData() {
 
   const { getParam } = useSearchParamsHook();
 
-  const category = getParam('category');
+  const category = getParam("category");
 
   const shuffleNews = () => {
     setNews(shuffleArray(news));

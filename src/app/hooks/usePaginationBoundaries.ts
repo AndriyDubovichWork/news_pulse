@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 export default function usePaginationBoundaries(pagesNumber: number) {
   const [boundaries, setBoundaries] = useState({
@@ -26,6 +26,7 @@ export default function usePaginationBoundaries(pagesNumber: number) {
 
   const moveRight = () => {
     if (boundaries.right >= pagesNumber - 1) return;
+
     setBoundaries({
       right: boundaries.right + 1,
       left: boundaries.left + 1,
@@ -33,6 +34,7 @@ export default function usePaginationBoundaries(pagesNumber: number) {
   };
   const moveLeft = () => {
     if (boundaries.left == 0) return;
+
     setBoundaries({
       right: boundaries.right - 1,
       left: boundaries.left - 1,

@@ -2,14 +2,14 @@ import React from "react";
 import Input from "../Input/Input";
 import style from "./Button.module.scss";
 
-type ButtonPropT = {
-  value: string;
-  className?: string;
-};
-
-function Button({ value, className }: ButtonPropT) {
+function Button({
+  value,
+  className,
+  ...props
+}: React.HTMLProps<HTMLInputElement>) {
   return (
     <Input
+      {...props}
       type="button"
       value={value}
       className={`${style.button} ${className}`}
