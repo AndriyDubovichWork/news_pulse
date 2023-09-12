@@ -1,12 +1,25 @@
 @import "./../../../vars.scss";
 
-.button {
+.highLightedButton {
   align-self: flex-end;
   width: 10vw;
   background-color: $highLightedText;
 }
+
+.highLightedButton:hover,
+.highLightedButton:focus {
+  cursor: pointer;
+  background-color: $highLightedTinnedText;
+}
+.button {
+  align-self: flex-end;
+  width: 10vw;
+  background-color: $mainBackground;
+  border: 1px solid $secondaryBackground;
+}
 .button:hover,
 .button:focus {
   cursor: pointer;
-  background-color: $highLightedTinnedText;
+  background-color: $secondaryBackground;
+  border-color: $activeBackground;
 }

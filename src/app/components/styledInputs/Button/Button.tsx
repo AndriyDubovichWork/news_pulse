@@ -5,14 +5,17 @@ import style from "./Button.module.scss";
 function Button({
   value,
   className,
+  isHihglighted = true,
   ...props
-}: React.HTMLProps<HTMLInputElement>) {
+}: { isHihglighted?: boolean } & React.HTMLProps<HTMLInputElement>) {
   return (
     <Input
       {...props}
       type="button"
       value={value}
-      className={`${style.button} ${className}`}
+      className={`${
+        isHihglighted ? style.highLightedButton : style.button
+      } ${className}`}
     />
   );
 }

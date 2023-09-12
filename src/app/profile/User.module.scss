@@ -4,55 +4,7 @@
   margin: 0 auto;
 
   width: $defaultWidth;
-  .writerInfo {
-    background-color: $secondaryBackground;
-    padding: 10px;
 
-    border-radius: $borderRadius;
-
-    .banner {
-      border-radius: $borderRadius;
-      width: 100%;
-    }
-    .writer {
-      width: 100%;
-
-      display: flex;
-      flex-direction: row;
-
-      align-items: center;
-      justify-content: space-between;
-
-      margin-top: 10px;
-      .user {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-
-        .userImg {
-          width: 75px;
-          height: 75px;
-          border-radius: $borderRadius;
-        }
-        .name {
-          margin-left: 10px;
-          font-size: 16px;
-          font-style: normal;
-          font-weight: 500;
-          line-height: normal;
-        }
-      }
-      .about {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-      }
-      .button {
-        align-self: center;
-      }
-    }
-  }
   .articles {
     margin: 4vh 0;
   }

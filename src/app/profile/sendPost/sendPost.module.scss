@@ -1,0 +1,40 @@
+@import "./../../vars.scss";
+.sendPost {
+  width: $defaultWidth;
+  margin: 0 auto;
+
+  .option {
+    display: flex;
+    margin: 40px 0;
+
+    width: 20vw;
+    justify-content: space-between;
+    .selected {
+      background-color: $secondaryBackground;
+    }
+  }
+
+  .inputs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr repeat(2, 4fr);
+    grid-column-gap: 24px;
+    grid-row-gap: 20px;
+    .imageInput {
+      grid-area: 1 / 3 / 3 / 4;
+    }
+    .textArea {
+      grid-area: 2 / 1 / 4 / 3;
+    }
+
+    .submittion {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      align-content: flex-start;
+
+      margin-top: 5vh;
+    }
+  }
+}

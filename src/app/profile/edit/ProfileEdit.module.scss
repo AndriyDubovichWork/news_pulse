@@ -1,11 +1,11 @@
-@import './../vars.scss';
+@import "./../../vars.scss";
 
 .profile {
   width: $defaultWidth;
   margin: 0 auto;
-display: flex;
+  display: flex;
 
-flex-direction: column;
+  flex-direction: column;
   .Inputs {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -13,7 +13,7 @@ flex-direction: column;
     grid-column-gap: 24px;
     grid-row-gap: 24px;
   }
-  .Button{
+  .Button {
     margin: 5vh 0;
     align-self: flex-end;
   }
