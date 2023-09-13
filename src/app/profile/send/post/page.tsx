@@ -16,11 +16,6 @@ function SendPost() {
 
       <WriterInfo isMarked />
 
-      <div className={style.option}>
-        <Title title="Send Post" className={style.selected} />
-        <Title title="Send Video" />
-      </div>
-
       <div className={style.inputs}>
         <UserInput input={<Input />} title="Title" />
         <UserInput input={<Input />} title="Add tags" />

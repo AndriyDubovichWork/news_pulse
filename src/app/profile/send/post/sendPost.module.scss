@@ -1,18 +1,7 @@
-@import "./../../vars.scss";
+@import "./../../../vars.scss";
 .sendPost {
   width: $defaultWidth;
   margin: 0 auto;
-
-  .option {
-    display: flex;
-    margin: 40px 0;
-
-    width: 20vw;
-    justify-content: space-between;
-    .selected {
-      background-color: $secondaryBackground;
-    }
-  }
 
   .inputs {
     display: grid;
