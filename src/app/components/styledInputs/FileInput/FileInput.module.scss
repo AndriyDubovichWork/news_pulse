@@ -1,4 +1,4 @@
-@import './../../../vars.scss';
+@import "./../../../vars.scss";
 .dropContainer {
   position: relative;
   display: flex;
@@ -17,7 +17,7 @@
 
 .dropContainer:hover,
 .dropContainer.dragActive {
-  background: $activeBackground;
+  background: $secondaryBackgroundTransparent;
   border-color: $secondaryBackground;
 }
 
