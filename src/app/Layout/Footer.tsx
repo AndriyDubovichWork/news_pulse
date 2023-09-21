@@ -1,37 +1,37 @@
-import React from 'react';
-import style from './footer.module.scss';
-import useCategories from '../hooks/useCategories';
-import Input from '../components/styledInputs/Input/Input';
-import Title from '../components/Title/Title';
-import Comment from '../components/Comment/Comment';
-import Link from 'next/link';
-import Icon from '../components/Icon/Icon';
+import React from "react";
+import style from "./footer.module.scss";
+import useCategories from "../hooks/useCategories";
+import Input from "../components/styledInputs/Input/Input";
+import Title from "../components/Title/Title";
+import Comment from "../components/Comment/Comment";
+import Link from "next/link";
+import Icon from "../components/Icon/Icon";
 
 const AuthorsInstagram = [
-  'https://www.instagram.com',
-  'https://www.instagram.com',
-  'https://www.instagram.com',
-  'https://www.instagram.com',
-  'https://www.instagram.com',
-  'https://www.instagram.com',
-  'https://www.instagram.com',
-  'https://www.instagram.com',
-  'https://www.instagram.com',
+  "https://www.instagram.com",
+  "https://www.instagram.com",
+  "https://www.instagram.com",
+  "https://www.instagram.com",
+  "https://www.instagram.com",
+  "https://www.instagram.com",
+  "https://www.instagram.com",
+  "https://www.instagram.com",
+  "https://www.instagram.com",
 ];
 
 const comments = [
-  { author: 'comentator', text: 'hi my name is coment i am important' },
+  { author: "comentator", text: "hi my name is coment i am important" },
   {
-    author: 'Andrew Johnson',
-    text: 'hi my name is coment i am important not copired comment',
+    author: "Andrew Johnson",
+    text: "hi my name is coment i am important not copired comment",
   },
   {
-    author: 'Real Comentator',
-    text: 'hi my name is coment i am important not copired comment 100% original',
+    author: "Real Comentator",
+    text: "hi my name is coment i am important not copired comment 100% original",
   },
   {
-    author: 'Andrew Piterson',
-    text: 'sheeeesh',
+    author: "Andrew Piterson",
+    text: "sheeeesh",
   },
 ];
 
@@ -41,7 +41,7 @@ export default function Footer() {
     <footer className={style.footer}>
       <div className={style.leftfooterSection}>
         <div className={style.megaNews}>
-          <Title title='Mega News' />
+          <Title title="Mega News" />
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas
@@ -53,36 +53,33 @@ export default function Footer() {
         </div>
 
         <div className={style.categories}>
-          <Title title='Mega News' />
+          <Title title="Mega News" />
           <div className={style.links}>
-            {categories.map((category, id) => (
-              <Link
-                href={`/categories/?category=${category}`}
-                key={category + id}
-              >
-                {category}
+            {categories.map(({ name }, id) => (
+              <Link href={`/categories/?category=${name}`} key={name + id}>
+                {name}
               </Link>
             ))}
           </div>
         </div>
 
         <div className={style.newsLetters}>
-          <Title title='Newsletters' />
+          <Title title="Newsletters" />
           <Input
-            placeholder='Write your email ..'
-            style={{ width: '100%', height: '6vh', borderRadius: '12px' }}
+            placeholder="Write your email .."
+            style={{ width: "100%", height: "6vh", borderRadius: "12px" }}
           />
         </div>
 
         <div className={style.socialNetwork}>
-          <Title title='Social Network' />
+          <Title title="Social Network" />
           <Icon
-            name='instagram'
-            src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/2048px-Instagram_icon.png'
+            name="instagram"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/2048px-Instagram_icon.png"
           />
           <Icon
-            name='facebook'
-            src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Facebook_icon.svg/2048px-Facebook_icon.svg.png'
+            name="facebook"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Facebook_icon.svg/2048px-Facebook_icon.svg.png"
           />
         </div>
 
@@ -93,7 +90,7 @@ export default function Footer() {
       </div>
 
       <div className={style.newComents}>
-        <Title title='New Comments' />
+        <Title title="New Comments" />
         {comments.map((comment) => (
           <Comment
             author={comment.author}
@@ -104,15 +101,15 @@ export default function Footer() {
       </div>
 
       <div className={style.instagram}>
-        <Title title='Follow on Instagram' className={style.instagramTitle} />
+        <Title title="Follow on Instagram" className={style.instagramTitle} />
 
         {AuthorsInstagram.map((url, id) => {
           return (
-            <Link href={url} key={url + id} target='_blank'>
+            <Link href={url} key={url + id} target="_blank">
               <Icon
                 size={104}
                 src={`https://random.imagecdn.app/104/104/?avoidCachingSoItwillBeDifferentImages=${id}`}
-                name='instagram image'
+                name="instagram image"
               />
             </Link>
           );

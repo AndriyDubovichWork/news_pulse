@@ -5,25 +5,9 @@
 
   padding: 1.5vh 2vw;
 
-  background-color: #222;
-  animation-name: pulse;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
-
-  backdrop-filter: blur(10px);
+  background-color: $secondaryBackgroundTransparent;
 
   .text {
     z-index: 4;
-  }
-}
-@keyframes pulse {
-  0% {
-    background-color: #4f4f4f;
-  }
-  50% {
-    background-color: #ffffff;
-  }
-  100% {
-    background-color: #4f4f4f;
   }
 }
