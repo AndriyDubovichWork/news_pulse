@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react";
-import getMostPopularNews from "../api/requests/getMostPopularNews";
-import getUserIp from "../api/requests/getUserIp";
-import getWeather from "../api/requests/getWeather";
-import shuffleArray from "../lib/shuffleArray";
+import { useState, useEffect } from 'react';
+import getMostPopularNews from '../api/requests/getMostPopularNews';
+import getUserIp from '../api/requests/getUserIp';
+import getWeather from '../api/requests/getWeather';
+import shuffleArray from '../lib/shuffleArray';
 
 export default function useGetData() {
   const [news, setNews] = useState<NewsT>([]);
@@ -22,10 +22,10 @@ export default function useGetData() {
       });
     });
     Promise.all([
-      getWeather("London"),
-      getWeather("New York"),
-      getWeather("Paris"),
-      getWeather("Lviv"),
+      getWeather('London'),
+      getWeather('New York'),
+      getWeather('Paris'),
+      getWeather('Lviv'),
     ]).then((values) => {
       setCitiesWeather(values);
     });

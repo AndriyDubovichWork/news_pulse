@@ -1,40 +1,40 @@
-"use client";
+'use client';
 
-import React, { useState } from "react";
-import style from "./header.module.scss";
-import Link from "next/link";
-import SearchBar from "../components/styledInputs/SearchBar/SearchBar";
-import { BsBookmark } from "react-icons/bs";
-import { IoIosArrowDown } from "react-icons/io";
-import { FiUser } from "react-icons/fi";
-import { IoExitOutline } from "react-icons/io5";
+import React, { useState } from 'react';
+import style from './header.module.scss';
+import Link from 'next/link';
+import SearchBar from '../components/styledInputs/SearchBar/SearchBar';
+import { BsBookmark, BsPencil } from 'react-icons/bs';
+import { IoIosArrowDown } from 'react-icons/io';
+import { FiUser } from 'react-icons/fi';
+import { IoExitOutline } from 'react-icons/io5';
 
-import Icon from "../components/Icon/Icon";
-import IconWithText from "../components/IconWithText/IconWithText";
+import Icon from '../components/Icon/Icon';
+import IconWithText from '../components/IconWithText/IconWithText';
 
 export default function Header() {
   const [showDropDown, setShowDropDown] = useState(false);
 
   const dropDowns = [
-    { href: "/profile", icon: <FiUser size={24} />, text: "Profile" },
-    { href: "/profile/marked", icon: <BsBookmark size={24} />, text: "Marked" },
+    { href: '/profile', icon: <FiUser size={24} />, text: 'Profile' },
+    { href: '/profile/marked', icon: <BsBookmark size={24} />, text: 'Marked' },
     {
-      href: "/profile/exit",
+      href: '/profile/exit',
       icon: <IoExitOutline size={24} />,
-      text: "Exit",
+      text: 'Exit',
     },
   ];
 
   return (
     <header className={style.header}>
       <div className={style.half}>
-        <Link href="/" className={style.logo}>
+        <Link href='/' className={style.logo}>
           News Pulse
         </Link>
-        <Link href="/categories">Categories</Link>
-        <Link href="/pages">Pages</Link>
-        <Link href="/contact-us">Contact us</Link>
-        <Link href="/about-us">About us</Link>
+        {/* <Link href="/categories">Categories</Link>
+        <Link href="/pages">Pages</Link> */}
+        <Link href='/contact-us'>Contact us</Link>
+        <Link href='/about-us'>About us</Link>
       </div>
       <div className={style.half}>
         <SearchBar />
@@ -50,8 +50,8 @@ export default function Header() {
         >
           <Icon
             size={36}
-            name="user"
-            src="https://random.imagecdn.app/36/36/?avoidCachingSoItwillBeDifferentImages=user"
+            name='user'
+            src='https://random.imagecdn.app/36/36/?avoidCachingSoItwillBeDifferentImages=user'
           />
           <p className={style.name}>Andriy</p>
 
@@ -72,7 +72,9 @@ export default function Header() {
             </div>
           )}
         </div>
-        <BsBookmark className={style.icon} />
+        <Link href='/profile/marked' className={style.icon}>
+          <BsPencil />
+        </Link>
       </div>
     </header>
   );

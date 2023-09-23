@@ -1,5 +1,5 @@
-import React, { ReactElement } from "react";
-import style from "./IconWithText.module.scss";
+import React, { ReactElement } from 'react';
+import style from './IconWithText.module.scss';
 function IconWithText({
   text,
   icon,

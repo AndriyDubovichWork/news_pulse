@@ -1,13 +1,12 @@
 import React from 'react';
 import style from './Category.module.scss';
 import Link from 'next/link';
-import { StaticImageData } from 'next/image';
 
 type CategoryT = {
   category: string;
 };
 
-export default function Category({ category }: CategoryT) {
+export default async function Category({ category }: CategoryT) {
   return (
     <Link
       href={`/categories/?category=${category}`}

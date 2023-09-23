@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  experimental: {
+    allowMiddlewareResponseBody: true,
+  },
   images: {
     // formats: ['image/avif', 'image/webp'],
     remotePatterns: [
