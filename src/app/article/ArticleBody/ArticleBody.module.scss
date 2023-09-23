@@ -1,4 +1,13 @@
+@import './../../vars.scss';
+
 .body {
+  text-align: center;
+  .url {
+    color: $highLightedText;
+    text-decoration: underline;
+    font-size: 2rem;
+    padding: 20vh 0;
+  }
   .content {
     width: 60vw;
     margin: 0 auto;

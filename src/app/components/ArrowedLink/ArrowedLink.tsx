@@ -6,7 +6,9 @@ import style from './ArrowedLink.module.scss';
 function ArrowedLink({ current }: { current: string }) {
   return (
     <div className={style.link}>
-      <Link href='/'>Home</Link>
+      <Link href='/' className={style.url}>
+        Home
+      </Link>
       <IoIosArrowForward />
       <p className={style.current}>{current}</p>
     </div>

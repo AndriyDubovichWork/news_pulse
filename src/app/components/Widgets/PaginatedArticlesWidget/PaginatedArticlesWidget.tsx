@@ -13,9 +13,8 @@ export default function PaginatedArticlesWidget({
   title,
   news,
 }: PaginatedArticlesWidgetT) {
-  const { disabled, boundaries, moveRight, moveLeft } = usePaginationBoundaries(
-    news.length
-  );
+  const { disabled, boundaries, moveRight, moveLeft, moveEnd, moveStart } =
+    usePaginationBoundaries(news.length);
 
   return (
     <>
@@ -24,14 +23,26 @@ export default function PaginatedArticlesWidget({
 
         <div className={style.arrows}>
           <button
-            onClick={moveLeft}
+            onClick={(e) => {
+              if (e.ctrlKey) {
+                moveStart();
+              } else {
+                moveLeft();
+              }
+            }}
             disabled={disabled.left}
             className={style.arrow}
           >
             <IoIosArrowBack />
           </button>
           <button
-            onClick={moveRight}
+            onClick={(e) => {
+              if (e.ctrlKey) {
+                moveEnd();
+              } else {
+                moveRight();
+              }
+            }}
             disabled={disabled.right}
             className={style.arrow}
           >

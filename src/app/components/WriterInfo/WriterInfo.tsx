@@ -36,7 +36,7 @@ function WriterInfo({ isMarked }: { isMarked?: boolean }) {
             alt='user Image'
             src={`https://random.imagecdn.app/75/75/?avoidCachingSoItwillBeDifferentImages=userImage`}
           />
-          <p className={style.name}>hello world</p>
+          <p className={style.name}>Andriy Dubovich</p>
         </div>
 
         <div className={style.about}>

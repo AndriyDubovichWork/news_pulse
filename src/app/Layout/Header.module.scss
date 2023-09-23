@@ -9,8 +9,18 @@
 
   align-items: center;
 
-  .logo {
+  .selected {
     color: $highLightedText;
+  }
+  .selected:hover {
+    color: $highLightedTinnedText;
+  }
+
+  .url {
+    color: $mainText;
+  }
+  .url:hover {
+    color: $TinedText;
   }
 
   .half {

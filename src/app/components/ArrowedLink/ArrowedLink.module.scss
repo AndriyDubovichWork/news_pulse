@@ -4,6 +4,10 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  .url:hover {
+    color: $TinedText;
+  }
+
   .current {
     color: $TinedText;
   }

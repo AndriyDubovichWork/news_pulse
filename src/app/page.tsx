@@ -3,8 +3,8 @@ import style from './home.module.scss';
 import useGetData from './hooks/useGetData';
 import Widgets from './components/Widgets/Widgets';
 
-export default async function Home() {
-  const { weather, citiesWeather, news } = await useGetData();
+export default function Home() {
+  const { weather, citiesWeather, news } = useGetData();
 
   return (
     <main className={style.home}>

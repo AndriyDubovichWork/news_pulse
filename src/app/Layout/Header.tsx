@@ -11,8 +11,11 @@ import { IoExitOutline } from 'react-icons/io5';
 
 import Icon from '../components/Icon/Icon';
 import IconWithText from '../components/IconWithText/IconWithText';
+import { usePathname } from 'next/navigation';
 
 export default function Header() {
+  const path = usePathname();
+
   const [showDropDown, setShowDropDown] = useState(false);
 
   const dropDowns = [
@@ -24,17 +27,24 @@ export default function Header() {
       text: 'Exit',
     },
   ];
-
+  const urls = [
+    { href: '/', text: 'News Pulse' },
+    { href: '/contact-us', text: 'Contact us' },
+    { href: '/about-us', text: 'About us' },
+  ];
   return (
     <header className={style.header}>
       <div className={style.half}>
-        <Link href='/' className={style.logo}>
-          News Pulse
-        </Link>
+        {urls.map(({ href, text }) => (
+          <Link
+            href={href}
+            className={path === href ? style.selected : style.url}
+          >
+            {text}
+          </Link>
+        ))}
         {/* <Link href="/categories">Categories</Link>
         <Link href="/pages">Pages</Link> */}
-        <Link href='/contact-us'>Contact us</Link>
-        <Link href='/about-us'>About us</Link>
       </div>
       <div className={style.half}>
         <SearchBar />
@@ -73,7 +83,7 @@ export default function Header() {
           )}
         </div>
         <Link href='/profile/marked' className={style.icon}>
-          <BsPencil />
+          <BsBookmark />
         </Link>
       </div>
     </header>
