@@ -27,7 +27,7 @@ export default function usePaginationBoundaries(pagesNumber: number) {
   const moveEnd = () => {
     setBoundaries({
       right: pagesNumber - 1,
-      left: pagesNumber - 5,
+      left: pagesNumber - 4,
     });
   };
   const moveStart = () => {

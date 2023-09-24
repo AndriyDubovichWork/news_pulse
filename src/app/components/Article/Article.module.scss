@@ -58,6 +58,8 @@
   display: flex;
   justify-content: center;
 
+  width: 320px;
+
   .image {
     border-radius: $borderRadius;
 
@@ -105,7 +107,9 @@
 }
 
 .highNWideArticle {
+  width: 690px;
   width: 2fr;
+
   grid-area: 1 / 3 / 2 / 5;
 }
 @keyframes pulse {

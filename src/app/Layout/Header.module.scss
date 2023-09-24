@@ -24,7 +24,7 @@
   }
 
   .half {
-    width: 40%;
+    width: 30%;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -71,6 +71,12 @@
     .icon {
       display: flex;
       align-items: center;
+      background-color: $secondaryBackground;
+      padding: 10px;
+      border-radius: $borderRadius;
+    }
+    .icon:hover {
+      background-color: $secondaryBackgroundTransparent;
     }
   }
 }

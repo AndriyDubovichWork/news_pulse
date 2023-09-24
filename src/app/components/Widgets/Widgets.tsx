@@ -26,7 +26,7 @@ function Widgets({ weather, citiesWeather, news }: WidgetsPropsT) {
         news={shuffleArray(news)}
       />
 
-      <FootBallWidget />
+      {/* <FootBallWidget /> */}
 
       <NewPosts news={news} />
 

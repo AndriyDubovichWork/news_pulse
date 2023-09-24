@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import style from './header.module.scss';
 import Link from 'next/link';
 import SearchBar from '../components/styledInputs/SearchBar/SearchBar';
-import { BsBookmark, BsPencil } from 'react-icons/bs';
+import { BsBookmark, BsFillBookmarkFill } from 'react-icons/bs';
 import { IoIosArrowDown } from 'react-icons/io';
 import { FiUser } from 'react-icons/fi';
 import { IoExitOutline } from 'react-icons/io5';
@@ -16,6 +16,7 @@ import { usePathname } from 'next/navigation';
 export default function Header() {
   const path = usePathname();
 
+  const [isMarked, setIsMarked] = useState(false);
   const [showDropDown, setShowDropDown] = useState(false);
 
   const dropDowns = [
@@ -37,6 +38,7 @@ export default function Header() {
       <div className={style.half}>
         {urls.map(({ href, text }) => (
           <Link
+            key={href}
             href={href}
             className={path === href ? style.selected : style.url}
           >
@@ -47,7 +49,7 @@ export default function Header() {
         <Link href="/pages">Pages</Link> */}
       </div>
       <div className={style.half}>
-        <SearchBar />
+        {/* <SearchBar /> */}
 
         <div
           className={style.user}
@@ -70,7 +72,7 @@ export default function Header() {
             <div className={style.dropDown}>
               {dropDowns.map(({ href, icon, text }) => {
                 return (
-                  <Link href={href} className={style.Link}>
+                  <Link key={href} href={href} className={style.Link}>
                     <IconWithText
                       icon={icon}
                       text={text}
@@ -82,8 +84,17 @@ export default function Header() {
             </div>
           )}
         </div>
-        <Link href='/profile/marked' className={style.icon}>
-          <BsBookmark />
+        <Link
+          href='/profile/marked'
+          className={style.icon}
+          onMouseDown={() => {
+            setIsMarked(true);
+          }}
+          onMouseUp={() => {
+            setIsMarked(false);
+          }}
+        >
+          {isMarked ? <BsFillBookmarkFill /> : <BsBookmark />}
         </Link>
       </div>
     </header>

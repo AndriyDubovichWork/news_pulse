@@ -76,14 +76,18 @@ export default function Footer() {
 
         <div className={style.socialNetwork}>
           <Title title='Social Network' />
-          <Icon
-            name='instagram'
-            src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/2048px-Instagram_icon.png'
-          />
-          <Icon
-            name='facebook'
-            src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Facebook_icon.svg/2048px-Facebook_icon.svg.png'
-          />
+          <Link target='_blank' href={'https://www.instagram.com'}>
+            <Icon
+              name='instagram'
+              src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/2048px-Instagram_icon.png'
+            />
+          </Link>
+          <Link target='_blank' href={'https://www.facebook.com/'}>
+            <Icon
+              name='facebook'
+              src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Facebook_icon.svg/2048px-Facebook_icon.svg.png'
+            />
+          </Link>
         </div>
 
         <div className={style.copyright}>

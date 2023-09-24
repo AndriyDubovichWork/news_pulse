@@ -43,7 +43,7 @@ function WriterInfo({ isMarked }: { isMarked?: boolean }) {
           {isMarked ? (
             <>
               {options.map(({ href, title }) => (
-                <Link href={href}>
+                <Link href={href} key={href}>
                   <Title title={title} withRectangle={path === href} />
                 </Link>
               ))}
