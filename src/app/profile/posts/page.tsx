@@ -13,12 +13,13 @@ import useWeatherOfUserData from '@/app/hooks/useWeatherOfUserData';
 import Loading from '@/app/loading';
 import useGenerateRandomChartData from '@/app/hooks/useGenerateRandomChartData';
 import Title from '@/app/components/Title/Title';
+import useWidth from '@/app/hooks/useWidth';
 
 function Posts() {
   const { news } = useGetData();
 
   const chartData = useGenerateRandomChartData(10);
-
+  const width = useWidth();
   return (
     <main className={style.posts}>
       <ArrowedLink current='Profile Posts' />
@@ -29,6 +30,7 @@ function Posts() {
       <WeatherChart chartData={chartData} />
 
       <PaginatedArticlesWidget
+        width={width}
         title='Popular Posts'
         news={shuffleArray(news)}
       />

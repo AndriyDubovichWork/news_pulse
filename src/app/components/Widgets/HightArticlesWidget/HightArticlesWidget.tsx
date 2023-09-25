@@ -6,12 +6,17 @@ import style from './HightArticlesWidget.module.scss';
 
 type HightArticlesWidgetT = {
   news: NewsT;
+  isWideScreen: boolean;
   width: number;
 };
 
-function HightArticlesWidget({ news, width }: HightArticlesWidgetT) {
-  let isWideScreen = width >= 1500;
-  const elementsNum = isWideScreen ? 3 : 2;
+function HightArticlesWidget({
+  width,
+  news,
+  isWideScreen,
+}: HightArticlesWidgetT) {
+  const shown = Math.floor(width / 500);
+  const elementsNum = isWideScreen ? 3 : shown;
   const lessNews = news.slice(0, elementsNum);
 
   return (

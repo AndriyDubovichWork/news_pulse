@@ -7,22 +7,28 @@ import style from './WeatherWidget.module.scss';
 
 type WeatherWidgetT = {
   weather: WeatherT;
+  isWideScreen: boolean;
   citiesWeather: WeatherT[];
 };
 
 export default function WeatherWidget({
   weather,
+  isWideScreen,
   citiesWeather,
 }: WeatherWidgetT) {
   const { isMetric, switchIsMetric } = useWeatherWidgetData();
+
   return (
-    <div className={style.weather}>
-      <WeatherOfUser
-        weather={weather}
-        isMetric={isMetric}
-        switchIsMetric={switchIsMetric}
-      />
+    <div className={isWideScreen ? style.weather : style.small}>
+      {isWideScreen && (
+        <WeatherOfUser
+          weather={weather}
+          isMetric={isMetric}
+          switchIsMetric={switchIsMetric}
+        />
+      )}
       <WeatherOfCities
+        isWideScreen={isWideScreen}
         citiesWeather={citiesWeather}
         isMetric={isMetric}
         switchIsMetric={switchIsMetric}

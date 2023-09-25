@@ -45,9 +45,9 @@ function ContactInfo() {
   );
 }
 
-export default function Info() {
+export default function Info({ isWideScreen }: { isWideScreen: boolean }) {
   return (
-    <div className={style.info}>
+    <div className={`${style.info} ${!isWideScreen && style.small}`}>
       <Image
         className={style.map}
         width={840}

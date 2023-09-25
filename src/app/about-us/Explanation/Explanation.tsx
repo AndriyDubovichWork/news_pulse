@@ -2,13 +2,17 @@ import React from 'react';
 import style from './Explanation.module.scss';
 import Image from 'next/image';
 
-export default function Explanation() {
+export default function Explanation({
+  isWideScreen,
+}: {
+  isWideScreen: boolean;
+}) {
   return (
     <div className={style.explanation}>
       <h1 className={style.title}>
         We pay attention to your needs and do the best design.
       </h1>
-      <div className={style.content}>
+      <div className={`${style.content} ${!isWideScreen && style.small}`}>
         <p className={style.text}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas

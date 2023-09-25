@@ -6,21 +6,32 @@ import FootBallWidget from './FootBallWidget/FootBallWidget';
 import WeatherWidget from './WeatherWidget/WeatherWidget';
 import NewPosts from './NewPosts/NewPosts';
 import shuffleArray from '@/app/lib/shuffleArray';
-import LatestPosts from './LatestVideos/LatestPosts';
+import LatestPosts from './LatestPosts/LatestPosts';
 
 type WidgetsPropsT = {
   weather: WeatherT;
   width: number;
+  isWideScreen: boolean;
   citiesWeather: WeatherT[];
   news: NewsT;
 };
 
-function Widgets({ weather, citiesWeather, news, width }: WidgetsPropsT) {
+function Widgets({
+  weather,
+  citiesWeather,
+  news,
+  width,
+  isWideScreen,
+}: WidgetsPropsT) {
   return (
     <>
       <CategoriesWidget />
 
-      <HightArticlesWidget news={shuffleArray(news)} width={width} />
+      <HightArticlesWidget
+        width={width}
+        isWideScreen={isWideScreen}
+        news={shuffleArray(news)}
+      />
 
       <PaginatedArticlesWidget
         width={width}
@@ -30,9 +41,13 @@ function Widgets({ weather, citiesWeather, news, width }: WidgetsPropsT) {
 
       {/* <FootBallWidget /> */}
 
-      <NewPosts news={news} />
+      <NewPosts news={news} isWideScreen={isWideScreen} />
 
-      <LatestPosts news={shuffleArray(news)} />
+      <LatestPosts
+        isWideScreen={isWideScreen}
+        news={shuffleArray(news)}
+        width={width}
+      />
 
       <PaginatedArticlesWidget
         width={width}
@@ -40,7 +55,11 @@ function Widgets({ weather, citiesWeather, news, width }: WidgetsPropsT) {
         news={shuffleArray(news)}
       />
 
-      <WeatherWidget weather={weather} citiesWeather={citiesWeather} />
+      <WeatherWidget
+        isWideScreen={isWideScreen}
+        weather={weather}
+        citiesWeather={citiesWeather}
+      />
 
       <PaginatedArticlesWidget
         width={width}

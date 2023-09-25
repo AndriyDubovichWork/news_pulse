@@ -4,7 +4,6 @@ export default function usePaginationBoundaries(
   pagesNumber: number,
   shownElements: number
 ) {
-  // console.log(shownElements);
   const [boundaries, setBoundaries] = useState({
     left: 0,
     right: shownElements - 1,

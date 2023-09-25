@@ -3,30 +3,19 @@ import { useState, useEffect } from 'react';
 import style from './home.module.scss';
 import useGetData from './hooks/useGetData';
 import Widgets from './components/Widgets/Widgets';
+import useWidth from './hooks/useWidth';
 
 export default function Home() {
   //ToDo refactore this code
 
   const { weather, citiesWeather, news } = useGetData();
-  const [width, setWidth] = useState(0);
-
-  useEffect(() => {
-    setWidth(window.innerWidth);
-
-    let timeoutId: any;
-
-    window.addEventListener('resize', () => {
-      clearTimeout(timeoutId);
-      timeoutId = setTimeout(() => {
-        setWidth(window.innerWidth);
-      }, 100);
-    });
-  }, []);
+  const { width, isWideScreen } = useWidth();
 
   return (
     <main className={style.home}>
       {weather && citiesWeather && news && (
         <Widgets
+          isWideScreen={isWideScreen}
           width={width}
           weather={weather}
           citiesWeather={citiesWeather}

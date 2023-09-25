@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import style from './footer.module.scss';
 import useCategories from '../hooks/useCategories';
@@ -6,6 +8,7 @@ import Title from '../components/Title/Title';
 import Comment from '../components/Comment/Comment';
 import Link from 'next/link';
 import Icon from '../components/Icon/Icon';
+import useWidth from '../hooks/useWidth';
 
 const AuthorsInstagram = [
   'https://www.instagram.com',
@@ -37,8 +40,9 @@ const comments = [
 
 export default function Footer() {
   const categories = useCategories();
+  const { isWideScreen } = useWidth();
   return (
-    <footer className={style.footer}>
+    <footer className={`${style.footer} ${!isWideScreen && style.small}`}>
       <div className={style.leftfooterSection}>
         <div className={style.megaNews}>
           <Title title='Mega News' />
@@ -95,33 +99,39 @@ export default function Footer() {
           <p>All Copyright (c) 2022 Reserved</p>
         </div>
       </div>
-
-      <div className={style.newComents}>
-        <Title title='New Comments' />
-        {comments.map((comment) => (
-          <Comment
-            author={comment.author}
-            text={comment.text}
-            key={comment.text}
-          />
-        ))}
-      </div>
-
-      <div className={style.instagram}>
-        <Title title='Follow on Instagram' className={style.instagramTitle} />
-
-        {AuthorsInstagram.map((url, id) => {
-          return (
-            <Link href={url} key={url + id} target='_blank'>
-              <Icon
-                size={104}
-                src={`https://random.imagecdn.app/104/104/?avoidCachingSoItwillBeDifferentImages=${id}`}
-                name='instagram image'
+      {isWideScreen && (
+        <>
+          <div className={style.newComents}>
+            <Title title='New Comments' />
+            {comments.map((comment) => (
+              <Comment
+                author={comment.author}
+                text={comment.text}
+                key={comment.text}
               />
-            </Link>
-          );
-        })}
-      </div>
+            ))}
+          </div>
+
+          <div className={style.instagram}>
+            <Title
+              title='Follow on Instagram'
+              className={style.instagramTitle}
+            />
+
+            {AuthorsInstagram.map((url, id) => {
+              return (
+                <Link href={url} key={url + id} target='_blank'>
+                  <Icon
+                    size={104}
+                    src={`https://random.imagecdn.app/104/104/?avoidCachingSoItwillBeDifferentImages=${id}`}
+                    name='instagram image'
+                  />
+                </Link>
+              );
+            })}
+          </div>
+        </>
+      )}
     </footer>
   );
 }

@@ -15,7 +15,7 @@ export default function PaginatedArticlesWidget({
   news,
   width,
 }: PaginatedArticlesWidgetT) {
-  let shownElements = Math.floor(width / 400);
+  let shownElements = Math.floor(width / 380) || 1;
 
   let { disabled, boundaries, moveRight, moveLeft, moveEnd, moveStart } =
     usePaginationBoundaries(news.length, shownElements);

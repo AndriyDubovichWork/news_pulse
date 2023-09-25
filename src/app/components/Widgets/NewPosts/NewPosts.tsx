@@ -7,9 +7,10 @@ import { IoIosArrowForward } from 'react-icons/io';
 
 type NewPostsPropsT = {
   news: NewsT;
+  isWideScreen: boolean;
 };
 
-function NewPosts({ news }: NewPostsPropsT) {
+function NewPosts({ news, isWideScreen }: NewPostsPropsT) {
   const visibleNews = news.slice(0, 6);
 
   return (
@@ -23,7 +24,13 @@ function NewPosts({ news }: NewPostsPropsT) {
       </div>
       <div className={style.newPosts}>
         {visibleNews.map((article) => {
-          return <Article article={article} isWide key={article.abstract} />;
+          return (
+            <Article
+              article={article}
+              isWide={isWideScreen}
+              key={article.abstract}
+            />
+          );
         })}
       </div>
     </>
