@@ -12,6 +12,8 @@ import { IoExitOutline } from 'react-icons/io5';
 import Icon from '../components/Icon/Icon';
 import IconWithText from '../components/IconWithText/IconWithText';
 import { usePathname } from 'next/navigation';
+import { signIn, signOut, useSession } from 'next-auth/react';
+import Button from '../components/styledInputs/Button/Button';
 
 export default function Header() {
   const path = usePathname();
@@ -23,7 +25,7 @@ export default function Header() {
     { href: '/profile', icon: <FiUser size={24} />, text: 'Profile' },
     { href: '/profile/marked', icon: <BsBookmark size={24} />, text: 'Marked' },
     {
-      href: '/',
+      href: '/api/auth/signout',
       icon: <IoExitOutline size={24} />,
       text: 'Exit',
     },
@@ -33,6 +35,7 @@ export default function Header() {
     { href: '/contact-us', text: 'Contact us' },
     { href: '/about-us', text: 'About us' },
   ];
+  const { data: session } = useSession();
   return (
     <header className={style.header}>
       <div className={style.half}>
@@ -50,40 +53,46 @@ export default function Header() {
       </div>
       <div className={style.half}>
         {/* <SearchBar /> */}
+        {session ? (
+          <div
+            className={style.user}
+            onMouseEnter={() => {
+              setShowDropDown(true);
+            }}
+            onMouseLeave={() => {
+              setShowDropDown(false);
+            }}
+          >
+            <Icon
+              size={36}
+              name='user'
+              src={
+                session?.user?.image ||
+                'https://random.imagecdn.app/36/36/?avoidCachingSoItwillBeDifferentImages=user'
+              }
+            />
+            <p className={style.name}>{session?.user?.name}</p>
 
-        <div
-          className={style.user}
-          onMouseEnter={() => {
-            setShowDropDown(true);
-          }}
-          onMouseLeave={() => {
-            setShowDropDown(false);
-          }}
-        >
-          <Icon
-            size={36}
-            name='user'
-            src='https://random.imagecdn.app/36/36/?avoidCachingSoItwillBeDifferentImages=user'
-          />
-          <p className={style.name}>Andriy</p>
-
-          <IoIosArrowDown />
-          {showDropDown && (
-            <div className={style.dropDown}>
-              {dropDowns.map(({ href, icon, text }) => {
-                return (
-                  <Link key={href} href={href} className={style.Link}>
-                    <IconWithText
-                      icon={icon}
-                      text={text}
-                      textClassName={style.Link}
-                    />
-                  </Link>
-                );
-              })}
-            </div>
-          )}
-        </div>
+            <IoIosArrowDown />
+            {showDropDown && (
+              <div className={style.dropDown}>
+                {dropDowns.map(({ href, icon, text }) => {
+                  return (
+                    <Link key={href} href={href} className={style.Link}>
+                      <IconWithText
+                        icon={icon}
+                        text={text}
+                        textClassName={style.Link}
+                      />
+                    </Link>
+                  );
+                })}
+              </div>
+            )}
+          </div>
+        ) : (
+          <Button onClick={() => signIn()} value='Login' />
+        )}
         <Link
           href='/profile/marked'
           className={style.icon}
