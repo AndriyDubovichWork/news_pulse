@@ -5,6 +5,7 @@ import useSearchParams from '@/app/hooks/useSearchParams';
 import { BsFillGrid3X3GapFill } from 'react-icons/bs';
 import { BiGridVertical } from 'react-icons/bi';
 import ArrowedLink from '@/app/components/ArrowedLink/ArrowedLink';
+import useWidth from '@/app/hooks/useWidth';
 
 type CategoryHeaderPropsT = {
   category: string;
@@ -22,7 +23,7 @@ export default function CategoryHeader({
   isGrid,
 }: CategoryHeaderPropsT) {
   const { setParam, getParam } = useSearchParams();
-
+  const { isWideScreen } = useWidth();
   useEffect(() => {
     setParam('sortBy', byArray[0]);
   }, []);
@@ -31,7 +32,7 @@ export default function CategoryHeader({
     <header className={style.categoryHeader}>
       <ArrowedLink current={category} />
       <div className={style.sort}>
-        <div className={style.byLine}>
+        <div className={`${style.byLine} ${!isWideScreen && style.small}`}>
           {byArray.map((by) => {
             const isSelected = by === getParam('sortBy');
             return (

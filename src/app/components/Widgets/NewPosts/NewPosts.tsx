@@ -22,7 +22,7 @@ function NewPosts({ news, isWideScreen }: NewPostsPropsT) {
           <IoIosArrowForward />
         </Link>
       </div>
-      <div className={style.newPosts}>
+      <div className={`${style.newPosts} ${!isWideScreen && style.small}`}>
         {visibleNews.map((article) => {
           return (
             <Article

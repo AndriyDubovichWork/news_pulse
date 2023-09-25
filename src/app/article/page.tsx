@@ -8,13 +8,14 @@ import ArrowedLink from '../components/ArrowedLink/ArrowedLink';
 import ArticleBody from './ArticleBody/ArticleBody';
 import useGetData from '../hooks/useGetData';
 import Loading from '../loading';
+import useWidth from '../hooks/useWidth';
 
 export default function Article() {
   const router = useRouter();
 
   const { getParam } = useSearchParamsHook();
   const { news } = useGetData();
-
+  const { width } = useWidth();
   const id = getParam('id');
 
   const [article] = news.filter(
@@ -33,7 +34,7 @@ export default function Article() {
       ) : (
         <main className={style.article}>
           <ArrowedLink current={article.title} />
-          <ArticleBody news={news} article={article} />
+          <ArticleBody width={width} news={news} article={article} />
         </main>
       )}
     </>

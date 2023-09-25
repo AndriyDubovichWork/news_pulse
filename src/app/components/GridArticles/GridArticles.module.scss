@@ -9,4 +9,8 @@
   grid-template-columns: repeat(auto-fit, minmax(680px, 1fr));
   grid-column-gap: 0px;
   grid-row-gap: 24px;
+
+  justify-content: center;
+
+  justify-items: center;
 }

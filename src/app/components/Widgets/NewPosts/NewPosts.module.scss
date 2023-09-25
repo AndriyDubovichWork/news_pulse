@@ -22,7 +22,11 @@
   grid-template-columns: repeat(auto-fit, minmax(680px, 1fr));
   grid-template-rows: repeat(3, 1fr);
   grid-row-gap: 24px;
-
+  width: 100%;
   margin: 5vh 0;
+}
+.small {
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  justify-self: center;
   justify-items: center;
 }
