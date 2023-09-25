@@ -1,18 +1,18 @@
 import React from 'react';
-import style from './LatestVideos.module.scss';
+import style from './LatestPosts.module.scss';
 import Article from '../../Article/Article';
 import Title from '../../Title/Title';
 
-type LatestVideosPropsT = {
+type LatestPostsPropsT = {
   news: NewsT;
 };
 
-function LatestVideos({ news }: LatestVideosPropsT) {
+export default function LatestPosts({ news }: LatestPostsPropsT) {
   const slicedNews = news.slice(0, 3);
 
   return (
     <>
-      <Title title='Latest Videos' className={style.title} />
+      <Title title='Latest Posts' className={style.title} />
       <div className={style.latest}>
         {slicedNews.map((article, id) => {
           const isFirst = id === 0;
@@ -34,5 +34,3 @@ function LatestVideos({ news }: LatestVideosPropsT) {
     </>
   );
 }
-
-export default LatestVideos;

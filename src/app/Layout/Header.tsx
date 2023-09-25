@@ -23,7 +23,7 @@ export default function Header() {
     { href: '/profile', icon: <FiUser size={24} />, text: 'Profile' },
     { href: '/profile/marked', icon: <BsBookmark size={24} />, text: 'Marked' },
     {
-      href: '/profile/exit',
+      href: '/',
       icon: <IoExitOutline size={24} />,
       text: 'Exit',
     },

@@ -80,3 +80,13 @@
     }
   }
 }
+@media (orientation: portrait) {
+  .header {
+    .selected {
+      display: none;
+    }
+    .url {
+      display: none;
+    }
+  }
+}

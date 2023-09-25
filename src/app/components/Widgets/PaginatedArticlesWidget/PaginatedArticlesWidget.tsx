@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Title from '../../Title/Title';
 import style from './PaginatedArticlesWidget.module.scss';
 import Article from '../../Article/Article';
@@ -7,15 +7,18 @@ import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 type PaginatedArticlesWidgetT = {
   title: string;
   news: NewsT;
+  width: number;
 };
 
 export default function PaginatedArticlesWidget({
   title,
   news,
+  width,
 }: PaginatedArticlesWidgetT) {
-  const { disabled, boundaries, moveRight, moveLeft, moveEnd, moveStart } =
-    usePaginationBoundaries(news.length);
+  let shownElements = Math.floor(width / 400);
 
+  let { disabled, boundaries, moveRight, moveLeft, moveEnd, moveStart } =
+    usePaginationBoundaries(news.length, shownElements);
   return (
     <>
       <div className={style.headerSection}>

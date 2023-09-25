@@ -84,10 +84,10 @@ export function Temp({
         src={'https:' + condition.icon}
         className={style.icon}
       />
-      <h1 className={style.temp} onClick={switchIsMetric}>
+      <div className={style.temp} onClick={switchIsMetric}>
         {isMetric ? avgtempC : avgtempF}
         <h3 className={style.tempUnit}>{isMetric ? '°C' : '°F'}</h3>
-      </h1>
+      </div>
     </>
   );
 }

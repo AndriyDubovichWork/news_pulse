@@ -1,20 +1,22 @@
-import usePaginationBoundaries from "@/app/hooks/usePaginationBoundaries";
-import React, { useState } from "react";
-import Button from "../styledInputs/Button/Button";
-import style from "./Paginator.module.scss";
+import usePaginationBoundaries from '@/app/hooks/usePaginationBoundaries';
+import React, { useState } from 'react';
+import Button from '../styledInputs/Button/Button';
+import style from './Paginator.module.scss';
 
 type PaginatorPropsT = {
   shuffleNews: () => void;
 };
 
 export default function Paginator({ shuffleNews }: PaginatorPropsT) {
-  const { disabled, boundaries, moveRight, moveLeft } =
-    usePaginationBoundaries(9);
+  const { disabled, boundaries, moveRight, moveLeft } = usePaginationBoundaries(
+    9,
+    4
+  );
 
   return (
     <div className={style.pagination}>
       <Button
-        value="prev"
+        value='prev'
         onClick={() => {
           moveLeft();
           shuffleNews();
@@ -28,7 +30,7 @@ export default function Paginator({ shuffleNews }: PaginatorPropsT) {
       <h4 className={style.page}>{boundaries.right + 1}</h4>
 
       <Button
-        value="next"
+        value='next'
         onClick={() => {
           moveRight();
           shuffleNews();

@@ -6,22 +6,24 @@ import FootBallWidget from './FootBallWidget/FootBallWidget';
 import WeatherWidget from './WeatherWidget/WeatherWidget';
 import NewPosts from './NewPosts/NewPosts';
 import shuffleArray from '@/app/lib/shuffleArray';
-import LatestVideos from './LatestVideos/LatestVideos';
+import LatestPosts from './LatestVideos/LatestPosts';
 
 type WidgetsPropsT = {
   weather: WeatherT;
+  width: number;
   citiesWeather: WeatherT[];
   news: NewsT;
 };
 
-function Widgets({ weather, citiesWeather, news }: WidgetsPropsT) {
+function Widgets({ weather, citiesWeather, news, width }: WidgetsPropsT) {
   return (
     <>
       <CategoriesWidget />
 
-      <HightArticlesWidget news={shuffleArray(news)} />
+      <HightArticlesWidget news={shuffleArray(news)} width={width} />
 
       <PaginatedArticlesWidget
+        width={width}
         title='Popular Posts'
         news={shuffleArray(news)}
       />
@@ -30,13 +32,21 @@ function Widgets({ weather, citiesWeather, news }: WidgetsPropsT) {
 
       <NewPosts news={news} />
 
-      <LatestVideos news={shuffleArray(news)} />
+      <LatestPosts news={shuffleArray(news)} />
 
-      <PaginatedArticlesWidget title='Trendy Posts' news={shuffleArray(news)} />
+      <PaginatedArticlesWidget
+        width={width}
+        title='Trendy Posts'
+        news={shuffleArray(news)}
+      />
 
       <WeatherWidget weather={weather} citiesWeather={citiesWeather} />
 
-      <PaginatedArticlesWidget title='Top Posts' news={shuffleArray(news)} />
+      <PaginatedArticlesWidget
+        width={width}
+        title='Top Posts'
+        news={shuffleArray(news)}
+      />
     </>
   );
 }
