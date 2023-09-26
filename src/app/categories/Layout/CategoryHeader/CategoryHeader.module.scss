@@ -42,9 +42,19 @@
         background-color: $secondaryBackgroundTransparent;
       }
     }
-    .small {
-      width: 80%;
+  }
+
+  .small {
+    .byLine {
+      width: 70%;
     }
+    .type {
+      display: none;
+    }
+
+    display: flex;
+    justify-content: center;
+    height: 5vh;
   }
   .title {
     font-size: 20px;

@@ -31,8 +31,8 @@ export default function CategoryHeader({
   return (
     <header className={style.categoryHeader}>
       <ArrowedLink current={category} />
-      <div className={style.sort}>
-        <div className={`${style.byLine} ${!isWideScreen && style.small}`}>
+      <div className={`${style.sort} ${!isWideScreen && style.small}`}>
+        <div className={style.byLine}>
           {byArray.map((by) => {
             const isSelected = by === getParam('sortBy');
             return (

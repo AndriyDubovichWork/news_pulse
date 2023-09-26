@@ -7,10 +7,11 @@ import useWidth from './hooks/useWidth';
 export default function Home() {
   const { weather, citiesWeather, news } = useGetData();
   const { width, isWideScreen } = useWidth();
+  const isDataLoaded = weather && citiesWeather && news;
 
   return (
     <main className={style.home}>
-      {weather && citiesWeather && news && (
+      {isDataLoaded && (
         <Widgets
           isWideScreen={isWideScreen}
           width={width}

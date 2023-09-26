@@ -19,7 +19,7 @@ function Posts() {
   const { news } = useGetData();
 
   const chartData = useGenerateRandomChartData(10);
-  const width = useWidth();
+  const { width } = useWidth();
   return (
     <main className={style.posts}>
       <ArrowedLink current='Profile Posts' />

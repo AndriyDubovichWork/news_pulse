@@ -3,12 +3,13 @@ import ArticlePlaceHolder from './nytLogo.png';
 import Image from 'next/image';
 import style from './article.module.scss';
 import Link from 'next/link';
+import useWidth from '@/app/hooks/useWidth';
 
 type ArticlePropsT = { article: ArticleT; isWide?: boolean; isHigh?: boolean };
 
 function Article({ article, isWide = false, isHigh = false }: ArticlePropsT) {
   const data = article?.media?.[0]?.['media-metadata']?.[2];
-
+  const { isWideScreen } = useWidth();
   if (isHigh)
     return (
       <Link
@@ -36,7 +37,9 @@ function Article({ article, isWide = false, isHigh = false }: ArticlePropsT) {
     <Link
       href={`/article?id=${article.asset_id}`}
       // target='_blank'
-      className={`${style.article} ${isWide && style.wideArticle}`}
+      className={`${style.article} ${
+        isWide && isWideScreen && style.wideArticle
+      }`}
     >
       <Image
         height={190}

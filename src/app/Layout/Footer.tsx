@@ -2,44 +2,17 @@
 
 import React from 'react';
 import style from './footer.module.scss';
-import useCategories from '../hooks/useCategories';
 import Input from '../components/styledInputs/Input/Input';
 import Title from '../components/Title/Title';
 import Comment from '../components/Comment/Comment';
 import Link from 'next/link';
 import Icon from '../components/Icon/Icon';
 import useWidth from '../hooks/useWidth';
-
-const AuthorsInstagram = [
-  'https://www.instagram.com',
-  'https://www.instagram.com',
-  'https://www.instagram.com',
-  'https://www.instagram.com',
-  'https://www.instagram.com',
-  'https://www.instagram.com',
-  'https://www.instagram.com',
-  'https://www.instagram.com',
-  'https://www.instagram.com',
-];
-
-const comments = [
-  { author: 'comentator', text: 'hi my name is coment i am important' },
-  {
-    author: 'Andrew Johnson',
-    text: 'hi my name is coment i am important not copired comment',
-  },
-  {
-    author: 'Real Comentator',
-    text: 'hi my name is coment i am important not copired comment 100% original',
-  },
-  {
-    author: 'Andrew Piterson',
-    text: 'sheeeesh',
-  },
-];
+import useMockData from '../hooks/useMockData';
 
 export default function Footer() {
-  const categories = useCategories();
+  const { AuthorsInstagram, comments } = useMockData();
+  const { categories } = useMockData();
   const { isWideScreen } = useWidth();
   return (
     <footer className={`${style.footer} ${!isWideScreen && style.small}`}>

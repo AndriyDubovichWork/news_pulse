@@ -3,17 +3,15 @@
 import React, { useState } from 'react';
 import style from './header.module.scss';
 import Link from 'next/link';
-import SearchBar from '../components/styledInputs/SearchBar/SearchBar';
 import { BsBookmark, BsFillBookmarkFill } from 'react-icons/bs';
 import { IoIosArrowDown } from 'react-icons/io';
-import { FiUser } from 'react-icons/fi';
-import { IoExitOutline } from 'react-icons/io5';
 
 import Icon from '../components/Icon/Icon';
 import IconWithText from '../components/IconWithText/IconWithText';
 import { usePathname } from 'next/navigation';
 import { signIn, signOut, useSession } from 'next-auth/react';
 import Button from '../components/styledInputs/Button/Button';
+import useMockData from '../hooks/useMockData';
 
 export default function Header() {
   const path = usePathname();
@@ -21,20 +19,8 @@ export default function Header() {
   const [isMarked, setIsMarked] = useState(false);
   const [showDropDown, setShowDropDown] = useState(false);
 
-  const dropDowns = [
-    { href: '/profile', icon: <FiUser size={24} />, text: 'Profile' },
-    { href: '/profile/marked', icon: <BsBookmark size={24} />, text: 'Marked' },
-    {
-      href: '/api/auth/signout',
-      icon: <IoExitOutline size={24} />,
-      text: 'Exit',
-    },
-  ];
-  const urls = [
-    { href: '/', text: 'News Pulse' },
-    { href: '/contact-us', text: 'Contact us' },
-    { href: '/about-us', text: 'About us' },
-  ];
+  const { dropDowns, urls } = useMockData();
+
   const { data: session } = useSession();
   return (
     <header className={style.header}>

@@ -1,10 +1,10 @@
 import React from 'react';
 import Category from './Category/Category';
 import style from './CategoriesWidget.module.scss';
-import useCategories from '@/app/hooks/useCategories';
+import useMockData from '@/app/hooks/useMockData';
 
 export default function CategoriesWidget() {
-  const categories = useCategories();
+  const { categories } = useMockData();
   return (
     <div className={style.categories}>
       {categories.map((category) => (

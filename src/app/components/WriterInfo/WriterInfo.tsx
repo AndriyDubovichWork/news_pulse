@@ -10,14 +10,11 @@ import style from './WriterInfo.module.scss';
 import Title from '../Title/Title';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import useMockData from '@/app/hooks/useMockData';
 
 function WriterInfo({ isMarked }: { isMarked?: boolean }) {
   const path = usePathname();
-  const options = [
-    { title: 'marked', href: '/profile/marked' },
-    { title: 'send post', href: '/profile/post' },
-    { title: 'posts', href: '/profile/posts' },
-  ];
+  const { markedOptions } = useMockData();
   return (
     <div className={style.writerInfo}>
       <Image
@@ -42,7 +39,7 @@ function WriterInfo({ isMarked }: { isMarked?: boolean }) {
         <div className={style.about}>
           {isMarked ? (
             <>
-              {options.map(({ href, title }) => (
+              {markedOptions.map(({ href, title }) => (
                 <Link href={href} key={href}>
                   <Title title={title} withRectangle={path === href} />
                 </Link>

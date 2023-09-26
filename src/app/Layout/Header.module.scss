@@ -82,6 +82,10 @@
 }
 @media (orientation: portrait) {
   .header {
+    .half {
+      width: 100%;
+      display: flex;
+    }
     .selected {
       display: none;
     }
