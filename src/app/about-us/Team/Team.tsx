@@ -33,7 +33,7 @@ function Member({ member }: { member: MemberT }) {
   );
 }
 
-function Team({ isWideScreen }: { isWideScreen: boolean }) {
+function Team() {
   return (
     <>
       <Title title='News Pulse Team' className={style.title} />

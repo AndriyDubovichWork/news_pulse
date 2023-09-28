@@ -14,7 +14,7 @@ function aboutUs() {
       <ArrowedLink current='About Us' />
       <Explanation isWideScreen={isWideScreen} />
       <Info isWideScreen={isWideScreen} />
-      <Team isWideScreen={isWideScreen} />
+      <Team />
     </div>
   );
 }

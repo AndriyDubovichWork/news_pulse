@@ -36,7 +36,6 @@ function Article({ article, isWide = false, isHigh = false }: ArticlePropsT) {
   return (
     <Link
       href={`/article?id=${article.asset_id}`}
-      // target='_blank'
       className={`${style.article} ${
         isWide && isWideScreen && style.wideArticle
       }`}

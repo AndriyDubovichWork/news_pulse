@@ -1,7 +1,28 @@
 import { FiUser } from 'react-icons/fi';
 import { IoExitOutline } from 'react-icons/io5';
-import SearchBar from '../components/styledInputs/SearchBar/SearchBar';
-import { BsBookmark, BsFillBookmarkFill } from 'react-icons/bs';
+import { BsBookmark } from 'react-icons/bs';
+
+function generateRandomChartData(size: number) {
+  let labels = [];
+  let data = [];
+
+  for (let i = 0; i <= size; i++) {
+    labels.push('');
+    data.push(Math.round(Math.random() * 10));
+  }
+
+  return {
+    labels: labels,
+    datasets: [
+      {
+        label: '',
+        data: data,
+        borderColor: '#FCC54C',
+        backgroundColor: '#FCC54C',
+      },
+    ],
+  };
+}
 
 function useMockData() {
   const AuthorsInstagram = [
@@ -68,6 +89,7 @@ function useMockData() {
     urls,
     categories,
     markedOptions,
+    randomChartData: generateRandomChartData(10),
   };
 }
 

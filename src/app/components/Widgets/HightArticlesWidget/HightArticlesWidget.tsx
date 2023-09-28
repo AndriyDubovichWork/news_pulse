@@ -22,12 +22,12 @@ function HightArticlesWidget({
   return (
     <div className={style.articles}>
       {lessNews.map((article, id) => {
-        const isLast = id === elementsNum - 1 && isWideScreen;
+        const isWide = id === elementsNum - 1 && isWideScreen;
         return (
           <Article
             article={article}
             isHigh={true}
-            isWide={isLast}
+            isWide={isWide}
             key={article.abstract}
           />
         );

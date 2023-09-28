@@ -14,7 +14,7 @@ type ArticleBodyPropsT = {
 
 async function ArticleBody({ article, news, width }: ArticleBodyPropsT) {
   const html = await getArticleByUrl(article.url);
-
+  // const { isWideScreen } = useWidth();
   return (
     <div className={style.body}>
       <Link target='_blank' href={article.url} className={style.url}>
@@ -22,7 +22,7 @@ async function ArticleBody({ article, news, width }: ArticleBodyPropsT) {
       </Link>
       <div
         dangerouslySetInnerHTML={{ __html: html }}
-        className={style.content}
+        className={`${style.content} ${!false && style.smallContent}`}
       />
       <PaginatedArticlesWidget
         width={width}

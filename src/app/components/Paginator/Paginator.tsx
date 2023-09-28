@@ -13,6 +13,8 @@ export default function Paginator({ shuffleNews }: PaginatorPropsT) {
     4
   );
 
+  const pages = Array.from(Array(boundaries.right + 1).keys());
+
   return (
     <div className={style.pagination}>
       <Button
@@ -23,11 +25,9 @@ export default function Paginator({ shuffleNews }: PaginatorPropsT) {
         }}
         disabled={disabled.left}
       />
-
-      <h4 className={style.page}>{boundaries.left + 1}</h4>
-      <h4 className={style.page}>{boundaries.left + 2}</h4>
-      <h4 className={style.page}>{boundaries.left + 3}</h4>
-      <h4 className={style.page}>{boundaries.right + 1}</h4>
+      {pages.map((page) => {
+        return <h4 className={style.page}>{page + 1}</h4>;
+      })}
 
       <Button
         value='next'

@@ -1,17 +1,14 @@
 import Image from 'next/image';
 import style from './Icon.module.scss';
 
-export default function Icon({
-  src,
-  name,
-  size = 40,
-  className,
-}: {
+type icon = {
   src: string;
   name: string;
   size?: number;
   className?: string;
-}) {
+};
+
+export default function Icon({ src, name, size = 40, className }: icon) {
   return (
     <Image
       width={size}

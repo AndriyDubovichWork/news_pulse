@@ -8,11 +8,7 @@ type CategoryT = {
 
 export default async function Category({ category }: CategoryT) {
   return (
-    <Link
-      href={`/categories/?category=${category}`}
-      className={style.category}
-      style={{}}
-    >
+    <Link href={`/categories/?category=${category}`} className={style.category}>
       <p className={style.text}>#{category}</p>
     </Link>
   );

@@ -4,21 +4,18 @@ import React from 'react';
 import style from './Posts.module.scss';
 import ArrowedLink from '@/app/components/ArrowedLink/ArrowedLink';
 import WriterInfo from '@/app/components/WriterInfo/WriterInfo';
-import GridArticles from '@/app/components/GridArticles/GridArticles';
 import PaginatedArticlesWidget from '@/app/components/Widgets/PaginatedArticlesWidget/PaginatedArticlesWidget';
 import shuffleArray from '@/app/lib/shuffleArray';
 import useGetData from '@/app/hooks/useGetData';
 import WeatherChart from '@/app/components/Widgets/WeatherWidget/WeatherOfUser/WeatherChart/WeatherChart';
-import useWeatherOfUserData from '@/app/hooks/useWeatherOfUserData';
-import Loading from '@/app/loading';
-import useGenerateRandomChartData from '@/app/hooks/useGenerateRandomChartData';
 import Title from '@/app/components/Title/Title';
 import useWidth from '@/app/hooks/useWidth';
+import useMockData from '@/app/hooks/useMockData';
 
 function Posts() {
   const { news } = useGetData();
 
-  const chartData = useGenerateRandomChartData(10);
+  const { randomChartData } = useMockData();
   const { width } = useWidth();
   return (
     <main className={style.posts}>
@@ -27,7 +24,7 @@ function Posts() {
 
       <Title title='View Posts' />
 
-      <WeatherChart chartData={chartData} />
+      <WeatherChart chartData={randomChartData} />
 
       <PaginatedArticlesWidget
         width={width}
