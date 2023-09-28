@@ -2,20 +2,7 @@ import React from 'react';
 import style from './Team.module.scss';
 import Title from '@/app/components/Title/Title';
 import Image from 'next/image';
-
-type MemberT = {
-  position: string;
-  name: string;
-};
-
-const members: MemberT[] = [
-  { position: 'Designer', name: 'Behzad Pashaei' },
-  { position: 'Programmer', name: 'Cassie Evans' },
-  { position: 'Marketing', name: 'Louis Hoebregts' },
-  { position: 'Administrative', name: 'Patricia' },
-  { position: 'CEO', name: 'James Hoebregts' },
-  { position: 'Financial', name: 'Jon Kantner' },
-];
+import useMockData from '@/app/hooks/useMockData';
 
 function Member({ member }: { member: MemberT }) {
   return (
@@ -34,6 +21,8 @@ function Member({ member }: { member: MemberT }) {
 }
 
 function Team() {
+  const { members } = useMockData();
+
   return (
     <>
       <Title title='News Pulse Team' className={style.title} />

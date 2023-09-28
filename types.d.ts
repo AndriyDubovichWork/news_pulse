@@ -169,3 +169,8 @@ type Hour = {
   gust_kph: number;
   uv: number;
 };
+
+type MemberT = {
+  position: string;
+  name: string;
+};

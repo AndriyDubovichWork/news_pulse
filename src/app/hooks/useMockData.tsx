@@ -82,6 +82,15 @@ function useMockData() {
     { title: 'send post', href: '/profile/post' },
     { title: 'posts', href: '/profile/posts' },
   ];
+
+  const members: MemberT[] = [
+    { position: 'Designer', name: 'Behzad Pashaei' },
+    { position: 'Programmer', name: 'Cassie Evans' },
+    { position: 'Marketing', name: 'Louis Hoebregts' },
+    { position: 'Administrative', name: 'Patricia' },
+    { position: 'CEO', name: 'James Hoebregts' },
+    { position: 'Financial', name: 'Jon Kantner' },
+  ];
   return {
     comments,
     AuthorsInstagram,
@@ -90,6 +99,7 @@ function useMockData() {
     categories,
     markedOptions,
     randomChartData: generateRandomChartData(10),
+    members,
   };
 }
 
