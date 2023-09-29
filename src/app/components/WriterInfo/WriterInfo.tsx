@@ -11,8 +11,12 @@ import Title from '../Title/Title';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import useMockData from '@/app/hooks/useMockData';
+import { Session } from 'next-auth';
+import randomNumStrFormat from '@/app/lib/generateRandomNumberInStringFormat';
 
-function WriterInfo({ isMarked }: { isMarked?: boolean }) {
+type writerInfo = { isMarked?: boolean; session?: Session };
+
+function WriterInfo({ isMarked, session }: writerInfo) {
   const path = usePathname();
   const { markedOptions } = useMockData();
   return (
@@ -30,10 +34,15 @@ function WriterInfo({ isMarked }: { isMarked?: boolean }) {
             className={style.userImg}
             width={75}
             height={75}
-            alt='user Image'
-            src={`https://random.imagecdn.app/75/75/?avoidCachingSoItwillBeDifferentImages=userImage`}
+            alt={session?.user?.name || 'user Image'}
+            src={
+              session?.user?.image ||
+              `https://random.imagecdn.app/75/75/?avoidCachingSoItwillBeDifferentImages=userImage`
+            }
           />
-          <p className={style.name}>Andriy Dubovich</p>
+          <p className={style.name}>
+            {session?.user?.name || 'Andriy Dubovich'}
+          </p>
         </div>
 
         <div className={style.about}>
@@ -47,11 +56,17 @@ function WriterInfo({ isMarked }: { isMarked?: boolean }) {
             </>
           ) : (
             <>
-              <IconWithText icon={<AiOutlineStar />} text='Rate : 4.2' />
-              <IconWithText icon={<AiOutlineUser />} text='Follower : 1.2k' />
+              <IconWithText
+                icon={<AiOutlineStar />}
+                text={'Rate : ' + randomNumStrFormat(3, 5)}
+              />
+              <IconWithText
+                icon={<AiOutlineUser />}
+                text={'Follower : ' + randomNumStrFormat(10_000, 500_000)}
+              />
               <IconWithText
                 icon={<BsFillFileEarmarkPostFill />}
-                text='Post : 29'
+                text={'Post : ' + randomNumStrFormat(10, 200)}
               />
             </>
           )}

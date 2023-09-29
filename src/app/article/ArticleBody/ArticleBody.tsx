@@ -5,6 +5,7 @@ import PaginatedArticlesWidget from '@/app/components/Widgets/PaginatedArticlesW
 import getArticleByUrl from '@/app/api/requests/getArticleByUrl';
 import Link from 'next/link';
 import useWidth from '@/app/hooks/useWidth';
+import Share from '@/app/components/Share/Share';
 
 type ArticleBodyPropsT = {
   article: ArticleT;
@@ -17,6 +18,7 @@ async function ArticleBody({ article, news, width }: ArticleBodyPropsT) {
   // const { isWideScreen } = useWidth();
   return (
     <div className={style.body}>
+      {html && <Share url={article.url} quote={article.title} />}
       <Link target='_blank' href={article.url} className={style.url}>
         Original Article
       </Link>
@@ -24,6 +26,8 @@ async function ArticleBody({ article, news, width }: ArticleBodyPropsT) {
         dangerouslySetInnerHTML={{ __html: html }}
         className={`${style.content} ${!false && style.smallContent}`}
       />
+      {html && <Share url={article.url} quote={article.title} />}
+
       <PaginatedArticlesWidget
         width={width}
         news={news}

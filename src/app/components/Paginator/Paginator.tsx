@@ -26,7 +26,11 @@ export default function Paginator({ shuffleNews }: PaginatorPropsT) {
         disabled={disabled.left}
       />
       {pages.map((page) => {
-        return <h4 className={style.page}>{page + 1}</h4>;
+        return (
+          <h4 key={page} className={style.page}>
+            {page + 1}
+          </h4>
+        );
       })}
 
       <Button
