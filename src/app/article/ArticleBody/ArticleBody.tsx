@@ -4,8 +4,8 @@ import style from './ArticleBody.module.scss';
 import PaginatedArticlesWidget from '@/app/components/Widgets/PaginatedArticlesWidget/PaginatedArticlesWidget';
 import getArticleByUrl from '@/app/api/requests/getArticleByUrl';
 import Link from 'next/link';
-import useWidth from '@/app/hooks/useWidth';
-import Share from '@/app/components/Share/Share';
+import Share from '@/app/components/styledInputs/Share/Share';
+import Like from '@/app/components/styledInputs/Like/Like';
 
 type ArticleBodyPropsT = {
   article: ArticleT;
@@ -15,10 +15,17 @@ type ArticleBodyPropsT = {
 
 async function ArticleBody({ article, news, width }: ArticleBodyPropsT) {
   const html = await getArticleByUrl(article.url);
-  // const { isWideScreen } = useWidth();
+
+  const shareAndLike = (
+    <div className={style.shareAndLike}>
+      <Share url={article.url} quote={article.title} />
+      <Like />
+    </div>
+  );
+
   return (
     <div className={style.body}>
-      {html && <Share url={article.url} quote={article.title} />}
+      {html && shareAndLike}
       <Link target='_blank' href={article.url} className={style.url}>
         Original Article
       </Link>
@@ -26,7 +33,7 @@ async function ArticleBody({ article, news, width }: ArticleBodyPropsT) {
         dangerouslySetInnerHTML={{ __html: html }}
         className={`${style.content} ${!false && style.smallContent}`}
       />
-      {html && <Share url={article.url} quote={article.title} />}
+      {html && shareAndLike}
 
       <PaginatedArticlesWidget
         width={width}

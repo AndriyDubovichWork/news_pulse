@@ -1,0 +1,44 @@
+@import './../../../vars.scss';
+
+.active,
+.inactive {
+  cursor: pointer;
+  font-size: 40px;
+}
+.inactive {
+  color: $mainText;
+}
+.inactive:hover {
+  color: $TinedText;
+}
+.active {
+  color: $highLightedText;
+  animation: shake 600ms forwards;
+}
+.active:hover {
+  color: $highLightedTinnedText;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateY(-9px);
+  }
+  35% {
+    transform: translateY(-9px) rotate(17deg);
+  }
+  55% {
+    transform: translateY(-9px) rotate(-17deg);
+  }
+  65% {
+    transform: translateY(-9px) rotate(17deg);
+  }
+  75% {
+    transform: translateY(-9px) rotate(-17deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0);
+  }
+}

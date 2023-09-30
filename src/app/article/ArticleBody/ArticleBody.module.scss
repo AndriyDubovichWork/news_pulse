@@ -2,22 +2,36 @@
 
 .body {
   text-align: center;
+  .shareAndLike {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+  }
   .url {
     color: $highLightedText;
     text-decoration: underline;
     font-size: 2rem;
-    padding: 20vh 0;
+    margin: 20vh 0;
   }
   .content {
     width: 60vw;
     margin: 0 auto;
 
     text-align: center;
+
+    ul {
+      list-style: none;
+    }
   }
   .smallContent {
     width: 80vw;
+    ul {
+      list-style: none;
+    }
   }
   img {
+    height: 100%;
     width: 100%;
   }
 }
