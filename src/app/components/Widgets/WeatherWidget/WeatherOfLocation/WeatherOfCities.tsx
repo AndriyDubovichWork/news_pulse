@@ -1,6 +1,5 @@
 import React from 'react';
 import CityWeather from './CityWeather/CityWeather';
-import style from './WeatherOfCities.module.scss';
 type WeatherOfCitiesT = {
   citiesWeather: WeatherT[];
   isMetric: boolean;

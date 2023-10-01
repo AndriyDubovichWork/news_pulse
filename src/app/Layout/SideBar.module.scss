@@ -6,6 +6,7 @@
 
   margin: 2vh auto;
   header {
+    cursor: pointer;
     .title {
       color: $highLightedText;
       font-size: 2rem;
@@ -33,6 +34,7 @@
     align-items: center;
   }
   .content {
+    cursor: pointer;
     .link {
       margin: 2vh 0;
     }

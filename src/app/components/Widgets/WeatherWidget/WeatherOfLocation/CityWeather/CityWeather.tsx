@@ -1,8 +1,7 @@
 import React from 'react';
 import style from './CityWeather.module.scss';
-import dateToWeekName from '@/app/lib/dateToWeekName';
-import dateToHour from '@/app/lib/dateToHour';
 import { Conditions, PlaceTime, Temp } from '../../Reusable';
+
 type CityWeatherT = {
   weather: WeatherT;
   isMetric: boolean;
@@ -14,7 +13,6 @@ export default function CityWeather({
   isMetric,
   switchIsMetric,
 }: CityWeatherT) {
-  const id = Math.random();
   return (
     <div className={style.city}>
       <div className={style.conditionNTime}>
