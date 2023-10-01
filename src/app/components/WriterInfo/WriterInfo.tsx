@@ -13,6 +13,7 @@ import { usePathname } from 'next/navigation';
 import useMockData from '@/app/hooks/useMockData';
 import { Session } from 'next-auth';
 import randomNumStrFormat from '@/app/lib/generateRandomNumberInStringFormat';
+import useWidth from '@/app/hooks/useWidth';
 
 type writerInfo = { isMarked?: boolean; session?: Session };
 
@@ -20,6 +21,9 @@ function WriterInfo({ isMarked, session }: writerInfo) {
   const path = usePathname();
   const { markedOptions } = useMockData();
   const [isFollowed, setIsFollowed] = useState(false);
+
+  const { isWideScreen } = useWidth();
+
   return (
     <div className={style.writerInfo}>
       <Image
@@ -29,7 +33,7 @@ function WriterInfo({ isMarked, session }: writerInfo) {
         alt='Image Banner'
         src={`https://random.imagecdn.app/1491/150/?avoidCachingSoItwillBeDifferentImages=bannerImage`}
       />
-      <div className={style.writer}>
+      <div className={`${style.writer} ${!isWideScreen && style.small}`}>
         <div className={style.user}>
           <Image
             className={style.userImg}

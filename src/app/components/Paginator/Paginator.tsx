@@ -12,8 +12,10 @@ export default function Paginator({ shuffleNews }: PaginatorPropsT) {
     9,
     4
   );
-
-  const pages = Array.from(Array(boundaries.right + 1).keys());
+  const pages = [];
+  for (let i = boundaries.left; i <= boundaries.right; i++) {
+    pages.push(i);
+  }
 
   return (
     <div className={style.pagination}>
