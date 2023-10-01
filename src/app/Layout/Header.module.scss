@@ -8,7 +8,12 @@
   justify-content: space-between;
 
   align-items: center;
+  .hamburger {
+    width: 20px;
+    height: 20px;
 
+    display: none;
+  }
   .selected {
     color: $highLightedText;
   }
@@ -85,12 +90,16 @@
     .half {
       width: 100%;
       display: flex;
+      justify-content: space-between;
     }
     .selected {
       display: none;
     }
     .url {
       display: none;
+    }
+    .hamburger {
+      display: block;
     }
   }
 }

@@ -1,0 +1,44 @@
+@import './../vars.scss';
+
+.sideBar {
+  width: $defaultWidth;
+  height: 100vh;
+
+  margin: 2vh auto;
+  header {
+    .title {
+      color: $highLightedText;
+      font-size: 2rem;
+    }
+    .title:hover {
+      color: $highLightedTinnedText;
+    }
+
+    .close {
+      padding: 10px;
+      font-size: 20px;
+      border-radius: $borderRadius;
+      box-sizing: content-box;
+      background-color: $secondaryBackground;
+    }
+    .close:hover,
+    .close:focus {
+      background-color: $secondaryBackgroundTransparent;
+    }
+
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .content {
+    .link {
+      margin: 2vh 0;
+    }
+    .link:hover,
+    .link:focus {
+      color: $TinedText;
+    }
+  }
+}

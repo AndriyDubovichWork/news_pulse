@@ -2,7 +2,6 @@ import React from 'react';
 import CategoriesWidget from './CategoriesWidget/CategoriesWidget';
 import HightArticlesWidget from './HightArticlesWidget/HightArticlesWidget';
 import PaginatedArticlesWidget from './PaginatedArticlesWidget/PaginatedArticlesWidget';
-import FootBallWidget from './FootBallWidget/FootBallWidget';
 import WeatherWidget from './WeatherWidget/WeatherWidget';
 import NewPosts from './NewPosts/NewPosts';
 import shuffleArray from '@/app/lib/shuffleArray';
@@ -38,8 +37,6 @@ function Widgets({
         title='Popular Posts'
         news={shuffleArray(news)}
       />
-
-      {/* <FootBallWidget /> */}
 
       <NewPosts news={news} isWideScreen={isWideScreen} />
 

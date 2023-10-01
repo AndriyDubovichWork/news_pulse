@@ -7,7 +7,7 @@ import Explanation from './Explanation/Explanation';
 import Info from './Info/Info';
 import Team from './Team/Team';
 import useWidth from '../hooks/useWidth';
-function aboutUs() {
+export default function AboutUs() {
   const { isWideScreen } = useWidth();
   return (
     <div className={style.aboutUs}>
@@ -18,5 +18,3 @@ function aboutUs() {
     </div>
   );
 }
-
-export default aboutUs;

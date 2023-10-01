@@ -9,11 +9,16 @@ import { IoIosArrowDown } from 'react-icons/io';
 import Icon from '../components/Icon/Icon';
 import IconWithText from '../components/IconWithText/IconWithText';
 import { usePathname } from 'next/navigation';
-import { signIn, signOut, useSession } from 'next-auth/react';
+import { signIn, useSession } from 'next-auth/react';
 import Button from '../components/styledInputs/Button/Button';
 import useMockData from '../hooks/useMockData';
+import { GiHamburgerMenu } from 'react-icons/gi';
 
-export default function Header() {
+type header = {
+  setIsSidebarOpen: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+export default function Header({ setIsSidebarOpen }: header) {
   const path = usePathname();
 
   const [isMarked, setIsMarked] = useState(false);
@@ -22,9 +27,15 @@ export default function Header() {
   const { dropDowns, urls } = useMockData();
 
   const { data: session } = useSession();
+
   return (
     <header className={style.header}>
       <div className={style.half}>
+        <GiHamburgerMenu
+          className={style.hamburger}
+          onClick={() => setIsSidebarOpen(true)}
+        />
+
         {urls.map(({ href, text }) => (
           <Link
             key={href}
