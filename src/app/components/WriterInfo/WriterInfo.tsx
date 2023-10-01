@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import Button from '../styledInputs/Button/Button';
 import IconWithText from '../IconWithText/IconWithText';
 import { AiOutlineStar, AiOutlineUser } from 'react-icons/ai';
@@ -19,6 +19,7 @@ type writerInfo = { isMarked?: boolean; session?: Session };
 function WriterInfo({ isMarked, session }: writerInfo) {
   const path = usePathname();
   const { markedOptions } = useMockData();
+  const [isFollowed, setIsFollowed] = useState(false);
   return (
     <div className={style.writerInfo}>
       <Image
@@ -77,11 +78,16 @@ function WriterInfo({ isMarked, session }: writerInfo) {
             <Button
               isHihglighted={false}
               value={'Edit Profile'}
-              className={style.button}
+              style={{ alignSelf: 'center' }}
             />
           </Link>
         ) : (
-          <Button value={'+ Follow'} className={style.button} />
+          <Button
+            value={isFollowed ? 'followed' : '+ Follow'}
+            isHihglighted={!isFollowed}
+            style={{ alignSelf: 'center' }}
+            onClick={() => setIsFollowed(!isFollowed)}
+          />
         )}
       </div>
     </div>

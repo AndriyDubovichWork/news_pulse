@@ -22,11 +22,13 @@ export async function GET(request: Request) {
   if (url) {
     const html = await getHtml(url);
     const $ = cheerio.load(html);
+
     $('#top-wrapper').remove();
     $('#sponsor-wrapper').remove();
     $('[role=toolbar]').remove();
     $('#bottom-wrapper').remove();
     $('svg').remove();
+    $('div[data-testid="lazyimage-container"]').remove();
 
     const articleHtml = $('#story').toString();
 
