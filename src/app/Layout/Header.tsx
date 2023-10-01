@@ -82,10 +82,10 @@ export default function Header() {
         <Link
           href='/profile/marked'
           className={style.icon}
-          // onMouseDown={() => {
-          //   setIsMarked(true);
-          // }}
-          onMouseUp={() => {
+          onMouseEnter={() => {
+            setIsMarked(true);
+          }}
+          onMouseLeave={() => {
             setIsMarked(false);
           }}
         >
