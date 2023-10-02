@@ -1,5 +1,11 @@
 @import './../../../vars.scss';
 
+.likesContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
 .active,
 .inactive {
   cursor: pointer;
