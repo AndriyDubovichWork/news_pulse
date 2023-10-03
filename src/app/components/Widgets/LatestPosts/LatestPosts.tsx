@@ -2,6 +2,7 @@ import React from 'react';
 import style from './LatestPosts.module.scss';
 import Article from '../../Article/Article';
 import Title from '../../Title/Title';
+import HighArticle from '../../Article/HighArticle';
 
 type LatestPostsPropsT = {
   news: NewsT;
@@ -29,12 +30,20 @@ export default function LatestPosts({
               className={isFirst ? style.video : style.article}
               key={article.abstract}
             >
-              <Article
-                article={article}
-                isHigh={isFirst}
-                isWide={isWideScreen || isFirst}
-                key={article.abstract}
-              />
+              {isFirst ? (
+                <HighArticle
+                  news={news}
+                  article={article}
+                  isWide
+                  key={article.abstract}
+                />
+              ) : (
+                <Article
+                  article={article}
+                  isWide={isWideScreen}
+                  key={article.abstract}
+                />
+              )}
             </div>
           );
         })}

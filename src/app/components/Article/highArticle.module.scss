@@ -1,0 +1,117 @@
+@import './../../vars.scss';
+
+.wideArticle {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  .text {
+    display: flex;
+    justify-content: space-around;
+    padding-left: 2vw;
+  }
+}
+.highArticle {
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+  width: 320px;
+  width: 40%;
+
+  .image {
+    width: 100%;
+
+    border-radius: $borderRadius;
+
+    background-color: #222;
+    animation-name: pulse;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+
+    object-fit: cover;
+  }
+  .text {
+    border-radius: $borderRadius;
+
+    background-color: $secondaryBackgroundTransparent;
+
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translate(-50%, 0);
+
+    z-index: 2;
+
+    width: 85%;
+
+    padding: 16px;
+
+    .title {
+      font-size: 16px;
+
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-bottom: 16px;
+    }
+    .abstract {
+      font-size: 14px;
+
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+  }
+  .arrows {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 0);
+
+    width: 95%;
+
+    .arrow {
+      background-color: $secondaryBackground;
+      padding: 12px;
+      box-sizing: content-box;
+      border-radius: $borderRadius;
+      border: 0;
+    }
+    .arrow:hover {
+      background-color: $secondaryBackgroundTransparent;
+    }
+    .arrow:disabled {
+      background-color: $mainBackground;
+    }
+    display: flex;
+    justify-content: space-between;
+
+    z-index: 3;
+
+    color: $mainText;
+  }
+}
+
+.highNWideArticle {
+  width: 100%;
+  width: 2fr;
+
+  grid-area: 1 / 3 / 2 / 5;
+
+  .image {
+    width: 100%;
+  }
+}
+@keyframes pulse {
+  0% {
+    background-color: #4f4f4f;
+  }
+  50% {
+    background-color: #969696;
+  }
+  100% {
+    background-color: #4f4f4f;
+  }
+}
