@@ -3,6 +3,8 @@
 import { useState, useEffect } from 'react';
 import Article from '../../Article/Article';
 import style from './HightArticlesWidget.module.scss';
+import HighArticle from '../../Article/HighArticle';
+import usePaginationBoundaries from '@/app/hooks/usePaginationBoundaries';
 
 type HightArticlesWidgetT = {
   news: NewsT;
@@ -22,11 +24,11 @@ function HightArticlesWidget({
   return (
     <div className={style.articles}>
       {lessNews.map((article, id) => {
-        const isWide = id === elementsNum - 1 && isWideScreen;
+        const isWide = id === 0;
         return (
-          <Article
+          <HighArticle
+            news={news}
             article={article}
-            isHigh={true}
             isWide={isWide}
             key={article.abstract}
           />

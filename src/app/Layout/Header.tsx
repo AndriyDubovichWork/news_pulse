@@ -3,7 +3,6 @@
 import React, { useState } from 'react';
 import style from './header.module.scss';
 import Link from 'next/link';
-import { BsBookmark, BsFillBookmarkFill } from 'react-icons/bs';
 import { IoIosArrowDown } from 'react-icons/io';
 
 import Icon from '../components/Icon/Icon';
@@ -13,6 +12,7 @@ import { signIn, useSession } from 'next-auth/react';
 import Button from '../components/styledInputs/Button/Button';
 import useMockData from '../hooks/useMockData';
 import { GiHamburgerMenu } from 'react-icons/gi';
+import Marked from '../components/styledInputs/Marked/Marked';
 
 type header = {
   setIsSidebarOpen: React.Dispatch<React.SetStateAction<boolean>>;
@@ -21,7 +21,6 @@ type header = {
 export default function Header({ setIsSidebarOpen }: header) {
   const path = usePathname();
 
-  const [isMarked, setIsMarked] = useState(false);
   const [showDropDown, setShowDropDown] = useState(false);
 
   const { dropDowns, urls } = useMockData();
@@ -90,18 +89,7 @@ export default function Header({ setIsSidebarOpen }: header) {
         ) : (
           <Button onClick={() => signIn()} value='Login' />
         )}
-        <Link
-          href='/profile/marked'
-          className={style.icon}
-          onMouseEnter={() => {
-            setIsMarked(true);
-          }}
-          onMouseLeave={() => {
-            setIsMarked(false);
-          }}
-        >
-          {isMarked ? <BsFillBookmarkFill /> : <BsBookmark />}
-        </Link>
+        <Marked />
       </div>
     </header>
   );

@@ -14,7 +14,7 @@ function NewPosts({ news, isWideScreen }: NewPostsPropsT) {
   const visibleNews = news.slice(0, 6);
 
   return (
-    <>
+    <div className={style.newPostsContainer}>
       <div className={style.header}>
         <Title title='New Posts' />
         <Link href={'/hello'} className={style.more}>
@@ -33,7 +33,7 @@ function NewPosts({ news, isWideScreen }: NewPostsPropsT) {
           );
         })}
       </div>
-    </>
+    </div>
   );
 }
 

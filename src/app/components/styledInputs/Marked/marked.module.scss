@@ -1,0 +1,12 @@
+@import './../../../vars.scss';
+
+.marked {
+  display: flex;
+  align-items: center;
+  background-color: $secondaryBackground;
+  padding: 10px;
+  border-radius: $borderRadius;
+}
+.hoverable:hover {
+  background-color: $secondaryBackgroundTransparent;
+}

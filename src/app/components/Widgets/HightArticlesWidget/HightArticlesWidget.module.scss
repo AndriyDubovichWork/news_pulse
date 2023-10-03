@@ -1,9 +1,10 @@
 .articles {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  grid-template-rows: 1fr;
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
+  display: flex;
+  justify-content: space-around;
+  gap: 30px;
+  // grid-template-rows: 1fr;
+  // grid-column-gap: 0px;
+  // grid-row-gap: 0px;
 
-  justify-items: center;
+  // justify-items: center;
 }

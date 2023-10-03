@@ -73,16 +73,6 @@
         }
       }
     }
-    .icon {
-      display: flex;
-      align-items: center;
-      background-color: $secondaryBackground;
-      padding: 10px;
-      border-radius: $borderRadius;
-    }
-    .icon:hover {
-      background-color: $secondaryBackgroundTransparent;
-    }
   }
 }
 @media (orientation: portrait) {

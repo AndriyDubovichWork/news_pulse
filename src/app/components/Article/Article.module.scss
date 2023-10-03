@@ -3,6 +3,7 @@
 .article {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   .image {
     border-radius: $borderRadius;
 
@@ -16,6 +17,7 @@
   .text {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     width: 340px;
 
     .title {
@@ -35,13 +37,43 @@
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
     }
-    .byline {
-      color: $TinedText;
-      font-size: 12px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 18px;
-      letter-spacing: 0.25px;
+    .author {
+      border-radius: $borderRadius;
+
+      width: 100%;
+
+      padding: 14px 16px;
+
+      display: flex;
+
+      justify-self: flex-end;
+      // align-self: flex-end;
+      justify-content: space-between;
+
+      align-items: center;
+
+      background-color: $secondaryBackground;
+      .about {
+        display: flex;
+        flex-direction: column;
+
+        .byLine {
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 22px;
+          letter-spacing: 0.1px;
+        }
+        .date {
+          color: $TinedText;
+
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 18px;
+          letter-spacing: 0.25px;
+        }
+      }
     }
   }
 }
@@ -49,7 +81,10 @@
 .wideArticle {
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
   .text {
+    display: flex;
+    justify-content: space-around;
     padding-left: 2vw;
   }
 }
@@ -59,8 +94,11 @@
   justify-content: center;
 
   width: 320px;
+  width: 40%;
 
   .image {
+    width: 100%;
+
     border-radius: $borderRadius;
 
     background-color: #222;
@@ -107,10 +145,14 @@
 }
 
 .highNWideArticle {
-  width: 690px;
+  width: 100%;
   width: 2fr;
 
   grid-area: 1 / 3 / 2 / 5;
+
+  .image {
+    width: 100%;
+  }
 }
 @keyframes pulse {
   0% {

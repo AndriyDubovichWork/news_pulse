@@ -1,32 +1,36 @@
 @import './../../../vars.scss';
 
-.header {
-  display: flex;
-  flex-direction: row;
+.newPostsContainer {
+  margin: 20px 0;
 
-  justify-content: space-between;
-
-  .more {
-    border-radius: $borderRadius;
-
+  .header {
     display: flex;
-    align-items: center;
+    flex-direction: row;
 
-    background-color: $secondaryBackground;
-    padding: 10px 16px 10px 24px;
+    justify-content: space-between;
+
+    .more {
+      border-radius: $borderRadius;
+
+      display: flex;
+      align-items: center;
+
+      background-color: $secondaryBackground;
+      padding: 10px 16px 10px 24px;
+    }
   }
-}
 
-.newPosts {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(680px, 1fr));
-  grid-template-rows: repeat(3, 1fr);
-  grid-row-gap: 24px;
-  width: 100%;
-  margin: 5vh 0;
-}
-.small {
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-  justify-self: center;
-  justify-items: center;
+  .newPosts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(680px, 1fr));
+    grid-template-rows: repeat(3, 1fr);
+    grid-row-gap: 24px;
+    width: 100%;
+    margin: 5vh 0;
+  }
+  .small {
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    justify-self: center;
+    justify-items: center;
+  }
 }
