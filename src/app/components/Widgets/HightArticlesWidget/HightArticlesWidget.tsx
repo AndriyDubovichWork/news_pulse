@@ -17,7 +17,7 @@ function HightArticlesWidget({
   news,
   isWideScreen,
 }: HightArticlesWidgetT) {
-  const shown = Math.floor(width / 500);
+  const shown = Math.floor(width / 500) || 1;
   const elementsNum = isWideScreen ? 3 : shown;
   const lessNews = news.slice(0, elementsNum);
 

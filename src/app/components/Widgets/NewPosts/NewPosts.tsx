@@ -11,7 +11,7 @@ type NewPostsPropsT = {
 };
 
 function NewPosts({ news, isWideScreen }: NewPostsPropsT) {
-  const visibleNews = news.slice(0, 6);
+  const visibleNews = news.slice(0, 8);
 
   return (
     <div className={style.newPostsContainer}>

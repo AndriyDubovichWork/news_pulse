@@ -14,8 +14,8 @@ export default function LatestPosts({
   width,
   isWideScreen,
 }: LatestPostsPropsT) {
-  const fittingElements = Math.floor(width / 700) || 1;
-  const elementsNum = isWideScreen ? 3 : fittingElements;
+  const shown = Math.floor(width / 750) || 1;
+  const elementsNum = isWideScreen ? 3 : shown;
   const slicedNews = news.slice(0, elementsNum);
 
   return (
@@ -23,7 +23,7 @@ export default function LatestPosts({
       <Title title='Latest Posts' className={style.title} />
       <div className={`${style.latest} ${!isWideScreen && style.small}`}>
         {slicedNews.map((article, id) => {
-          const isFirst = isWideScreen && id === 0;
+          const isFirst = id === 0;
           return (
             <div
               className={isFirst ? style.video : style.article}
@@ -32,7 +32,7 @@ export default function LatestPosts({
               <Article
                 article={article}
                 isHigh={isFirst}
-                isWide={isWideScreen}
+                isWide={isWideScreen || isFirst}
                 key={article.abstract}
               />
             </div>
