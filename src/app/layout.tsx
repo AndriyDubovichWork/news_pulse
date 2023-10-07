@@ -7,9 +7,9 @@ import Footer from './Layout/Footer';
 import { SessionProvider } from 'next-auth/react';
 import SideBar from './Layout/SideBar';
 
-export const metadata: Metadata = {
-  title: 'news pulse',
-};
+// export const metadata: Metadata = {
+//   title: 'news pulse',
+// };
 
 export default function RootLayout({
   children,
