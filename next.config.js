@@ -3,9 +3,9 @@ const nextConfig = {
   experimental: {
     allowMiddlewareResponseBody: true,
   },
-  output: 'export',
+  // output: 'export',
   images: {
-    unoptimized: true,
+    // unoptimized: true,
     // formats: ['image/avif', 'image/webp'],
     remotePatterns: [
       {
