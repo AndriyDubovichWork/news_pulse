@@ -1,6 +1,6 @@
-import React from "react";
-import Input from "../Input/Input";
-import style from "./Button.module.scss";
+import React from 'react';
+import Input from '../Input/Input';
+import style from './Button.module.scss';
 
 function Button({
   value,
@@ -11,7 +11,7 @@ function Button({
   return (
     <Input
       {...props}
-      type="button"
+      type='button'
       value={value}
       className={`${
         isHihglighted ? style.highLightedButton : style.button
