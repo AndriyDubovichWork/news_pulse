@@ -6,13 +6,13 @@ import Link from 'next/link';
 import { IoIosArrowDown } from 'react-icons/io';
 
 import Icon from '../components/Icon/Icon';
-import IconWithText from '../components/IconWithText/IconWithText';
 import { usePathname } from 'next/navigation';
 import { signIn, useSession } from 'next-auth/react';
 import Button from '../components/styledInputs/Button/Button';
 import useMockData from '../hooks/useMockData';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import Marked from '../components/styledInputs/Marked/Marked';
+import DropDown from '../components/styledInputs/DropDown/DropDown';
 
 type header = {
   setIsSidebarOpen: React.Dispatch<React.SetStateAction<boolean>>;
@@ -23,7 +23,7 @@ export default function Header({ setIsSidebarOpen }: header) {
 
   const [showDropDown, setShowDropDown] = useState(false);
 
-  const { dropDowns, urls } = useMockData();
+  const { urls } = useMockData();
 
   const { data: session } = useSession();
 
@@ -70,21 +70,7 @@ export default function Header({ setIsSidebarOpen }: header) {
             <p className={style.name}>{session?.user?.name}</p>
 
             <IoIosArrowDown />
-            {showDropDown && (
-              <div className={style.dropDown}>
-                {dropDowns.map(({ href, icon, text }) => {
-                  return (
-                    <Link key={href} href={href} className={style.Link}>
-                      <IconWithText
-                        icon={icon}
-                        text={text}
-                        textClassName={style.Link}
-                      />
-                    </Link>
-                  );
-                })}
-              </div>
-            )}
+            {showDropDown && <DropDown />}
           </div>
         ) : (
           <Button onClick={() => signIn()} value='Login' />

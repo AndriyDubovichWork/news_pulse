@@ -5,11 +5,17 @@ type iconWithText = {
   text: string;
   icon: ReactElement<any, any>;
   textClassName?: string;
+  containerClassName?: string;
 };
 
-function IconWithText({ text, icon, textClassName }: iconWithText) {
+function IconWithText({
+  text,
+  icon,
+  containerClassName,
+  textClassName,
+}: iconWithText) {
   return (
-    <div className={`${style.elem} ${textClassName}`}>
+    <div className={`${style.elem} ${containerClassName}`}>
       {icon}
 
       <p className={`${style.text} ${textClassName}`}>{text}</p>

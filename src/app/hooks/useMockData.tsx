@@ -53,8 +53,8 @@ function useMockData() {
     },
   ];
   const dropDowns = [
-    { href: '/profile', icon: <FiUser size={24} />, text: 'Profile' },
-    { href: '/profile/marked', icon: <BsBookmark size={24} />, text: 'Marked' },
+    { href: '/profile', icon: <FiUser size={20} />, text: 'Profile' },
+    { href: '/profile/marked', icon: <BsBookmark size={20} />, text: 'Marked' },
     {
       href: '/api/auth/signout',
       icon: <IoExitOutline size={24} />,
