@@ -8,6 +8,7 @@ export default function Home() {
   const { weather, citiesWeather, news } = useGetData();
   const { width, isWideScreen } = useWidth();
   const isDataLoaded = weather && citiesWeather && news;
+  // console.log(isDataLoaded);
 
   return (
     <main className={style.home}>
