@@ -78,7 +78,7 @@ function WriterInfo({ isMarked, session }: writerInfo) {
         </div>
 
         {isMarked ? (
-          <Link href={'/profile/edit'}>
+          <Link href={'/profile/edit'} className={style.Button}>
             <Button
               isHihglighted={false}
               value={'Edit Profile'}
@@ -87,6 +87,7 @@ function WriterInfo({ isMarked, session }: writerInfo) {
           </Link>
         ) : (
           <Button
+            className={style.Button}
             value={isFollowed ? 'followed' : '+ Follow'}
             isHihglighted={!isFollowed}
             style={{ alignSelf: 'center' }}

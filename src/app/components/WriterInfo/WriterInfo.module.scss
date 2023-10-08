@@ -54,10 +54,20 @@
     grid-column-gap: 0px;
     grid-row-gap: 0px;
 
-    justify-items: center;
-    align-items: center;
+    // justify-items: center;
+    // align-items: center;
     .about {
+      justify-self: center;
+      align-self: center;
       grid-area: 1 / 1 / 2 / 3;
+    }
+    .user {
+      justify-self: flex-start;
+      align-self: center;
+    }
+    .Button {
+      justify-self: flex-end;
+      align-self: center;
     }
   }
 }
