@@ -1,6 +1,6 @@
 import React from 'react';
 import { AiOutlineClose } from 'react-icons/ai';
-import style from './sideBar.module.scss';
+import style from './SideBar.module.scss';
 import { useRouter } from 'next/navigation';
 import Title from '../components/Title/Title';
 

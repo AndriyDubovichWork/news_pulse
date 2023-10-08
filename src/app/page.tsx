@@ -1,6 +1,6 @@
 'use client';
 
-import style from './home.module.scss';
+import style from './Home.module.scss';
 import useGetData from './hooks/useGetData';
 import Widgets from './components/Widgets/Widgets';
 import useWidth from './hooks/useWidth';
