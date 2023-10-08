@@ -14,21 +14,24 @@ export default function useGetData() {
     setNews(shuffleArray(news));
   };
   useEffect(() => {
-    getMostPopularNews().then((fetchedNews) => {
-      setNews(fetchedNews);
-    });
-    getUserIp().then((ip) => {
-      getWeather(ip).then((res) => {
-        setWeather(res);
-      });
-    });
     Promise.all([
-      getWeather('London'),
-      getWeather('New York'),
-      getWeather('Paris'),
-      getWeather('Lviv'),
-    ]).then((values) => {
-      setCitiesWeather(values);
+      getMostPopularNews().then((fetchedNews) => {
+        setNews(fetchedNews);
+      }),
+      getUserIp().then((ip) => {
+        getWeather(ip).then((res) => {
+          setWeather(res);
+        });
+      }),
+      Promise.all([
+        getWeather('London'),
+        getWeather('New York'),
+        getWeather('Paris'),
+        getWeather('Lviv'),
+      ]).then((values) => {
+        setCitiesWeather(values);
+      }),
+    ]).then(() => {
       setIsDataLoaded(true);
     });
   }, []);
