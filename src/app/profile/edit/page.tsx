@@ -28,7 +28,7 @@ function ProfileEdit() {
         <UserInput
           input={<TextArea />}
           wideArea={'4 / 1 / 5 / 3'}
-          title='Add Banner'
+          title='Explanation'
         />
         <UserInput input={<FileInput />} title='Add Image' />
       </div>
