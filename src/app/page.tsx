@@ -1,14 +1,17 @@
 'use client';
-
+import { useState, useEffect } from 'react';
 import style from './Home.module.scss';
 import useGetData from './hooks/useGetData';
 import Widgets from './components/Widgets/Widgets';
 import useWidth from './hooks/useWidth';
 export default function Home() {
-  const { weather, citiesWeather, news } = useGetData();
+  const { weather, citiesWeather, news, isDataLoaded } = useGetData();
   const { width, isWideScreen } = useWidth();
-  const isDataLoaded = weather && citiesWeather && news;
+
   // console.log(isDataLoaded);
+  // useEffect(() => {
+  //   setIsDataLoaded(weather && citiesWeather && news);
+  // }, [weather, citiesWeather, news]);
 
   return (
     <main className={style.home}>
@@ -16,8 +19,8 @@ export default function Home() {
         <Widgets
           isWideScreen={isWideScreen}
           width={width}
-          weather={weather}
-          citiesWeather={citiesWeather}
+          weather={weather as WeatherT}
+          citiesWeather={citiesWeather as WeatherT[]}
           news={news}
         />
       )}

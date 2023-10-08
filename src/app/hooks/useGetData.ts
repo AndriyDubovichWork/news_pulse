@@ -8,6 +8,7 @@ export default function useGetData() {
   const [news, setNews] = useState<NewsT>([]);
   const [weather, setWeather] = useState<WeatherT>();
   const [citiesWeather, setCitiesWeather] = useState<WeatherT[]>();
+  const [isDataLoaded, setIsDataLoaded] = useState<boolean>(false);
 
   const shuffleNews = () => {
     setNews(shuffleArray(news));
@@ -28,8 +29,17 @@ export default function useGetData() {
       getWeather('Lviv'),
     ]).then((values) => {
       setCitiesWeather(values);
+      setIsDataLoaded(true);
     });
   }, []);
 
-  return { shuffleNews, news, setNews, weather, setWeather, citiesWeather };
+  return {
+    shuffleNews,
+    news,
+    setNews,
+    weather,
+    setWeather,
+    citiesWeather,
+    isDataLoaded,
+  };
 }
