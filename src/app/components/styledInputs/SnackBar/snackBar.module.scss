@@ -1,0 +1,11 @@
+@import './../../../vars.scss';
+
+.snackBar {
+  position: fixed;
+  bottom: 4%;
+  right: 2%;
+
+  padding: 4vh 4vw;
+
+  background-color: $secondaryBackground;
+}
