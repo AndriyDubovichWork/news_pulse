@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import style from './Header.module.scss';
+import style from './header.module.scss';
 import Link from 'next/link';
 import { IoIosArrowDown } from 'react-icons/io';
 
