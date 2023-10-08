@@ -174,3 +174,6 @@ type MemberT = {
   position: string;
   name: string;
 };
+
+declare module '*.scss';
+declare module '*.module.scss';
