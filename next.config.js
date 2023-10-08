@@ -1,5 +1,7 @@
+const withSass = require('@zeit/next-sass');
+
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+const nextConfig = withSass({
   experimental: {
     allowMiddlewareResponseBody: true,
   },
@@ -30,6 +32,6 @@ const nextConfig = {
       },
     ],
   },
-};
+});
 
 module.exports = nextConfig;
