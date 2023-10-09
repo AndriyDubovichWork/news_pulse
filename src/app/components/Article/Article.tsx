@@ -10,63 +10,11 @@ type ArticlePropsT = {
   article: ArticleT;
   isWide?: boolean;
   isHigh?: boolean;
-  moveRight?: () => void;
-  moveLeft?: () => void;
 };
 
-type high = {
-  article: ArticleT;
-  isWide: boolean;
-  moveRight?: () => void;
-  moveLeft?: () => void;
-  data: { url?: string };
-};
-
-function HighArticle({ article, isWide, data, moveLeft, moveRight }: high) {
-  return (
-    <Link
-      href={`/article?id=${article.asset_id}`}
-      // target='_blank'
-      className={`${style.highArticle} ${
-        isWide && style.wideArticle && style.highNWideArticle
-      }`}
-    >
-      <Image
-        height={452}
-        width={isWide ? 690 : 320}
-        className={style.image}
-        src={data.url || ArticlePlaceHolder.src}
-        alt={data.url || 'article img'}
-      />
-      <div className={`${isWide && style.textWide} ${style.text}`}>
-        <h3 className={style.title}>{article.title}</h3>
-        <p className={style.abstract}>{article.abstract}</p>
-      </div>
-    </Link>
-  );
-}
-
-function Article({
-  article,
-  isWide = false,
-  isHigh = false,
-  moveLeft,
-  moveRight,
-}: ArticlePropsT) {
+function Article({ article, isWide = false }: ArticlePropsT) {
   const data = article?.media?.[0]?.['media-metadata']?.[2];
   const { isWideScreen } = useWidth();
-
-  if (isHigh) {
-    return (
-      <HighArticle
-        article={article}
-        data={data}
-        isWide={isWide}
-        moveRight={moveRight}
-        moveLeft={moveLeft}
-      />
-    );
-  }
 
   return (
     <Link

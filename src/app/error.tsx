@@ -1,5 +1,6 @@
 'use client';
 import style from './Error.module.scss';
+import Button from './components/styledInputs/Button/Button';
 
 export default function Error({
   error,
@@ -13,7 +14,11 @@ export default function Error({
       <h2 className={style.message}>
         {error.message || 'Something went wrong!'}
       </h2>
-      <button onClick={() => reset()}>Try again</button>
+      <Button
+        onClick={() => reset()}
+        value={'Try again'}
+        className={style.button}
+      />
     </div>
   );
 }

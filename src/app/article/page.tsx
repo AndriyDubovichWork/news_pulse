@@ -7,7 +7,6 @@ import style from './Article.module.scss';
 import ArrowedLink from '../components/ArrowedLink/ArrowedLink';
 import ArticleBody from './ArticleBody/ArticleBody';
 import useGetData from '../hooks/useGetData';
-import Loading from '../loading';
 import useWidth from '../hooks/useWidth';
 
 export default function Article() {
@@ -29,9 +28,7 @@ export default function Article() {
 
   return (
     <>
-      {!article ? (
-        <Loading />
-      ) : (
+      {article && (
         <main className={style.article}>
           <ArrowedLink current={article.title} />
           <ArticleBody width={width} news={news} article={article} />

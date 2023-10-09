@@ -14,6 +14,9 @@ type ArticleBodyPropsT = {
 };
 
 async function ArticleBody({ article, news, width }: ArticleBodyPropsT) {
+  if (!article && news) {
+    throw new Error('could not find this article');
+  }
   const html = await getArticleByUrl(article.url);
 
   const shareAndLike = (

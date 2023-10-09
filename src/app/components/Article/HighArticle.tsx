@@ -30,7 +30,7 @@ function HighArticle({ article, isWide, news }: highArticle) {
         height={452}
         width={isWide ? 690 : 320}
         className={style.image}
-        src={data.url || ArticlePlaceHolder.src}
+        src={data?.url || ArticlePlaceHolder.src}
         alt={data.url || 'article img'}
       />
       {isWide && (

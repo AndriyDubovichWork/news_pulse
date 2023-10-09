@@ -1,7 +1,6 @@
 import axios from 'axios';
 import { NextResponse } from 'next/server';
 import * as cheerio from 'cheerio';
-import { useParams } from 'next/navigation';
 
 async function getHtml(url: string) {
   return await axios
@@ -11,6 +10,7 @@ async function getHtml(url: string) {
           'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36',
       },
     })
+
     .then((res) => res.data);
 }
 
