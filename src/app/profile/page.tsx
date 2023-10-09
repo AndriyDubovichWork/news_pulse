@@ -19,7 +19,7 @@ export default function User() {
   const { data: session } = useSession();
   return (
     <main className={style.user}>
-      <ArrowedLink current='Writer' />
+      <ArrowedLink current={session?.user?.name || 'Writer'} />
       <WriterInfo session={session as Session} />
 
       <div className={style.articles}>
