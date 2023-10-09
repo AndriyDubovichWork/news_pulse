@@ -13,6 +13,13 @@
     grid-column-gap: 24px;
     grid-row-gap: 24px;
   }
+
+  @media (orientation: portrait) {
+    .Inputs {
+      display: block;
+    }
+  }
+
   .Button {
     margin: 5vh 0;
     align-self: flex-end;
