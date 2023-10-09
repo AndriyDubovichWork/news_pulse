@@ -3,6 +3,7 @@ import getMostPopularNews from '../api/requests/getMostPopularNews';
 import getUserIp from '../api/requests/getUserIp';
 import getWeather from '../api/requests/getWeather';
 import shuffleArray from '../lib/shuffleArray';
+import useMockData from './useMockData';
 
 export default function useGetData() {
   const [news, setNews] = useState<NewsT>([]);

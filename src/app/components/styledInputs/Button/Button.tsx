@@ -8,18 +8,23 @@ import SnackBar from '../SnackBar/SnackBar';
 function Button({
   value,
   className,
-  snackBarMessage,
+  snackBar,
   isHihglighted = true,
   ...props
 }: {
   isHihglighted?: boolean;
-  snackBarMessage?: string;
+  snackBar?: { message: string; condition?: ConditionT };
 } & React.HTMLProps<HTMLInputElement>) {
   const [showSnackBar, setShowSnackBar] = useState(false);
   return (
     <>
       <Input
-        onClick={() => setShowSnackBar(true)}
+        onClick={() => {
+          setTimeout(() => {
+            setShowSnackBar(false);
+          }, 1000 * 5);
+          setShowSnackBar(true);
+        }}
         {...props}
         type='button'
         value={value}
@@ -27,9 +32,11 @@ function Button({
           isHihglighted ? style.highLightedButton : style.button
         } ${className}`}
       />
-      {showSnackBar && snackBarMessage && (
+      {snackBar?.message && (
         <SnackBar
-          message={snackBarMessage}
+          isShown={showSnackBar}
+          message={snackBar.message}
+          condition={snackBar.condition || 'positive'}
           close={() => setShowSnackBar(false)}
         />
       )}

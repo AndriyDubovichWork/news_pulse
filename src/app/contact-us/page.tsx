@@ -29,7 +29,7 @@ export default function ContactUs() {
         <UserInput input={<FileInput />} title='Add File' />
       </div>
 
-      <Button value='send' />
+      <Button value='send' snackBar={{ message: 'message sent' }} />
     </div>
   );
 }

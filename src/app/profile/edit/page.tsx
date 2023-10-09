@@ -55,7 +55,7 @@ function ProfileEdit() {
       <Button
         value='save'
         className={style.Button}
-        snackBarMessage={'snackBarMessage'}
+        snackBar={{ message: 'saved', condition: 'positive' }}
       />
     </main>
   );

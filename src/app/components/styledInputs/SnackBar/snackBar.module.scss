@@ -1,11 +1,50 @@
 @import './../../../vars.scss';
 
 .snackBar {
+  display: block;
+
+  border-radius: $borderRadius;
   position: fixed;
   bottom: 4%;
   right: 2%;
 
   padding: 4vh 4vw;
-
+  animation: appear 0.5s ease-out;
+  .close {
+    position: absolute;
+    top: 10%;
+    right: 5%;
+    cursor: pointer;
+  }
+  .close:hover {
+    color: $TinedText;
+  }
+}
+.hidden {
+  display: none;
+}
+.neutral {
   background-color: $secondaryBackground;
+}
+.positive {
+  background-color: $positive;
+}
+.negative {
+  background-color: $negative;
+}
+@keyframes appear {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+
+  1% {
+    display: block;
+    opacity: 0;
+  }
+
+  100% {
+    display: block;
+    opacity: 1;
+  }
 }

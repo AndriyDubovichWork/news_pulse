@@ -7,15 +7,9 @@ import useWidth from './hooks/useWidth';
 export default function Home() {
   const { weather, citiesWeather, news, isDataLoaded } = useGetData();
   const { width, isWideScreen } = useWidth();
-  const incorrectData = !weather || !citiesWeather || !news;
-  // console.log(isDataLoaded);
-  // useEffect(() => {
-  //   setIsDataLoaded(weather && citiesWeather && news);
-  // }, [weather, citiesWeather, news]);
-  if (isDataLoaded && incorrectData) {
-    throw new Error(
-      "couldn't load required data ,if multiple reloads didnt help wait for a minute and than reload"
-    );
+
+  if (isDataLoaded && !news) {
+    throw new Error("couldn't load news");
   }
   return (
     <main className={style.home}>

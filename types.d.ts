@@ -174,6 +174,6 @@ type MemberT = {
   position: string;
   name: string;
 };
-
+type ConditionT = 'neutral' | 'positive' | 'negative';
 // declare module '*.scss';
 // declare module '*.module.scss';

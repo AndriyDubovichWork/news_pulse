@@ -31,7 +31,7 @@ function HighArticle({ article, isWide, news }: highArticle) {
         width={isWide ? 690 : 320}
         className={style.image}
         src={data?.url || ArticlePlaceHolder.src}
-        alt={data.url || 'article img'}
+        alt={data?.url || 'article img'}
       />
       {isWide && (
         <div className={style.arrows}>

@@ -7,7 +7,6 @@ import Image from 'next/image';
 import IconWithText from '../components/IconWithText/IconWithText';
 import { AiOutlineStar, AiOutlineUser } from 'react-icons/ai';
 import { BsFillFileEarmarkPostFill } from 'react-icons/bs';
-import Button from '../components/styledInputs/Button/Button';
 import useGetData from '../hooks/useGetData';
 import GridArticles from '../components/GridArticles/GridArticles';
 import Paginator from '../components/Paginator/Paginator';

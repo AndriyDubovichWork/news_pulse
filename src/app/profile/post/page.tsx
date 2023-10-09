@@ -41,7 +41,11 @@ function SendPost() {
             isHihglighted={false}
             style={{ width: '5vw' }}
           />
-          <Button value={'Public'} style={{ width: '5vw' }} />
+          <Button
+            value={'Public'}
+            style={{ width: '5vw' }}
+            snackBar={{ message: 'published', condition: 'positive' }}
+          />
         </div>
       </div>
     </main>
