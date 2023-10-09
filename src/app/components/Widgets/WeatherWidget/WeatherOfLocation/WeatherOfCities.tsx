@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import CityWeather from './CityWeather/CityWeather';
 type WeatherOfCitiesT = {
   citiesWeather: WeatherT[];
@@ -18,16 +18,15 @@ export default function WeatherOfCities({
       {citiesWeather.map((cityWeather, id) => {
         const shouldShow = isWideScreen || id <= 1;
         return (
-          <>
+          <Fragment key={cityWeather.location.name}>
             {shouldShow && (
               <CityWeather
-                key={cityWeather.current.condition.code}
                 weather={cityWeather}
                 isMetric={isMetric}
                 switchIsMetric={switchIsMetric}
               />
             )}
-          </>
+          </Fragment>
         );
       })}
     </>

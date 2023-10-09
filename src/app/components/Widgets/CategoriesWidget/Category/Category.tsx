@@ -6,7 +6,7 @@ type CategoryT = {
   category: string;
 };
 
-export default async function Category({ category }: CategoryT) {
+export default function Category({ category }: CategoryT) {
   return (
     <Link href={`/categories/?category=${category}`} className={style.category}>
       <p className={style.text}>#{category}</p>
