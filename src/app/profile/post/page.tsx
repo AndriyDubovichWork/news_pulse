@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import style from './sendPost.module.scss';
 import ArrowedLink from '@/app/components/ArrowedLink/ArrowedLink';
@@ -8,13 +10,16 @@ import FileInput from '@/app/components/styledInputs/FileInput/FileInput';
 import TextArea from '@/app/components/styledInputs/TextArea/TextArea';
 import Button from '@/app/components/styledInputs/Button/Button';
 import Title from '@/app/components/Title/Title';
+import { useSession } from 'next-auth/react';
 
 function SendPost() {
+  const { data: session } = useSession();
+
   return (
     <main className={style.sendPost}>
       <ArrowedLink current='Profile Send Post' />
 
-      <WriterInfo isMarked />
+      <WriterInfo session={session} />
 
       <div className={style.inputs}>
         <UserInput input={<Input />} title='Title' />

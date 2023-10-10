@@ -15,11 +15,11 @@ import { Session } from 'next-auth';
 import randomNumStrFormat from '@/app/lib/generateRandomNumberInStringFormat';
 import useWidth from '@/app/hooks/useWidth';
 
-type writerInfo = { isMarked?: boolean; session?: Session };
+type writerInfo = { isMarked?: boolean; session?: Session | null | undefined };
 
 function WriterInfo({ isMarked, session }: writerInfo) {
   const path = usePathname();
-  const { markedOptions } = useMockData();
+  const { profileOptions } = useMockData();
   const [isFollowed, setIsFollowed] = useState(false);
 
   const { isWideScreen } = useWidth();
@@ -53,14 +53,6 @@ function WriterInfo({ isMarked, session }: writerInfo) {
         <div className={style.about}>
           {isMarked ? (
             <>
-              {markedOptions.map(({ href, title }) => (
-                <Link href={href} key={href}>
-                  <Title title={title} withRectangle={path === href} />
-                </Link>
-              ))}
-            </>
-          ) : (
-            <>
               <IconWithText
                 icon={<AiOutlineStar />}
                 text={'Rate : ' + randomNumStrFormat(3, 5)}
@@ -74,18 +66,18 @@ function WriterInfo({ isMarked, session }: writerInfo) {
                 text={'Post : ' + randomNumStrFormat(10, 200)}
               />
             </>
+          ) : (
+            <>
+              {profileOptions.map(({ href, title }) => (
+                <Link href={href} key={href}>
+                  <Title title={title} withRectangle={path === href} />
+                </Link>
+              ))}
+            </>
           )}
         </div>
 
         {isMarked ? (
-          <Link href={'/profile/edit'} className={style.Button}>
-            <Button
-              isHihglighted={false}
-              value={'Edit Profile'}
-              style={{ alignSelf: 'center' }}
-            />
-          </Link>
-        ) : (
           <Button
             className={style.Button}
             value={isFollowed ? 'followed' : '+ Follow'}
@@ -93,6 +85,14 @@ function WriterInfo({ isMarked, session }: writerInfo) {
             style={{ alignSelf: 'center' }}
             onClick={() => setIsFollowed(!isFollowed)}
           />
+        ) : (
+          <Link href={'/profile/edit'} className={style.Button}>
+            <Button
+              isHihglighted={false}
+              value={'Edit Profile'}
+              style={{ alignSelf: 'center' }}
+            />
+          </Link>
         )}
       </div>
     </div>

@@ -11,16 +11,18 @@ import WeatherChart from '@/app/components/Widgets/WeatherWidget/WeatherOfUser/W
 import Title from '@/app/components/Title/Title';
 import useWidth from '@/app/hooks/useWidth';
 import useMockData from '@/app/hooks/useMockData';
+import { useSession } from 'next-auth/react';
 
 function Posts() {
   const { news } = useGetData();
 
   const { randomChartData } = useMockData();
   const { width } = useWidth();
+  const { data: session } = useSession();
   return (
     <main className={style.posts}>
       <ArrowedLink current='Profile Posts' />
-      <WriterInfo isMarked />
+      <WriterInfo session={session} />
 
       <Title title='View Posts' />
 

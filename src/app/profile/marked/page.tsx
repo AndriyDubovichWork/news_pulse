@@ -12,7 +12,6 @@ import WriterInfo from '@/app/components/WriterInfo/WriterInfo';
 
 export default function User() {
   const { news, shuffleNews } = useGetData();
-
   return (
     <main className={style.user}>
       <ArrowedLink current='Marked' />

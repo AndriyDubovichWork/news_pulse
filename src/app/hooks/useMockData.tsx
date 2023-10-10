@@ -77,8 +77,8 @@ function useMockData() {
     'Abstract',
     'Nature',
   ];
-  const markedOptions = [
-    { title: 'marked', href: '/profile/marked' },
+  const profileOptions = [
+    { title: 'profile', href: '/profile' },
     { title: 'send post', href: '/profile/post' },
     { title: 'posts', href: '/profile/posts' },
   ];
@@ -3076,7 +3076,7 @@ function useMockData() {
     dropDowns,
     urls,
     categories,
-    markedOptions,
+    profileOptions,
     mockWeather,
     randomChartData: generateRandomChartData(10),
     members,
