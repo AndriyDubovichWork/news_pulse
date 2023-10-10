@@ -3,7 +3,6 @@
 import React from 'react';
 import style from './Marked.module.scss';
 import Image from 'next/image';
-import Title from '@/app/components/Title/Title';
 import useGetData from '@/app/hooks/useGetData';
 import ArrowedLink from '@/app/components/ArrowedLink/ArrowedLink';
 import GridArticles from '@/app/components/GridArticles/GridArticles';

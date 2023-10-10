@@ -14,6 +14,7 @@ import useMockData from '@/app/hooks/useMockData';
 import { Session } from 'next-auth';
 import randomNumStrFormat from '@/app/lib/generateRandomNumberInStringFormat';
 import useWidth from '@/app/hooks/useWidth';
+import useSearchParamsHook from '@/app/hooks/useSearchParams';
 
 type writerInfo = { isMarked?: boolean; session?: Session | null | undefined };
 
@@ -23,6 +24,8 @@ function WriterInfo({ isMarked, session }: writerInfo) {
   const [isFollowed, setIsFollowed] = useState(false);
 
   const { isWideScreen } = useWidth();
+
+  const { getParam } = useSearchParamsHook();
 
   return (
     <div className={style.writerInfo}>
@@ -46,7 +49,7 @@ function WriterInfo({ isMarked, session }: writerInfo) {
             }
           />
           <p className={style.name}>
-            {session?.user?.name || 'Andriy Dubovich'}
+            {session?.user?.name || getParam('author') || 'Andriy Dubovich'}
           </p>
         </div>
 
